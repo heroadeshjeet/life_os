@@ -1,6 +1,6 @@
 /**
  * Life_OS v2 — Counselor server route.
- *
+ * api/counselor/route.ts
  * Uses Groq API (Llama 3.3 70B) with 3 API keys rotated for fallback.
  * Only called for deep reflection — 90% of intents are handled locally.
  *
