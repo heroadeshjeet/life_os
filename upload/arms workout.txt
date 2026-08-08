@@ -1,0 +1,520 @@
+Arms Workout Plan 
+--- Day 1 ---
+Dynamic Chest - x12
+Spiderman Push-Ups - x12
+Up and Down Plank - x12
+Wide Arm Push-Ups - x12
+Inchworms - x10
+Burpees - x10
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Spiderman Push-Ups - x10
+Up and Down Plank - x10
+Wide Arm Push-Ups - x10
+Inchworms - x10
+Burpees - x8
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 2 ---
+Elbows Back - x12
+Military Push Ups - x12
+Push-Up & Rotation - x12
+Leg Barbell Curl Left - x10
+Leg Barbell Curl Right - x10
+Diamond Push-Ups - x12
+Star Crawl - 30 Sec
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Military Push Ups - x10
+Push-Up & Rotation - x10
+Leg Barbell Curl Left - x8
+Leg Barbell Curl Right - x8
+Diamond Push-Ups - x10
+Star Crawl - 30 Sec
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 3 ---
+Alternating Hooks - 30 Sec
+Floor Tricep Dips - x12
+Military Push Ups - x12
+Spiderman Push-Ups - x12
+Doorway Curls Left - x10
+Doorway Curls Right - x10
+Wide Arm Push-Ups - x12
+Crab Walk - 30 Sec
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Floor Tricep Dips - x10
+Military Push Ups - x10
+Spiderman Push-Ups - x10
+Doorway Curls Left - x8
+Doorway Curls Right - x8
+Crab Walk - 30 Sec
+Push-Ups - x10
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 4 ---
+Rest ☕
+--- Day 5 ---
+Dynamic Chest - x12
+Floor Tricep Dips - x12
+Push-Up & Rotation - x12
+Diamond Push-Ups - x12
+Inchworms - x10
+Push-Ups - x12
+Skipping Without Rope - 30 Sec
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Floor Tricep Dips - x10
+Push-Up & Rotation - x10
+Diamond Push-Ups - x10
+Inchworms - x10
+Push-Ups - x10
+Skipping Without Rope - 30 Sec
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 6 ---
+Elbows Back - x12
+Push-Up & Rotation - x12
+Star Crawl - 30 Sec
+Push-Ups - x12
+Floor Y Raises - x12
+Plank and Reach - x12
+Burpees - x10
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Push-Up & Rotation - x10
+Star Crawl - 30 Sec
+Push-Ups - x10
+Floor Y Raises - x10
+Plank and Reach - x10
+Burpees - x8
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 7 ---
+Alternating Hooks - 30 Sec
+Military Push Ups - x12
+Leg Barbell Curl Left - x12
+Leg Barbell Curl Right - x12
+Up and Down Plank - x12
+Crab Walk - 30 Sec
+Floor Y Raises - x12
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Military Push Ups - x10
+Leg Barbell Curl Left - x10
+Leg Barbell Curl Right - x10
+Up and Down Plank - x10
+Crab Walk - 30 Sec
+Floor Y Raises - x10
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 8 ---
+Rest ☕
+--- Day 9 ---
+Dynamic Chest - x12
+Spiderman Push-Ups - x14
+Doorway Curls Left - x12
+Doorway Curls Right - x12
+Diamond Push-Ups - x12
+Up and Down Plank - x12
+Wide Arm Push-Ups - x12
+Star Crawl - 30 Sec
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Spiderman Push-Ups - x12
+Doorway Curls Left - x10
+Doorway Curls Right - x10
+Diamond Push-Ups - x10
+Up and Down Plank - x10
+Wide Arm Push-Ups - x10
+Star Crawl - 30 Sec
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 10 ---
+Elbows Back - x12
+Floor Tricep Dips - x14
+Military Push Ups - x14
+Push-Up & Rotation - x14
+Inchworms - x10
+Plank and Reach - x12
+Skipping Without Rope - 30 Sec
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Floor Tricep Dips - x12
+Military Push Ups - x12
+Push-Up & Rotation - x12
+Inchworms - x10
+Plank and Reach - x10
+Skipping Without Rope - 30 Sec
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 11 ---
+Alternating Hooks - 30 Sec
+Spiderman Push-Ups - x14
+Diamond Push-Ups - x14
+Wide Arm Push-Ups - x14
+Crab Walk - 30 Sec
+Floor Y Raises - x12
+Burpees - x10
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Spiderman Push-Ups - x12
+Diamond Push-Ups - x12
+Wide Arm Push-Ups - x12
+Crab Walk - 30 Sec
+Floor Y Raises - x10
+Burpees - x8
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 12 ---
+Rest ☕
+--- Day 13 ---
+Dynamic Chest - x12
+Spiderman Push-Ups - x14
+Up and Down Plank - x12
+Wide Arm Push-Ups - x14
+Star Crawl - 36 Sec
+Floor Y Raises - x14
+Burpees - x12
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Spiderman Push-Ups - x12
+Up and Down Plank - x10
+Wide Arm Push-Ups - x12
+Star Crawl - 36 Sec
+Floor Y Raises - x12
+Burpees - x10
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 14 ---
+Elbows Back - x12
+Military Push Ups - x14
+Push-Up & Rotation - x14
+Leg Barbell Curl Left - x12
+Leg Barbell Curl Right - x12
+Diamond Push-Ups - x14
+Crab Walk - 36 Sec
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Military Push Ups - x12
+Push-Up & Rotation - x12
+Leg Barbell Curl Left - x10
+Leg Barbell Curl Right - x10
+Diamond Push-Ups - x12
+Crab Walk - 36 Sec
+Plank and Reach - x10
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 15 ---
+Alternating Hooks - 30 Sec
+Floor Tricep Dips - x14
+Military Push Ups - x14
+Doorway Curls Left - x12
+Doorway Curls Right - x12
+Up and Down Plank - x12
+Inchworms - x12
+Plank and Reach - x12
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Floor Tricep Dips - x12
+Military Push Ups - x12
+Doorway Curls Left - x10
+Doorway Curls Right - x10
+Up and Down Plank - x10
+Inchworms - x12
+Plank and Reach - x10
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 16 ---
+Rest ☕
+--- Day 17 ---
+Dynamic Chest - x14
+Floor Tricep Dips - x14
+Push-Up & Rotation - x14
+Leg Barbell Curl Left - x14
+Leg Barbell Curl Right - x14
+Diamond Push-Ups - x14
+Star Crawl - 36 Sec
+Push-Ups - x14
+Skipping Without Rope - 30 Sec
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Floor Tricep Dips - x12
+Push-Up & Rotation - x12
+Leg Barbell Curl Left - x12
+Leg Barbell Curl Right - x12
+Diamond Push-Ups - x12
+Star Crawl - 36 Sec
+Push-Ups - x12
+Skipping Without Rope - 30 Sec
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 18 ---
+Elbows Back - x14
+Push-Up & Rotation - x14
+Doorway Curls Left - x14
+Doorway Curls Right - x14
+Crab Walk - 36 Sec
+Push-Ups - x14
+Floor Y Raises - x14
+Plank and Reach - x14
+Burpees - x12
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Push-Up & Rotation - x12
+Doorway Curls Left - x12
+Doorway Curls Right - x12
+Crab Walk - 36 Sec
+Push-Ups - x12
+Floor Y Raises - x12
+Plank and Reach - x12
+Burpees - x10
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 19 ---
+Alternating Hooks - 30 Sec
+Military Push Ups - x14
+Doorway Curls Left - x14
+Doorway Curls Right - x14
+Up and Down Plank - x14
+Inchworms - x12
+Floor Y Raises - x14
+Skipping Without Rope - 30 Sec
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Military Push Ups - x12
+Doorway Curls Left - x12
+Doorway Curls Right - x12
+Up and Down Plank - x12
+Inchworms - x12
+Floor Y Raises - x12
+Skipping Without Rope - 30 Sec
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 20 ---
+Rest ☕
+--- Day 21 ---
+Dynamic Chest - x14
+Spiderman Push-Ups - x14
+Leg Barbell Curl Left - x14
+Leg Barbell Curl Right - x14
+Diamond Push-Ups - x14
+Up and Down Plank - x14
+Wide Arm Push-Ups - x14
+Star Crawl - 36 Sec
+Plank and Reach - x14
+Skipping Without Rope - 30 Sec
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Spiderman Push-Ups - x12
+Leg Barbell Curl Left - x12
+Leg Barbell Curl Right - x12
+Diamond Push-Ups - x12
+Up and Down Plank - x12
+Wide Arm Push-Ups - x12
+Star Crawl - 36 Sec
+Plank and Reach - x12
+Skipping Without Rope - 30 Sec
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 22 ---
+Elbows Back - x14
+Floor Tricep Dips - x14
+Military Push Ups - x14
+Push-Up & Rotation - x14
+Inchworms - x12
+Push-Ups - x16
+Plank and Reach - x14
+Skipping Without Rope - 30 Sec
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Floor Tricep Dips - x12
+Military Push Ups - x12
+Push-Up & Rotation - x12
+Inchworms - x12
+Push-Ups - x14
+Plank and Reach - x12
+Skipping Without Rope - 30 Sec
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 23 ---
+Alternating Hooks - 30 Sec
+Spiderman Push-Ups - x14
+Diamond Push-Ups - x14
+Wide Arm Push-Ups - x16
+Crab Walk - 36 Sec
+Push-Ups - x16
+Floor Y Raises - x14
+Burpees - x12
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Spiderman Push-Ups - x12
+Diamond Push-Ups - x12
+Wide Arm Push-Ups - x14
+Crab Walk - 36 Sec
+Push-Ups - x14
+Floor Y Raises - x12
+Burpees - x10
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 24 ---
+Rest ☕
+--- Day 25 ---
+Dynamic Chest - x16
+Floor Tricep Dips - x16
+Military Push Ups - x16
+Spiderman Push-Ups - x16
+Leg Barbell Curl Left - x14
+Leg Barbell Curl Right - x14
+Up and Down Plank - x14
+Star Crawl - 40 Sec
+Plank and Reach - x14
+Skipping Without Rope - 30 Sec
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Floor Tricep Dips - x14
+Military Push Ups - x14
+Spiderman Push-Ups - x14
+Leg Barbell Curl Left - x12
+Leg Barbell Curl Right - x12
+Up and Down Plank - x12
+Star Crawl - 40 Sec
+Plank and Reach - x12
+Skipping Without Rope - 30 Sec
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 26 ---
+Elbows Back - x16
+Military Push Ups - x16
+Push-Up & Rotation - x16
+Doorway Curls Left - x16
+Doorway Curls Right - x16
+Diamond Push-Ups - x16
+Crab Walk - 40 Sec
+Burpees - x14
+Skipping Without Rope - 30 Sec
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Military Push Ups - x14
+Push-Up & Rotation - x14
+Doorway Curls Left - x14
+Doorway Curls Right - x14
+Diamond Push-Ups - x14
+Crab Walk - 40 Sec
+Burpees - x12
+Skipping Without Rope - 30 Sec
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 27 ---
+Alternating Hooks - 30 Sec
+Spiderman Push-Ups - x16
+Up and Down Plank - x14
+Wide Arm Push-Ups - x16
+Inchworms - x14
+Floor Y Raises - x16
+Burpees - x14
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Spiderman Push-Ups - x14
+Up and Down Plank - x12
+Wide Arm Push-Ups - x14
+Inchworms - x14
+Floor Y Raises - x14
+Burpees - x12
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 28 ---
+Rest ☕
+--- Day 29 ---
+Dynamic Chest - x16
+Floor Tricep Dips - x16
+Push-Up & Rotation - x16
+Diamond Push-Ups - x16
+Wide Arm Push-Ups - x16
+Star Crawl - 40 Sec
+Push-Ups - x16
+Plank and Reach - x14
+Skipping Without Rope - 30 Sec
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Floor Tricep Dips - x14
+Push-Up & Rotation - x14
+Diamond Push-Ups - x14
+Wide Arm Push-Ups - x14
+Star Crawl - 40 Sec
+Push-Ups - x14
+Plank and Reach - x12
+Skipping Without Rope - 30 Sec
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec
+--- Day 30 ---
+Elbows Back - x16
+Push-Up & Rotation - x16
+Leg Barbell Curl Left - x16
+Leg Barbell Curl Right - x16
+Crab Walk - 40 Sec
+Push-Ups - x16
+Floor Y Raises - x16
+Plank and Reach - x14
+Burpees - x14
+Skipping Without Rope - 30 Sec
+Arm Circles Clockwise - 30 Sec
+Arm Circles Counterclockwise - 30 Sec
+Push-Up & Rotation - x14
+Leg Barbell Curl Left - x14
+Leg Barbell Curl Right - x14
+Crab Walk - 40 Sec
+Push-Ups - x14
+Floor Y Raises - x14
+Plank and Reach - x12
+Burpees - x12
+Skipping Without Rope - 30 Sec
+Triceps Stretch Left - 30 Sec
+Triceps Stretch Right - 30 Sec
+Standing Biceps Stretch Left - 30 Sec
+Standing Biceps Stretch Right - 30 Sec

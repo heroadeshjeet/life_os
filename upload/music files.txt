@@ -1,0 +1,132 @@
+========================================
+ DIRECTORY STRUCTURE: /assets/
+ Total Files: 114
+music files list and locations currently
+========================================
+
+📁 /assets/audio/music/exercise/
+   ├── high-energy-1.mp3
+   ├── steady-push-1.mp3
+   ├── steady-push-2.mp3
+   ├── uplifting-1.mp3
+   ├── uplifting-2.mp3
+   ├── uplifting-3.mp3
+
+📁 /assets/audio/music/focus/
+   ├── binaural-deep-work.mp3
+   ├── brain-waves-alpha.mp3
+   ├── brain-waves-beta.mp3
+   ├── brain-waves-theta.mp3
+
+📁 /assets/audio/music/meditation/
+   ├── calm-1.mp3
+   ├── calm-2.mp3
+   ├── nature-ocean.mp3
+   ├── nature-rain.mp3
+   ├── singing-bowls.mp3
+
+📁 /assets/audio/sfx/
+   ├── error.mp3
+   ├── lock.mp3
+   ├── streak-milestone.mp3
+   ├── success.mp3
+   ├── tap.mp3
+   ├── unlock.mp3
+   ├── water-drop.mp3
+
+📁 /assets/exercise/
+   ├── abs-plans-raw.txt
+
+📁 /assets/exercises/gifs/
+   ├── 30 30 intervals.gif
+   ├── Abdominal Crunches.gif
+   ├── Alt V Ups.gif
+   ├── Bench dip.gif
+   ├── Bent Knee Side Hip Raises Left.gif
+   ├── Bent Knee Side Hip Raises Right.gif
+   ├── Bent Leg Raises.gif
+   ├── Bicycle Crunches.gif
+   ├── Calf raise.gif
+   ├── Child's Pose.gif
+   ├── Clapping Crunches.gif
+   ├── Cobra Stretch.gif
+   ├── Cross Arm Crunches.gif
+   ├── Cross Knee Planks.gif
+   ├── Crossover Crunches.gif
+   ├── Crunch Kicks.gif
+   ├── Crunch.gif
+   ├── Crutches With Legs Raised.gif
+   ├── Cycling.gif
+   ├── Dead Bug.gif
+   ├── Flutter Kicks.gif
+   ├── Glute bridge.gif
+   ├── Handstand hold.gif
+   ├── Heel Touches.gif
+   ├── Heels To Heaven.gif
+   ├── High Steeping.gif
+   ├── Hip opener.gif
+   ├── Hip opener.webp
+   ├── Incline row.webp
+   ├── Jump rope.gif
+   ├── Jumping Jacks.gif
+   ├── Kettlebell swing.gif
+   ├── L-sit.gif
+   ├── Leg In & Outs.gif
+   ├── Leg raise.gif
+   ├── Liying Twist Stretch Left.gif
+   ├── Liying Twist Stretch Rught.gif
+   ├── Long Arm Crunches.gif
+   ├── Lunge.gif
+   ├── Man-maker.gif
+   ├── Mountain Climbers.gif
+   ├── Muscle-up drill.gif
+   ├── Oblique V Ups Left.gif
+   ├── Oblique V Ups Right.gif
+   ├── One down Two Ups.gif
+   ├── Pike push-up.webp
+   ├── Planche progression.gif
+   ├── Plank.gif
+   ├── Pull-up.gif
+   ├── Push-up.gif
+   ├── README.md
+   ├── Reclined Oblique Twist.gif
+   ├── Restorative.gif
+   ├── Reverse Crunches.gif
+   ├── Reversed Crunches with legs raised.gif
+   ├── Rowing.gif
+   ├── Russian twist.gif
+   ├── Seated Abs Clockwise Circles.gif
+   ├── Seated Abs Counter Clockwise Circles.gif
+   ├── Side Bridges Left.gif
+   ├── Side Bridges Right.gif
+   ├── Side Crunches Left.gif
+   ├── Side Crunches Right.gif
+   ├── Side Plank Left.gif
+   ├── Side Plank Right.gif
+   ├── Sit Up Twist.gif
+   ├── Sit ups.gif
+   ├── Six-pack day.jpg
+   ├── Slow mountain climbers.gif
+   ├── SmartSelect_20260801_122407_Six Pack in 30 Days.gif
+   ├── Squat.gif
+   ├── Stairs.gif
+   ├── Standing Bicycle Crunches.gif
+   ├── Straight Arm Plank.gif
+   ├── Sun salutation.webp
+   ├── T Plank Left Pack in 30 Days.gif
+   ├── T Plank Right.gif
+   ├── Tabata.webp
+   ├── Thruster.gif
+   ├── V Ups.gif
+   ├── Vinyasa flow.gif
+   ├── Wall sit.gif
+   ├── X Man Crunches.gif
+   ├── Yin sequence.gif
+   ├── burpee.gif
+   ├── desktop.ini
+   ├── diamond.gif
+   ├── leg.gif
+   ├── mountain.gif
+   ├── running.gif
+   ├── russian.gif
+

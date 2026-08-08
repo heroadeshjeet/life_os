@@ -1,0 +1,1524 @@
+     1→Lose Belly Fat - Exerciness (⚡- Beginner) 
+     2→
+     3→--- Day 1 --- 
+     4→High Stepping - 20 Sec 
+     5→Jumping Jacks - 20 Sec 
+     6→Standing Bicycle Crunches - x18 
+     7→Abdominal Crunches - x6 
+     8→Heel Touch - x14 
+     9→Straight-Arm Plank - 20 Sec 
+    10→Standing Bicycle Crunches - x18 
+    11→Abdominal Crunches - x6 
+    12→Heel Touch - x14 
+    13→Straight-Arm Plank - 20 Sec 
+    14→Cobra Stretch - 20 Sec 
+    15→--- Day 2 --- 
+    16→High Stepping - 20 Sec 
+    17→Jumping Jacks - 20 Sec 
+    18→Sit Ups - x4 
+    19→Russian Twist - x8 
+    20→Crunch Kicks - x10 
+    21→Reverse Crunches With Leg Raised - x4 
+    22→Sit Ups - x4 
+    23→Russian Twist - x8 
+    24→Crunch Kicks - x10 
+    25→Reverse Crunches With Leg Raised - x4 
+    26→Cobra Stretch - 20 Sec 
+    27→--- Day 3 --- 
+    28→High Stepping - 20 Sec 
+    29→Jumping Jacks - 20 Sec 
+    30→Slow Mountain Climbers - x12 
+    31→Abdominal Crunches - x6 
+    32→Straight Arm Plank - 20 Sec 
+    33→Reclined Oblique Twist - x6 
+    34→Slow Mountain Climber - x12 
+    35→Abdominal Crunches - x6 
+    36→Straight Arm Plank - 20 Sec 
+    37→Reclined Oblique Twist - x6 
+    38→Slow Mountain Climber - x12 
+    39→Abdominal Crunches - x6 
+    40→Straight Arm Plank - 20 Sec 
+    41→Reclined Oblique Twist - x6 
+    42→Cobra Stretch - 20 Sec 
+    43→--- Day 4 --- 
+    44→Rest ☕ 
+    45→--- Day 5 --- 
+    46→High Stepping - 20 Sec 
+    47→Jumping Jacks - 20 Sec 
+    48→Sit Ups - x6 
+    49→Russian Twist - x10 
+    50→Heel Touch - x14 
+    51→Butt Bridge - x12 
+    52→Crossover Crunch - x4 
+    53→Sit Ups - x6 
+    54→Russian Twist - x10 
+    55→Heel Touch - x14 
+    56→Butt Bridge - x12 
+    57→Crossover Crunch - x4 
+    58→Cobra Stretch - 30 Sec 
+    59→--- Day 6 --- 
+    60→High Stepping - 20 Sec 
+    61→Jumping Jacks - 20 Sec 
+    62→Slow Mountain Climbers - x12 
+    63→Abdominal Crunches - x8 
+    64→Crunch Kicks - x10 
+    65→Reverse Crunches With Leg Raised - x6 
+    66→Dead Bug - x6 
+    67→Slow Mountain Climber - x12 
+    68→Abdominal Crunches - x8 
+    69→Crunch Kicks - x10 
+    70→Reverse Crunches With Leg Raised - x6 
+    71→Dead Bug - x6 
+    72→Cobra Stretch - 30 Sec 
+    73→--- Day 7 --- 
+    74→High Stepping - 20 Sec 
+    75→Jumping Jacks - 20 Sec 
+    76→Standing Bicycle Crunches - x18 
+    77→Straight Arm Plank - 20 Sec 
+    78→Reclined Oblique Twist - x6 
+    79→Bent Knee Side Hip Raises Right - x6 
+    80→Bent Knee Side Hip Raises Left - x6 
+    81→Standing Bicycle Crunches - x18 
+    82→Straight Arm Plank - 20 Sec 
+    83→Reclined Oblique Twist - x6 
+    84→Bent Knee Side Hip Raises Right - x6 
+    85→Bent Knee Side Hip Raises Left - x6 
+    86→Cobra Stretch - 30 Sec 
+    87→--- Day 8 --- 
+    88→Rest ☕ 
+    89→--- Day 9 --- 
+    90→High Stepping - 20 Sec 
+    91→Jumping Jacks - 20 Sec 
+    92→Sit Ups - x8 
+    93→Russian Twist - x10 
+    94→Reverse Crunches With Leg Raised - x8 
+    95→Crossover Crunches - x4 
+    96→Sit Ups - x8 
+    97→Russian Twist - x10 
+    98→Reverse Crunches With Leg Raised - x8 
+    99→Crossover Crunch - x4 
+   100→Cobra Stretch - 30 Sec 
+   101→--- Day 10 --- 
+   102→High Stepping - 20 Sec 
+   103→Jumping Jacks - 20 Sec 
+   104→Slow Mountain Climbers - x12 
+   105→Abdominal Crunches - x8 
+   106→Heel Touch - x14 
+   107→Butt Bridge - x12 
+   108→Reclined Oblique Twist - x8 
+   109→Slow Mountain Climber - x12 
+   110→Abdominal Crunches - x8 
+   111→Heel Touch - x14 
+   112→Butt Bridge - x12 
+   113→Reclined Oblique Twist - x8 
+   114→Cobra Stretch - 30 Sec 
+   115→--- Day 11 --- 
+   116→High Stepping - 20 Sec 
+   117→Jumping Jacks - 20 Sec 
+   118→Standing Bicycle Crunches - x18 
+   119→Crunch Kicks - x10 
+   120→Straight-Arm Plank - 20 Sec 
+   121→Bent Knee Side Hip Raises Right - x8 
+   122→Bent Knee Side Hip Raises Left - x8 
+   123→Dead Bug - x8 
+   124→Standing Bicycle Crunches - x18 
+   125→Crunch Kicks - x10 
+   126→Straight-Arm Plank - 20 Sec 
+   127→Bent Knee Side Hip Raises Right - x8 
+   128→Bent Knee Side Hip Raises Left - x8 
+   129→Dead Bug - x8 
+   130→Cobra Stretch - 30 Sec 
+   131→--- Day 12 --- 
+   132→Rest ☕ 
+   133→--- Day 13 --- 
+   134→High Stepping - 20 Sec 
+   135→Jumping Jacks - 20 Sec 
+   136→Standing Bicycle Crunches - x24 
+   137→Mountain Climber - x18 
+   138→Abdominal Crunches - x10 
+   139→Russian Twist - x14 
+   140→Bent Knee Side Hip Raises Right - x10 
+   141→Bent Knee Side Hip Raises Left - x10 
+   142→Standing Bicycle Crunches - x24 
+   143→Mountain Climber - x18 
+   144→Abdominal Crunches - x10 
+   145→Russian Twist - x14 
+   146→Bent Knee Side Hip Raises Right - x10 
+   147→Bent Knee Side Hip Raises Left - x10 
+   148→Cobra Stretch - 30 Sec 
+   149→Lying Twist Stretch Left - 30 Sec 
+   150→Lying Twist Stretch Right - 30 Sec 
+   151→--- Day 14 --- 
+   152→High Stepping - 20 Sec 
+   153→Jumping Jacks - 20 Sec 
+   154→Sit-Ups - x8 
+   155→Russian Twist - x16 
+   156→Crunch Kicks - x12 
+   157→Butt Bridge - x14 
+   158→Reclined Oblique Twist - x14 
+   159→Crossover Crunch - x12 
+   160→Sit-Ups - x8 
+   161→Russian Twist - x16 
+   162→Crunch Kicks - x12 
+   163→Butt Bridge - x14 
+   164→Reclined Oblique Twist - x14 
+   165→Crossover Crunch - x12 
+   166→Cobra Stretch - 30 Sec 
+   167→Lying Twist Stretch Left - 30 Sec 
+   168→Lying Twist Stretch Right - 30 Sec 
+   169→--- Day 15 --- 
+   170→High Stepping - 20 Sec 
+   171→Jumping Jacks - 20 Sec 
+   172→Mountain Climber - x20 
+   173→Abdominal Crunches - x12 
+   174→Heel Touch - x18 
+   175→Reverse Crunches With Leg Raised - x8 
+   176→Straight-Arm Plank - 26 Sec 
+   177→Dead Bug - x12 
+   178→Mountain Climber - x20 
+   179→Abdominal Crunches - x12 
+   180→Heel Touch - x18 
+   181→Reverse Crunches With Leg Raised - x8 
+   182→Straight-Arm Plank - 26 Sec 
+   183→Dead Bug - x12 
+   184→T Plank Left - x4 
+   185→T Plank Right - x4 
+   186→Cobra Stretch - 30 Sec 
+   187→Lying Twist Stretch Left - 30 Sec 
+   188→Lying Twist Stretch Right - 30 Sec 
+   189→--- Day 16 --- 
+   190→Rest ☕ 
+   191→--- Day 17 --- 
+   192→High Stepping - 20 Sec 
+   193→Jumping Jacks - 20 Sec 
+   194→Mountain Climber - x20 
+   195→Sit-Ups - x10 
+   196→Abdominal Crunches - x12 
+   197→Butt Bridge - x16 
+   198→Reclined Oblique Twist - x16 
+   199→Crossover Crunch - x12 
+   200→Mountain Climber - x20 
+   201→Sit-Ups - x10 
+   202→Abdominal Crunches - x12 
+   203→Butt Bridge - x16 
+   204→Reclined Oblique Twist - x16 
+   205→Crossover Crunch - x12 
+   206→Cobra Stretch - 30 Sec 
+   207→Lying Twist Stretch Left - 30 Sec 
+   208→Lying Twist Stretch Right - 30 Sec 
+   209→--- Day 18 --- 
+   210→High Stepping - 20 Sec 
+   211→Jumping Jacks - 20 Sec 
+   212→Standing Bicycle Crunches - x26 
+   213→Abdominal Crunches - x14 
+   214→Russian Twist - x16 
+   215→Crunch Kicks - x14 
+   216→Reverse Crunches With Leg Raised - x10 
+   217→Crossover Crunch - x14 
+   218→Standing Bicycle Crunches - x26 
+   219→Abdominal Crunches - x14 
+   220→Russian Twist - x16 
+   221→Crunch Kicks - x14 
+   222→Reverse Crunches With Leg Raised - x10 
+   223→Crossover Crunch - x14 
+   224→Kneeling Side Plank Right - 20 Sec 
+   225→Kneeling Side Plank Left - 20 Sec 
+   226→Cobra Stretch - 30 Sec 
+   227→Lying Twist Stretch Left - 30 Sec 
+   228→Lying Twist Stretch Right - 30 Sec 
+   229→--- Day 19 --- 
+   230→High Stepping - 20 Sec 
+   231→Jumping Jacks - 20 Sec 
+   232→Mountain Climber - x22 
+   233→Sit-Ups - x10 
+   234→Heel Touch - x18 
+   235→Straight-Arm Plank - 30 Sec 
+   236→Bent Knee Side Hip Raises Right - x12 
+   237→Bent Knee Side Hip Raises Left - x12 
+   238→Dead Bug - x14 
+   239→Mountain Climber - x22 
+   240→Sit-Ups - x10 
+   241→Heel Touch - x18 
+   242→Straight-Arm Plank - 30 Sec 
+   243→Bent Knee Side Hip Raises Right - x12 
+   244→Bent Knee Side Hip Raises Left - x12 
+   245→Dead Bug - x14 
+   246→Kneeling Side Plank Right - 20 Sec 
+   247→Kneeling Side Plank Left - 20 Sec 
+   248→Cobra Stretch - 30 Sec 
+   249→Lying Twist Stretch Left - 30 Sec 
+   250→Lying Twist Stretch Right - 30 Sec 
+   251→--- Day 20 --- 
+   252→Rest ☕ 
+   253→--- Day 21 --- 
+   254→High Stepping - 20 Sec 
+   255→Jumping Jacks - 20 Sec 
+   256→Abdominal Crunches - x14 
+   257→Russian Twist - x18 
+   258→Reverse Crunches With Leg Raised - x10 
+   259→Butt Bridge - x16 
+   260→Bent Knee Side Hip Raises Right - x14 
+   261→Bent Knee Side Hip Raises Left - x14 
+   262→Dead Bug - x14 
+   263→Abdominal Crunches - x14 
+   264→Russian Twist - x18 
+   265→Reverse Crunches With Leg Raised - x10 
+   266→Butt Bridge - x16 
+   267→Bent Knee Side Hip Raises Right - x14 
+   268→Bent Knee Side Hip Raises Left - x14 
+   269→Dead Bug - x14 
+   270→Kneeling Side Plank Right - 20 Sec 
+   271→Kneeling Side Plank Left - 20 Sec 
+   272→Cobra Stretch - 30 Sec 
+   273→Lying Twist Stretch Left - 30 Sec 
+   274→Lying Twist Stretch Right - 30 Sec 
+   275→--- Day 22 --- 
+   276→High Stepping - 20 Sec 
+   277→Jumping Jacks - 20 Sec 
+   278→Standing Bicycle Crunches - x28 
+   279→Mountain Climber - x22 
+   280→Sit-Ups - x12 
+   281→Reverse Crunches With Leg Raised - x12 
+   282→Straight-Arm Plank - 30 Sec 
+   283→Bent Knee Side Hip Raises Right - x16 
+   284→Bent Knee Side Hip Raises Left - x16 
+   285→Standing Bicycle Crunches - x28 
+   286→Mountain Climber - x22 
+   287→Sit-Ups - x12 
+   288→Reverse Crunches With Leg Raised - x12 
+   289→Straight-Arm Plank - 30 Sec 
+   290→Bent Knee Side Hip Raises Right - x16 
+   291→Bent Knee Side Hip Raises Left - x16 
+   292→T Plank Left - x4 
+   293→T Plank Right - x4 
+   294→Kneeling Side Plank Right - 20 Sec 
+   295→Kneeling Side Plank Left - 20 Sec 
+   296→Cobra Stretch - 30 Sec 
+   297→Lying Twist Stretch Left - 30 Sec 
+   298→Lying Twist Stretch Right - 30 Sec 
+   299→--- Day 23 --- 
+   300→High Stepping - 20 Sec 
+   301→Jumping Jacks - 20 Sec 
+   302→Mountain Climber - x24 
+   303→Crunch Kicks - x16 
+   304→Heel Touch - x20 
+   305→Straight-Arm Plank - 36 Sec 
+   306→Butt Bridge - x16 
+   307→Reclined Oblique Twist - x18 
+   308→Crossover Crunch - x14 
+   309→Mountain Climber - x24 
+   310→Crunch Kicks - x16 
+   311→Heel Touch - x20 
+   312→Straight-Arm Plank - 36 Sec 
+   313→Butt Bridge - x16 
+   314→Reclined Oblique Twist - x18 
+   315→Crossover Crunch - x14 
+   316→Kneeling Side Plank Right - 20 Sec 
+   317→Kneeling Side Plank Left - 20 Sec 
+   318→Cobra Stretch - 30 Sec 
+   319→Lying Twist Stretch Left - 30 Sec 
+   320→Lying Twist Stretch Right - 30 Sec 
+   321→--- Day 24 --- 
+   322→Rest ☕ 
+   323→--- Day 25 --- 
+   324→High Stepping - 20 Sec 
+   325→Jumping Jacks - 20 Sec 
+   326→Sit-Ups - x12 
+   327→Abdominal Crunches - x16 
+   328→Heel Touch - x20 
+   329→Butt Bridge - x16 
+   330→Bent Knee Side Hip Raises Right - x18 
+   331→Bent Knee Side Hip Raises Left - x18 
+   332→Dead Bug - x16 
+   333→Sit-Ups - x12 
+   334→Abdominal Crunches - x16 
+   335→Heel Touch - x20 
+   336→Butt Bridge - x16 
+   337→Bent Knee Side Hip Raises Right - x18 
+   338→Bent Knee Side Hip Raises Left - x18 
+   339→Dead Bug - x16 
+   340→Kneeling Side Plank Right - 20 Sec 
+   341→Kneeling Side Plank Left - 20 Sec 
+   342→Cobra Stretch - 30 Sec 
+   343→Lying Twist Stretch Left - 30 Sec 
+   344→Lying Twist Stretch Right - 30 Sec 
+   345→--- Day 26 --- 
+   346→High Stepping - 20 Sec 
+   347→Jumping Jacks - 20 Sec 
+   348→Standing Bicycle Crunches - x30 
+   349→Abdominal Crunches - x16 
+   350→Russian Twist - x20 
+   351→Crunch Kicks - x18 
+   352→Reverse Crunches With Leg Raised - x12 
+   353→Straight-Arm Plank - 36 Sec 
+   354→Dead Bug - x18 
+   355→Standing Bicycle Crunches - x30 
+   356→Abdominal Crunches - x16 
+   357→Russian Twist - x20 
+   358→Crunch Kicks - x18 
+   359→Reverse Crunches With Leg Raised - x12 
+   360→Straight-Arm Plank - 36 Sec 
+   361→Dead Bug - x18 
+   362→T Plank Left - x4 
+   363→T Plank Right - x4 
+   364→Kneeling Side Plank Right - 30 Sec 
+   365→Kneeling Side Plank Left - 30 Sec 
+   366→Cobra Stretch - 30 Sec 
+   367→Lying Twist Stretch Left - 30 Sec 
+   368→Lying Twist Stretch Right - 30 Sec 
+   369→--- Day 27 --- 
+   370→High Stepping - 20 Sec 
+   371→Jumping Jacks - 20 Sec 
+   372→Mountain Climber - x24 
+   373→Sit-Ups - x14 
+   374→Butt Bridge - x18 
+   375→Reclined Oblique Twist - x20 
+   376→Bent Knee Side Hip Raises Right - x20 
+   377→Bent Knee Side Hip Raises Left - x20 
+   378→Crossover Crunch - x16 
+   379→Mountain Climber - x24 
+   380→Sit-Ups - x14 
+   381→Butt Bridge - x18 
+   382→Reclined Oblique Twist - x20 
+   383→Bent Knee Side Hip Raises Right - x20 
+   384→Bent Knee Side Hip Raises Left - x20 
+   385→Crossover Crunch - x16 
+   386→T Plank Left - x4 
+   387→T Plank Right - x4 
+   388→Kneeling Side Plank Right - 30 Sec 
+   389→Kneeling Side Plank Left - 30 Sec 
+   390→Cobra Stretch - 30 Sec 
+   391→Lying Twist Stretch Left - 30 Sec 
+   392→Lying Twist Stretch Right - 30 Sec 
+   393→--- Day 28 --- 
+   394→Rest ☕ 
+   395→--- Day 29 --- 
+   396→High Stepping - 20 Sec 
+   397→Jumping Jacks - 20 Sec 
+   398→Standing Bicycle Crunches - x30 
+   399→Mountain Climber - x24 
+   400→Crunch Kicks - x20 
+   401→Heel Touch - x22 
+   402→Straight-Arm Plank - 36 Sec 
+   403→Butt Bridge - x18 
+   404→Crossover Crunch - x16 
+   405→Standing Bicycle Crunches - x30 
+   406→Mountain Climber - x24 
+   407→Crunch Kicks - x20 
+   408→Heel Touch - x22 
+   409→Straight-Arm Plank - 36 Sec 
+   410→Butt Bridge - x18 
+   411→Crossover Crunch - x16 
+   412→T Plank Left - x6 
+   413→T Plank Right - x6 
+   414→Kneeling Side Plank Right - 30 Sec 
+   415→Kneeling Side Plank Left - 30 Sec 
+   416→Cobra Stretch - 30 Sec 
+   417→Lying Twist Stretch Left - 30 Sec 
+   418→Lying Twist Stretch Right - 30 Sec 
+   419→--- Day 30 --- 
+   420→High Stepping - 20 Sec 
+   421→Jumping Jacks - 20 Sec 
+   422→Sit-Ups - x14 
+   423→Abdominal Crunches - x18 
+   424→Reverse Crunches With Leg Raised - x14 
+   425→Straight-Arm Plank - 40 Sec 
+   426→Bent Knee Side Hip Raises Right - x22 
+   427→Bent Knee Side Hip Raises Left - x22 
+   428→Crossover Crunch - x20 
+   429→Sit-Ups - x14 
+   430→Abdominal Crunches - x18 
+   431→Reverse Crunches With Leg Raised - x14 
+   432→Straight-Arm Plank - 40 Sec 
+   433→Bent Knee Side Hip Raises Right - x22 
+   434→Bent Knee Side Hip Raises Left - x22 
+   435→Crossover Crunch - x20 
+   436→T Plank Left - x6 
+   437→T Plank Right - x6 
+   438→Kneeling Side Plank Right - 30 Sec 
+   439→Kneeling Side Plank Left - 30 Sec 
+   440→Cobra Stretch - 30 Sec 
+   441→Lying Twist Stretch Left - 30 Sec 
+   442→Lying Twist Stretch Right - 30 Sec 
+   443→
+   444→Rock Hard Abs - Exerciness (⚡⚡- Intermediate) 
+   445→
+   446→--- Day 1 ---
+   447→High Stepping - 20 Sec
+   448→Jumping Jacks - 30 Sec
+   449→Crossover Crunch - x8
+   450→Cross Arm Crunches - x8
+   451→Heel Touch - x14
+   452→Plank - 30 Sec
+   453→Reverse Crunches With Leg Raised - x6
+   454→Crossover Crunch - x8
+   455→Cross Arm Crunches - x8
+   456→Heel Touch - x14
+   457→Plank - 30 Sec
+   458→Reverse Crunches With Leg Raised - x6
+   459→Cobra Stretch - 20 Sec
+   460→--- Day 2 ---
+   461→High Stepping - 20 Sec
+   462→Jumping Jacks - 30 Sec
+   463→Sit-Ups - x8
+   464→Long Arm Crunches - x12
+   465→Russian Twist - x14
+   466→Reverse Crunches - x8
+   467→Leg Raises - x6
+   468→Bent Leg Twist - x8
+   469→Sit-Ups - x8
+   470→Long Arm Crunches - x12
+   471→Russian Twist - x14
+   472→Reverse Crunches - x8
+   473→Leg Raises - x6
+   474→Bent Leg Twist - x8
+   475→Cobra Stretch - 20 Sec
+   476→--- Day 3 ---
+   477→High Stepping - 20 Sec
+   478→Jumping Jacks - 30 Sec
+   479→Cross Arm Crunches - x10
+   480→Plank - 30 Sec
+   481→Bicycle Crunches - x8
+   482→Leg Raises - x8
+   483→Reclined Oblique Twist - x8
+   484→Cross Arm Crunches - x10
+   485→Plank - 30 Sec
+   486→Reverse Crunches With Leg Raised - x8
+   487→Leg Raises - x8
+   488→Cobra Stretch - 20 Sec
+   489→--- Day 4 ---
+   490→Rest ☕
+   491→--- Day 5 ---
+   492→High Stepping - 20 Sec
+   493→Jumping Jacks - 30 Sec
+   494→Long Arm Crunches - x12
+   495→Russian Twist - x16
+   496→Plank - 30 Sec
+   497→Butt Bridge - x14
+   498→Bent Leg Twist - x8
+   499→Long Arm Crunches - x12
+   500→Russian Twist - x16
+   501→Plank - 30 Sec
+   502→Butt Bridge - x14
+   503→Bent Leg Twist - x8
+   504→Cobra Stretch - 30 Sec
+   505→--- Day 6 ---
+   506→High Stepping - 20 Sec
+   507→Jumping Jacks - 30 Sec
+   508→Sit-Ups - x8
+   509→Cross Arm Crunches - x12
+   510→Reverse Crunches - x10
+   511→Bicycle Crunches - x8
+   512→Leg Raises - x8
+   513→Sit-Ups - x8
+   514→Cross Arm Crunches - x12
+   515→Reverse Crunches - x10
+   516→Bicycle Crunches - x8
+   517→Leg Raises - x8
+   518→Cobra Stretch - 30 Sec
+   519→--- Day 7 ---
+   520→High Stepping - 20 Sec
+   521→Jumping Jacks - 30 Sec
+   522→Crossover Crunch - x12
+   523→Heel Touch - x18
+   524→Plank - 30 Sec
+   525→Reverse Crunches With Leg Raised - x10
+   526→Side Bridges Right - x8
+   527→Side Bridges Left - x8
+   528→Crossover Crunch - x12
+   529→Heel Touch - x18
+   530→Plank - 30 Sec
+   531→Reverse Crunches With Leg Raised - x10
+   532→Side Bridges Right - x8
+   533→Side Bridges Left - x8
+   534→Cobra Stretch - 30 Sec
+   535→--- Day 8 ---
+   536→Rest ☕
+   537→--- Day 9 ---
+   538→High Stepping - 20 Sec
+   539→Jumping Jacks - 30 Sec
+   540→Long Arm Crunches - x14
+   541→Plank - 30 Sec
+   542→Bicycle Crunches - x10
+   543→Reclined Oblique Twist - x12
+   544→Bent Leg Twist - x10
+   545→Long Arm Crunches - x14
+   546→Plank - 30 Sec
+   547→Bicycle Crunches - x10
+   548→Reclined Oblique Twist - x12
+   549→Bent Leg Twist - x10
+   550→Cobra Stretch - 30 Sec
+   551→--- Day 10 ---
+   552→High Stepping - 20 Sec
+   553→Jumping Jacks - 30 Sec
+   554→Crossover Crunch - x12
+   555→Sit-Ups - x10
+   556→Russian Twist - x18
+   557→Reverse Crunches - x12
+   558→Butt Bridge - x14
+   559→Crossover Crunch - x12
+   560→Sit-Ups - x10
+   561→Russian Twist - x18
+   562→Reverse Crunches - x12
+   563→Butt Bridge - x16
+   564→Cobra Stretch - 30 Sec
+   565→--- Day 11 ---
+   566→High Stepping - 20 Sec
+   567→Jumping Jacks - 30 Sec
+   568→Cross Arm Crunches - x14
+   569→Heel Touch - x18
+   570→Plank - 30 Sec
+   571→Leg Raises - x10
+   572→Side Bridges Right - x10
+   573→Side Bridges Left - x10
+   574→Cross Arm Crunches - x14
+   575→Heel Touch - x18
+   576→Plank - 30 Sec
+   577→Leg Raises - x10
+   578→Side Bridges Right - x10
+   579→Side Bridges Left - x10
+   580→Cobra Stretch - 30 Sec
+   581→--- Day 12 ---
+   582→Rest ☕
+   583→--- Day 13 ---
+   584→High Stepping - 20 Sec
+   585→Jumping Jacks - 30 Sec
+   586→Crossover Crunch - x14
+   587→Mountain Climber - x26
+   588→Cross Arm Crunches - x14
+   589→Russian Twist - x20
+   590→Reverse Crunches With Leg Raised - x10
+   591→Side Bridges Right - x10
+   592→Side Bridges Left - x10
+   593→Crossover Crunch - x14
+   594→Mountain Climber - x26
+   595→Cross Arm Crunches - x14
+   596→Russian Twist - x20
+   597→Reverse Crunches With Leg Raised - x10
+   598→Side Bridges Right - x10
+   599→Side Bridges Left - x10
+   600→Cobra Stretch - 30 Sec
+   601→Lying Twist Stretch Left - 30 Sec
+   602→Lying Twist Stretch Right - 30 Sec
+   603→--- Day 14 ---
+   604→High Stepping - 20 Sec
+   605→Jumping Jacks - 30 Sec
+   606→Sit-Ups - x10
+   607→Russian Twist - x22
+   608→Butt Bridge - x16
+   609→Bicycle Crunches - x12
+   610→Leg Raises - x12
+   611→Bent Leg Twist - x12
+   612→Crunch Kicks - 20 Sec
+   613→Sit-Ups - x10
+   614→Russian Twist - x22
+   615→Butt Bridge - x16
+   616→Bicycle Crunches - x12
+   617→Leg Raises - x12
+   618→Bent Leg Twist - x12
+   619→Cobra Stretch - 30 Sec
+   620→Lying Twist Stretch Left - 30 Sec
+   621→Lying Twist Stretch Right - 30 Sec
+   622→--- Day 15 ---
+   623→High Stepping - 20 Sec
+   624→Jumping Jacks - 30 Sec
+   625→Crossover Crunch - x14
+   626→Mountain Climber - x28
+   627→Cross Arm Crunches - x16
+   628→Heel Touch - x20
+   629→Plank - 30 Sec
+   630→Leg Raises - x12
+   631→Bent Leg Twist - x12
+   632→Crossover Crunch - x14
+   633→Mountain Climber - x28
+   634→Cross Arm Crunches - x16
+   635→Heel Touch - x20
+   636→Plank - 30 Sec
+   637→Leg Raises - x12
+   638→Bent Leg Twist - x12
+   639→T Plank Left - x4
+   640→T Plank Right - x4
+   641→Cobra Stretch - 30 Sec
+   642→Lying Twist Stretch Left - 30 Sec
+   643→Lying Twist Stretch Right - 30 Sec
+   644→--- Day 16 ---
+   645→Rest ☕
+   646→--- Day 17 ---
+   647→High Stepping - 20 Sec
+   648→Jumping Jacks - 30 Sec
+   649→Mountain Climber - x28
+   650→Long Arm Crunches - x16
+   651→Plank - 30 Sec
+   652→Reverse Crunches - x12
+   653→Butt Bridge - x18
+   654→Reclined Oblique Twist - x16
+   655→Mountain Climber - x28
+   656→Long Arm Crunches - x16
+   657→Plank - 30 Sec
+   658→Reverse Crunches - x12
+   659→Butt Bridge - x18
+   660→Reclined Oblique Twist - x16
+   661→Cobra Stretch - 30 Sec
+   662→Lying Twist Stretch Left - 30 Sec
+   663→Lying Twist Stretch Right - 30 Sec
+   664→--- Day 18 ---
+   665→High Stepping - 20 Sec
+   666→Jumping Jacks - 30 Sec
+   667→Sit-Ups - x12
+   668→Russian Twist - x22
+   669→Plank - 30 Sec
+   670→Reverse Crunches - x14
+   671→Bicycle Crunches - x14
+   672→Leg Raises - x14
+   673→Side Bridges Right - x12
+   674→Side Bridges Left - x12
+   675→Sit-Ups - x12
+   676→Russian Twist - x22
+   677→Plank - 30 Sec
+   678→Reverse Crunches - x14
+   679→Bicycle Crunches - x14
+   680→Leg Raises - x14
+   681→Side Bridges Right - x12
+   682→Side Bridges Left - x12
+   683→Side Plank Right - 20 Sec
+   684→Side Plank Left - 20 Sec
+   685→Cobra Stretch - 30 Sec
+   686→Lying Twist Stretch Left - 30 Sec
+   687→Lying Twist Stretch Right - 30 Sec
+   688→--- Day 19 ---
+   689→High Stepping - 20 Sec
+   690→Jumping Jacks - 30 Sec
+   691→Crossover Crunch - x16
+   692→Mountain Climber - x30
+   693→Sit-Ups - x14
+   694→Russian Twist - x22
+   695→Plank - 30 Sec
+   696→Reclined Oblique Twist - x16
+   697→Bent Leg Twist - x14
+   698→Crossover Crunch - x16
+   699→Mountain Climber - x30
+   700→Sit-Ups - x14
+   701→Russian Twist - x22
+   702→Plank - 30 Sec
+   703→Reclined Oblique Twist - x16
+   704→Bent Leg Twist - x14
+   705→Side Plank Right - 20 Sec
+   706→Side Plank Left - 20 Sec
+   707→Cobra Stretch - 30 Sec
+   708→Lying Twist Stretch Left - 30 Sec
+   709→Lying Twist Stretch Right - 30 Sec
+   710→--- Day 20 ---
+   711→Rest ☕
+   712→--- Day 21 ---
+   713→High Stepping - 20 Sec
+   714→Jumping Jacks - 30 Sec
+   715→Long Arm Crunches - x18
+   716→Russian Twist - x24
+   717→Reverse Crunches - x16
+   718→Butt Bridge - x18
+   719→Side Bridges Right - x14
+   720→Side Bridges Left - x14
+   721→Bent Leg Twist - x14
+   722→Crunch Kicks - 20 Sec
+   723→Long Arm Crunches - x18
+   724→Russian Twist - x24
+   725→Reverse Crunches - x16
+   726→Butt Bridge - x18
+   727→Side Bridges Right - x14
+   728→Side Bridges Left - x14
+   729→Bent Leg Twist - x14
+   730→Side Plank Right - 20 Sec
+   731→Side Plank Left - 20 Sec
+   732→Cobra Stretch - 30 Sec
+   733→Lying Twist Stretch Left - 30 Sec
+   734→Lying Twist Stretch Right - 30 Sec
+   735→--- Day 22 ---
+   736→High Stepping - 20 Sec
+   737→Jumping Jacks - 30 Sec
+   738→Crossover Crunch - x16
+   739→Mountain Climber - x30
+   740→Sit-Ups - x16
+   741→Heel Touch - x20
+   742→Plank - 30 Sec
+   743→Bicycle Crunches - x14
+   744→Reverse Crunches With Leg Raised - x16
+   745→Reclined Oblique Twist - x18
+   746→Crunch Kicks - 20 Sec
+   747→Crossover Crunch - x16
+   748→Mountain Climber - x30
+   749→Sit-Ups - x16
+   750→Heel Touch - x20
+   751→Plank - 30 Sec
+   752→Bicycle Crunches - x14
+   753→Reverse Crunches With Leg Raised - x16
+   754→Reclined Oblique Twist - x18
+   755→T Plank Left - x4
+   756→T Plank Right - x4
+   757→Side Plank Right - 20 Sec
+   758→Side Plank Left - 20 Sec
+   759→Cobra Stretch - 30 Sec
+   760→Lying Twist Stretch Left - 30 Sec
+   761→Lying Twist Stretch Right - 30 Sec
+   762→--- Day 23 ---
+   763→High Stepping - 20 Sec
+   764→Jumping Jacks - 30 Sec
+   765→Mountain Climber - x32
+   766→Cross Arm Crunches - x18
+   767→Russian Twist - x24
+   768→Plank - 30 Sec
+   769→Reverse Crunches - x16
+   770→Butt Bridge - x20
+   771→Bicycle Crunches - x14
+   772→Bent Leg Twist - x14
+   773→Crunch Kicks - 30 Sec
+   774→Mountain Climber - x32
+   775→Cross Arm Crunches - x18
+   776→Russian Twist - x24
+   777→Plank - 30 Sec
+   778→Reverse Crunches - x16
+   779→Butt Bridge - x20
+   780→Bicycle Crunches - x14
+   781→Bent Leg Twist - x14
+   782→Side Plank Right - 20 Sec
+   783→Side Plank Left - 20 Sec
+   784→Cobra Stretch - 30 Sec
+   785→Lying Twist Stretch Left - 30 Sec
+   786→Lying Twist Stretch Right - 30 Sec
+   787→--- Day 24 ---
+   788→Rest ☕
+   789→--- Day 25 ---
+   790→High Stepping - 20 Sec
+   791→Jumping Jacks - 30 Sec
+   792→Crossover Crunch - x18
+   793→Sit-Ups - x16
+   794→Long Arm Crunches - x20
+   795→Russian Twist - x24
+   796→Plank - 30 Sec
+   797→Butt Bridge - x20
+   798→Side Bridges Right - x18
+   799→Side Bridges Left - x18
+   800→Crunch Kicks - 30 Sec
+   801→Crossover Crunch - x18
+   802→Sit-Ups - x16
+   803→Long Arm Crunches - x20
+   804→Russian Twist - x24
+   805→Plank - 30 Sec
+   806→Butt Bridge - x20
+   807→Side Bridges Right - x18
+   808→Side Bridges Left - x18
+   809→Side Plank Right - 20 Sec
+   810→Side Plank Left - 20 Sec
+   811→Cobra Stretch - 30 Sec
+   812→Lying Twist Stretch Left - 30 Sec
+   813→Lying Twist Stretch Right - 30 Sec
+   814→--- Day 26 ---
+   815→High Stepping - 20 Sec
+   816→Jumping Jacks - 30 Sec
+   817→Crossover Crunch - x18
+   818→Cross Arm Crunches - x22
+   819→Russian Twist - x26
+   820→Plank - 30 Sec
+   821→Reverse Crunches - x18
+   822→Reverse Crunches With Leg Raised - x18
+   823→Bent Leg Twist - x18
+   824→Crunch Kicks - 30 Sec
+   825→Crossover Crunch - x18
+   826→Cross Arm Crunches - x22
+   827→Russian Twist - x26
+   828→Plank - 30 Sec
+   829→Reverse Crunches - x18
+   830→Reverse Crunches With Leg Raised - x18
+   831→Bent Leg Twist - x18
+   832→T Plank Left - x4
+   833→T Plank Right - x4
+   834→Side Plank Right - 30 Sec
+   835→Side Plank Left - 30 Sec
+   836→Cobra Stretch - 30 Sec
+   837→Lying Twist Stretch Left - 30 Sec
+   838→Lying Twist Stretch Right - 30 Sec
+   839→--- Day 27 ---
+   840→High Stepping - 20 Sec
+   841→Jumping Jacks - 30 Sec
+   842→Mountain Climber - x32
+   843→Sit-Ups - x18
+   844→Heel Touch - x24
+   845→Plank - 30 Sec
+   846→Bicycle Crunches - x16
+   847→Reclined Oblique Twist - x20
+   848→Side Bridges Right - x20
+   849→Side Bridges Left - x20
+   850→Mountain Climber - x32
+   851→Sit-Ups - x18
+   852→Heel Touch - x24
+   853→Plank - 30 Sec
+   854→Bicycle Crunches - x16
+   855→Reclined Oblique Twist - x20
+   856→Side Bridges Right - x20
+   857→Side Bridges Left - x20
+   858→T Plank Left - x4
+   859→T Plank Right - x4
+   860→Side Plank Right - 30 Sec
+   861→Side Plank Left - 30 Sec
+   862→Cobra Stretch - 30 Sec
+   863→Lying Twist Stretch Left - 30 Sec
+   864→Lying Twist Stretch Right - 30 Sec
+   865→--- Day 28 ---
+   866→Rest ☕
+   867→--- Day 29 ---
+   868→High Stepping - 20 Sec
+   869→Jumping Jacks - 30 Sec
+   870→Mountain Climber - x32
+   871→Sit-Ups - x18
+   872→Russian Twist - x26
+   873→Plank - 30 Sec
+   874→Butt Bridge - x24
+   875→Bicycle Crunches - x16
+   876→Reverse Crunches With Leg Raised - x20
+   877→Crunch Kicks - 30 Sec
+   878→Mountain Climber - x32
+   879→Sit-Ups - x18
+   880→Russian Twist - x26
+   881→Plank - 30 Sec
+   882→Butt Bridge - x24
+   883→Bicycle Crunches - x16
+   884→Reverse Crunches With Leg Raised - x20
+   885→T Plank Left - x6
+   886→T Plank Right - x6
+   887→Side Plank Right - 30 Sec
+   888→Side Plank Left - 30 Sec
+   889→Cobra Stretch - 30 Sec
+   890→Lying Twist Stretch Left - 30 Sec
+   891→Lying Twist Stretch Right - 30 Sec
+   892→--- Day 30 ---
+   893→High Stepping - 20 Sec
+   894→Jumping Jacks - 30 Sec
+   895→Crossover Crunch - x20
+   896→Sit-Ups - x20
+   897→Cross Arm Crunches - x22
+   898→Heel Touch - x26
+   899→Plank - 30 Sec
+   900→Bicycle Crunches - x20
+   901→Leg Raises - x22
+   902→Crunch Kicks - 30 Sec
+   903→Crossover Crunch - x20
+   904→Sit-Ups - x20
+   905→Cross Arm Crunches - x22
+   906→Heel Touch - x26
+   907→Plank - 30 Sec
+   908→Bicycle Crunches - x20
+   909→Leg Raises - x22
+   910→T Plank Left - x6
+   911→T Plank Right - x6
+   912→Side Plank Right - 30 Sec
+   913→Side Plank Left - 30 Sec
+   914→Cobra Stretch - 30 Sec
+   915→Lying Twist Stretch Left - 30 Sec
+   916→Lying Twist Stretch Right - 30 Sec
+   917→
+   918→Six Pack Abs - Exerciness (⚡⚡⚡- Advanced) 
+   919→
+   920→--- Day 1 ---
+   921→Bent Leg Twist - x6
+   922→Reverse Crunches - x8
+   923→V Crunch - x10
+   924→Flutter Kicks - 36 Sec
+   925→Heel Touch - x30
+   926→Mountain Climber - 12 Sec
+   927→X Man Crunch - x8
+   928→Heels to the Heavens - x12
+   929→Side Crunches Left - x10
+   930→Side Crunches Right - x10
+   931→Russian Twist - x18
+   932→Plank - 40 Sec
+   933→Mountain Climber - 12 Sec
+   934→X Man Crunch - x8
+   935→Heels to the Heavens - x12
+   936→Side Crunches Left - x10
+   937→Side Crunches Right - x10
+   938→Russian Twist - x18
+   939→Side Plank Left - 30 Sec
+   940→Side Plank Right - 30 Sec
+   941→Cobra Stretch - 30 Sec
+   942→Child's Pose - 30 Sec
+   943→--- Day 2 ---
+   944→Bent Leg Twist - x6
+   945→Reverse Crunches - x8
+   946→V Crunch - x10
+   947→Flutter Kicks - 36 Sec
+   948→Heel Touch - x30
+   949→Cross Arm Crunches - x16
+   950→Alt V-Up - x12
+   951→Crunches With Legs Raised - x12
+   952→Oblique V-Ups Left - x10
+   953→Oblique V-Ups Right - x10
+   954→Plank - 40 Sec
+   955→Cross Arm Crunches - x16
+   956→Alt V-Up - x12
+   957→Crunches With Legs Raised - x12
+   958→Oblique V-Ups Left - x10
+   959→Oblique V-Ups Right - x10
+   960→Side Plank Left - 30 Sec
+   961→Side Plank Right - 30 Sec
+   962→Cobra Stretch - 30 Sec
+   963→Child's Pose - 30 Sec
+   964→--- Day 3 ---
+   965→Bent Leg Twist - x6
+   966→Reverse Crunches - x8
+   967→V Crunch - x10
+   968→Flutter Kicks - 36 Sec
+   969→Heel Touch - x30
+   970→Clapping Crunches - x20
+   971→Seated Abs Clockwise Circles - x10
+   972→Seated Abs Counterclockwise Circles - x10
+   973→V-Up - x12
+   974→One Down Two Ups - x12
+   975→Plank - 40 Sec
+   976→Clapping Crunches - x20
+   977→Seated Abs Clockwise Circles - x10
+   978→Seated Abs Counterclockwise Circles - x10
+   979→V-Up - x12
+   980→One Down Two Ups - x12
+   981→Side Plank Left - 30 Sec
+   982→Side Plank Right - 30 Sec
+   983→Cobra Stretch - 30 Sec
+   984→Child's Pose - 30 Sec
+   985→--- Day 4 ---
+   986→Rest ☕
+   987→--- Day 5 ---
+   988→Bent Leg Twist - x6
+   989→Reverse Crunches - x8
+   990→V Crunch - x10
+   991→Flutter Kicks - 36 Sec
+   992→Heel Touch - x30
+   993→Mountain Climber - 12 Sec
+   994→Heels to the Heavens - x14
+   995→Side Crunches Left - x12
+   996→Side Crunches Right - x12
+   997→Leg In & Outs - 30 Sec
+   998→Plank - 40 Sec
+   999→Mountain Climber - 12 Sec
+  1000→Heels to the Heavens - x14
+  1001→Side Crunches Left - x12
+  1002→Side Crunches Right - x12
+  1003→Leg In & Outs - 30 Sec
+  1004→Side Plank Left - 30 Sec
+  1005→Side Plank Right - 30 Sec
+  1006→Cobra Stretch - 30 Sec
+  1007→Child's Pose - 30 Sec
+  1008→--- Day 6 ---
+  1009→Bent Leg Twist - x6
+  1010→Reverse Crunches - x8
+  1011→V Crunch - x10
+  1012→Flutter Kicks - 36 Sec
+  1013→Heel Touch - x30
+  1014→Cross Arm Crunches - x18
+  1015→X Man Crunch - x10
+  1016→Clapping Crunches - x22
+  1017→Seated Abs Clockwise Circles - x10
+  1018→Seated Abs Counterclockwise Circles - x10
+  1019→Plank - 40 Sec
+  1020→Cross Arm Crunches - x18
+  1021→X Man Crunch - x10
+  1022→Clapping Crunches - x22
+  1023→Seated Abs Clockwise Circles - x10
+  1024→Seated Abs Counterclockwise Circles - x10
+  1025→Side Plank Left - 30 Sec
+  1026→Side Plank Right - 30 Sec
+  1027→Cobra Stretch - 30 Sec
+  1028→Child's Pose - 30 Sec
+  1029→--- Day 7 ---
+  1030→Bent Leg Twist - x6
+  1031→Reverse Crunches - x8
+  1032→V Crunch - x10
+  1033→Flutter Kicks - 36 Sec
+  1034→Heel Touch - x30
+  1035→Alt V-Up - x14
+  1036→Side Crunches Left - x14
+  1037→Side Crunches Right - x14
+  1038→Cross Knee Plank - x18
+  1039→V-Up - x12
+  1040→Plank - 40 Sec
+  1041→Alt V-Up - x14
+  1042→Side Crunches Left - x14
+  1043→Side Crunches Right - x14
+  1044→Cross Knee Plank - x18
+  1045→V-Up - x12
+  1046→Side Plank Left - 30 Sec
+  1047→Side Plank Right - 30 Sec
+  1048→Cobra Stretch - 30 Sec
+  1049→Child's Pose - 30 Sec
+  1050→--- Day 8 ---
+  1051→Rest ☕
+  1052→--- Day 9 ---
+  1053→Bent Leg Twist - x6
+  1054→Reverse Crunches - x8
+  1055→V Crunch - x10
+  1056→Flutter Kicks - 36 Sec
+  1057→Heel Touch - x30
+  1058→Mountain Climber - 12 Sec
+  1059→Crunches With Legs Raised - x14
+  1060→Clapping Crunches - x24
+  1061→Seated Abs Clockwise Circles - x10
+  1062→Seated Abs Counterclockwise Circles - x10
+  1063→Plank - 40 Sec
+  1064→Mountain Climber - 12 Sec
+  1065→Crunches With Legs Raised - x14
+  1066→Clapping Crunches - x24
+  1067→Seated Abs Clockwise Circles - x10
+  1068→Seated Abs Counterclockwise Circles - x10
+  1069→Side Plank Left - 30 Sec
+  1070→Side Plank Right - 30 Sec
+  1071→Cobra Stretch - 30 Sec
+  1072→Child's Pose - 30 Sec
+  1073→--- Day 10 ---
+  1074→Bent Leg Twist - x6
+  1075→Reverse Crunches - x8
+  1076→V Crunch - x10
+  1077→Flutter Kicks - 36 Sec
+  1078→Heel Touch - x30
+  1079→X Man Crunch - x12
+  1080→Heels to the Heavens - x16
+  1081→One Down Two Ups - x12
+  1082→Sit-Up Twist - x16
+  1083→Russian Twist - x20
+  1084→Plank - 40 Sec
+  1085→X Man Crunch - x12
+  1086→Heels to the Heavens - x16
+  1087→One Down Two Ups - x12
+  1088→Sit-Up Twist - x16
+  1089→Russian Twist - x20
+  1090→Side Plank Left - 30 Sec
+  1091→Side Plank Right - 30 Sec
+  1092→Cobra Stretch - 30 Sec
+  1093→Child's Pose - 30 Sec
+  1094→--- Day 11 ---
+  1095→Bent Leg Twist - x6
+  1096→Reverse Crunches - x8
+  1097→V Crunch - x10
+  1098→Flutter Kicks - 36 Sec
+  1099→Heel Touch - x30
+  1100→Cross Arm Crunches - x22
+  1101→Side Crunches Left - x16
+  1102→Side Crunches Right - x16
+  1103→Leg In & Outs - 30 Sec
+  1104→Long Arm Crunches - x20
+  1105→Plank - 40 Sec
+  1106→Cross Arm Crunches - x22
+  1107→Side Crunches Left - x16
+  1108→Side Crunches Right - x16
+  1109→Leg In & Outs - 40 Sec
+  1110→Long Arm Crunches - x20
+  1111→Side Plank Left - 30 Sec
+  1112→Side Plank Right - 30 Sec
+  1113→Cobra Stretch - 30 Sec
+  1114→Child's Pose - 30 Sec
+  1115→--- Day 12 ---
+  1116→Rest ☕
+  1117→--- Day 13 ---
+  1118→Bent Leg Twist - x6
+  1119→Reverse Crunches - x8
+  1120→V Crunch - x10
+  1121→Flutter Kicks - 36 Sec
+  1122→Heel Touch - x30
+  1123→Mountain Climber - 40 Sec
+  1124→Alt V-Up - x16
+  1125→Crunches With Legs Raised - x16
+  1126→Oblique V-Ups Left - x14
+  1127→Oblique V-Ups Right - x14
+  1128→V-Up - x16
+  1129→One Down Two Ups - x12
+  1130→Sit-Up Twist - x18
+  1131→Plank - 40 Sec
+  1132→Mountain Climber - 40 Sec
+  1133→Alt V-Up - x16
+  1134→Crunches With Legs Raised - x16
+  1135→Oblique V-Ups Left - x14
+  1136→Oblique V-Ups Right - x14
+  1137→V-Up - x16
+  1138→One Down Two Ups - x12
+  1139→Sit-Up Twist - x18
+  1140→Side Plank Left - 30 Sec
+  1141→Side Plank Right - 30 Sec
+  1142→Cobra Stretch - 30 Sec
+  1143→Child's Pose - 30 Sec
+  1144→Lying Twist Stretch Left - 30 Sec
+  1145→Lying Twist Stretch Right - 30 Sec
+  1146→--- Day 14 ---
+  1147→Bent Leg Twist - x6
+  1148→Reverse Crunches - x8
+  1149→V Crunch - x10
+  1150→Flutter Kicks - 40 Sec
+  1151→Heel Touch - x30
+  1152→Cross Arm Crunches - x24
+  1153→Alt V-Up - x18
+  1154→Clapping Crunches - x26
+  1155→Leg In & Outs - 30 Sec
+  1156→Cross Knee Plank - x20
+  1157→One Down Two Ups - x12
+  1158→Russian Twist - x26
+  1159→Plank - 40 Sec
+  1160→Cross Arm Crunches - x24
+  1161→Alt V-Up - x18
+  1162→Clapping Crunches - x26
+  1163→Leg In & Outs - 30 Sec
+  1164→Cross Knee Plank - x20
+  1165→One Down Two Ups - x12
+  1166→Russian Twist - x26
+  1167→Side Plank Left - 30 Sec
+  1168→Side Plank Right - 30 Sec
+  1169→Cobra Stretch - 30 Sec
+  1170→Child's Pose - 30 Sec
+  1171→Lying Twist Stretch Left - 30 Sec
+  1172→Lying Twist Stretch Right - 30 Sec
+  1173→--- Day 15 ---
+  1174→Bent Leg Twist - x6
+  1175→Reverse Crunches - x8
+  1176→V Crunch - x10
+  1177→Flutter Kicks - 40 Sec
+  1178→Heel Touch - x30
+  1179→Mountain Climber - 40 Sec
+  1180→Cross Arm Crunches - x26
+  1181→X Man Crunch - x18
+  1182→Clapping Crunches - x26
+  1183→Seated Abs Clockwise Circles - x12
+  1184→Seated Abs Counterclockwise Circles - x12
+  1185→Russian Twist - x28
+  1186→Plank - 40 Sec
+  1187→Mountain Climber - 40 Sec
+  1188→Cross Arm Crunches - x26
+  1189→X Man Crunch - x18
+  1190→Clapping Crunches - x26
+  1191→Seated Abs Clockwise Circles - x12
+  1192→Seated Abs Counterclockwise Circles - x12
+  1193→Russian Twist - x28
+  1194→Side Plank Left - 30 Sec
+  1195→Side Plank Right - 30 Sec
+  1196→Cobra Stretch - 30 Sec
+  1197→Child's Pose - 30 Sec
+  1198→Lying Twist Stretch Left - 30 Sec
+  1199→Lying Twist Stretch Right - 30 Sec
+  1200→--- Day 16 ---
+  1201→Rest ☕
+  1202→--- Day 17 ---
+  1203→Bent Leg Twist - x6
+  1204→Reverse Crunches - x8
+  1205→V Crunch - x10
+  1206→Flutter Kicks - 40 Sec
+  1207→Heel Touch - x30
+  1208→Heels to the Heavens - x18
+  1209→Clapping Crunches - x28
+  1210→Seated Abs Clockwise Circles - x12
+  1211→Seated Abs Counterclockwise Circles - x12
+  1212→V-Up - x18
+  1213→One Down Two Ups - x14
+  1214→Reverse Crunches With Leg Raised - x14
+  1215→Plank - 40 Sec
+  1216→Heels to the Heavens - x18
+  1217→Clapping Crunches - x28
+  1218→Seated Abs Clockwise Circles - x12
+  1219→Seated Abs Counterclockwise Circles - x12
+  1220→V-Up - x18
+  1221→One Down Two Ups - x14
+  1222→Reverse Crunches With Leg Raised - x14
+  1223→Side Plank Left - 40 Sec
+  1224→Side Plank Right - 40 Sec
+  1225→Cobra Stretch - 30 Sec
+  1226→Child's Pose - 30 Sec
+  1227→Lying Twist Stretch Left - 30 Sec
+  1228→Lying Twist Stretch Right - 30 Sec
+  1229→--- Day 18 ---
+  1230→Bent Leg Twist - x6
+  1231→Reverse Crunches - x8
+  1232→V Crunch - x10
+  1233→Flutter Kicks - 40 Sec
+  1234→Heel Touch - x30
+  1235→Alt V-Up - x20
+  1236→X Man Crunch - x20
+  1237→Side Crunches Left - x18
+  1238→Side Crunches Right - x18
+  1239→Cross Knee Plank - x22
+  1240→V-Up - x20
+  1241→Long Arm Crunches - x20
+  1242→Plank - 40 Sec
+  1243→Alt V-Up - x20
+  1244→X Man Crunch - x20
+  1245→Side Crunches Left - x18
+  1246→Side Crunches Right - x18
+  1247→Cross Knee Plank - x22
+  1248→V-Up - x20
+  1249→Long Arm Crunches - x20
+  1250→Side Plank Left - 40 Sec
+  1251→Side Plank Right - 40 Sec
+  1252→Cobra Stretch - 30 Sec
+  1253→Child's Pose - 30 Sec
+  1254→Lying Twist Stretch Left - 30 Sec
+  1255→Lying Twist Stretch Right - 30 Sec
+  1256→--- Day 19 ---
+  1257→Bent Leg Twist - x6
+  1258→Reverse Crunches - x8
+  1259→V Crunch - x10
+  1260→Flutter Kicks - 40 Sec
+  1261→Heel Touch - x30
+  1262→Plank - 30 Sec
+  1263→X Man Crunch - x20
+  1264→Crunches With Legs Raised - x18
+  1265→Oblique V-Ups Left - x16
+  1266→Oblique V-Ups Right - x16
+  1267→Leg In & Outs - 30 Sec
+  1268→Sit-Up Twist - x18
+  1269→Plank - 40 Sec
+  1270→Standing Bicycle Crunches - x16
+  1271→X Man Crunch - x20
+  1272→Crunches With Legs Raised - x18
+  1273→Oblique V-Ups Left - x16
+  1274→Oblique V-Ups Right - x16
+  1275→Leg In & Outs - 30 Sec
+  1276→Sit-Up Twist - x18
+  1277→Side Plank Left - 40 Sec
+  1278→Side Plank Right - 40 Sec
+  1279→Cobra Stretch - 30 Sec
+  1280→Child's Pose - 30 Sec
+  1281→Lying Twist Stretch Left - 30 Sec
+  1282→Lying Twist Stretch Right - 30 Sec
+  1283→--- Day 20 ---
+  1284→Rest ☕
+  1285→--- Day 21 ---
+  1286→Bent Leg Twist - x6
+  1287→Reverse Crunches - x8
+  1288→V Crunch - x10
+  1289→Flutter Kicks - 40 Sec
+  1290→Heel Touch - x30
+  1291→Mountain Climber - 40 Sec
+  1292→Cross Arm Crunches - x28
+  1293→Alt V-Up - x20
+  1294→Seated Abs Clockwise Circles - x14
+  1295→Seated Abs Counterclockwise Circles - x14
+  1296→Leg In & Outs - 30 Sec
+  1297→One Down Two Ups - x14
+  1298→Sit-Up Twist - x20
+  1299→Long Arm Crunches - x20
+  1300→Plank - 40 Sec
+  1301→Mountain Climber - 40 Sec
+  1302→Cross Arm Crunches - x28
+  1303→Alt V-Up - x20
+  1304→Seated Abs Clockwise Circles - x14
+  1305→Seated Abs Counterclockwise Circles - x14
+  1306→Leg In & Outs - 30 Sec
+  1307→One Down Two Ups - x14
+  1308→Sit-Up Twist - x20
+  1309→Long Arm Crunches - x20
+  1310→Side Plank Left - 40 Sec
+  1311→Side Plank Right - 40 Sec
+  1312→Cobra Stretch - 30 Sec
+  1313→Child's Pose - 30 Sec
+  1314→Lying Twist Stretch Left - 30 Sec
+  1315→Lying Twist Stretch Right - 30 Sec
+  1316→--- Day 22 ---
+  1317→Bent Leg Twist - x6
+  1318→Reverse Crunches - x8
+  1319→V Crunch - x10
+  1320→Flutter Kicks - 40 Sec
+  1321→Heel Touch - x30
+  1322→Cross Arm Crunches - x30
+  1323→Side Crunches Left - x20
+  1324→Side Crunches Right - x20
+  1325→Clapping Crunches - x30
+  1326→Russian Twist - x30
+  1327→Reverse Crunches With Leg Raised - x16
+  1328→Long Arm Crunches - x20
+  1329→Plank - 40 Sec
+  1330→Cross Arm Crunches - x30
+  1331→Side Crunches Left - x20
+  1332→Side Crunches Right - x20
+  1333→Clapping Crunches - x30
+  1334→Russian Twist - x30
+  1335→Reverse Crunches With Leg Raised - x16
+  1336→Long Arm Crunches - x20
+  1337→Side Plank Left - 40 Sec
+  1338→Side Plank Right - 40 Sec
+  1339→Cobra Stretch - 30 Sec
+  1340→Child's Pose - 30 Sec
+  1341→Lying Twist Stretch Left - 30 Sec
+  1342→Lying Twist Stretch Right - 30 Sec
+  1343→--- Day 23 ---
+  1344→Bent Leg Twist - x6
+  1345→Reverse Crunches - x8
+  1346→V Crunch - x10
+  1347→Flutter Kicks - 40 Sec
+  1348→Heel Touch - x30
+  1349→Mountain Climber - 46 Sec
+  1350→Crunches With Legs Raised - x20
+  1351→Clapping Crunches - x30
+  1352→Seated Abs Clockwise Circles - x14
+  1353→Seated Abs Counterclockwise Circles - x14
+  1354→Leg In & Outs - 30 Sec
+  1355→Cross Knee Plank - x24
+  1356→V-Up - x22
+  1357→Sit-Up Twist - x22
+  1358→Plank - 40 Sec
+  1359→Mountain Climber - 46 Sec
+  1360→Crunches With Legs Raised - x20
+  1361→Clapping Crunches - x30
+  1362→Seated Abs Clockwise Circles - x14
+  1363→Seated Abs Counterclockwise Circles - x14
+  1364→Leg In & Outs - 30 Sec
+  1365→Cross Knee Plank - x24
+  1366→V-Up - x22
+  1367→Sit-Up Twist - x22
+  1368→Side Plank Left - 40 Sec
+  1369→Side Plank Right - 40 Sec
+  1370→Cobra Stretch - 30 Sec
+  1371→Child's Pose - 30 Sec
+  1372→Lying Twist Stretch Left - 30 Sec
+  1373→Lying Twist Stretch Right - 30 Sec
+  1374→--- Day 24 ---
+  1375→Rest ☕
+  1376→--- Day 25 ---
+  1377→Bent Leg Twist - x6
+  1378→Reverse Crunches - x8
+  1379→V Crunch - x10
+  1380→Flutter Kicks - 40 Sec
+  1381→Heel Touch - x30
+  1382→Alt V-Up - x22
+  1383→Clapping Crunches - x32
+  1384→Oblique V-Ups Left - x18
+  1385→Oblique V-Ups Right - x18
+  1386→Leg In & Outs - 30 Sec
+  1387→V-Up - x22
+  1388→Russian Twist - x30
+  1389→Long Arm Crunches - x22
+  1390→Plank - 40 Sec
+  1391→Alt V-Up - x22
+  1392→Clapping Crunches - x32
+  1393→Oblique V-Ups Left - x18
+  1394→Oblique V-Ups Right - x18
+  1395→Leg In & Outs - 30 Sec
+  1396→V-Up - x22
+  1397→Russian Twist - x30
+  1398→Long Arm Crunches - x22
+  1399→Side Plank Left - 40 Sec
+  1400→Side Plank Right - 40 Sec
+  1401→Cobra Stretch - 30 Sec
+  1402→Child's Pose - 30 Sec
+  1403→Lying Twist Stretch Left - 30 Sec
+  1404→Lying Twist Stretch Right - 30 Sec
+  1405→--- Day 26 ---
+  1406→Bent Leg Twist - x6
+  1407→Reverse Crunches - x8
+  1408→V Crunch - x10
+  1409→Flutter Kicks - 40 Sec
+  1410→Heel Touch - x30
+  1411→Crunches With Legs Raised - x22
+  1412→Clapping Crunches - x32
+  1413→Seated Abs Clockwise Circles - x16
+  1414→Seated Abs Counterclockwise Circles - x16
+  1415→V-Up - x24
+  1416→One Down Two Ups - x18
+  1417→Sit-Up Twist - x22
+  1418→Long Arm Crunches - x22
+  1419→Plank - 40 Sec
+  1420→Crunches With Legs Raised - x22
+  1421→Clapping Crunches - x32
+  1422→Seated Abs Clockwise Circles - x16
+  1423→Seated Abs Counterclockwise Circles - x16
+  1424→V-Up - x24
+  1425→One Down Two Ups - x18
+  1426→Sit-Up Twist - x22
+  1427→Long Arm Crunches - x22
+  1428→Side Plank Left - 40 Sec
+  1429→Side Plank Right - 40 Sec
+  1430→Cobra Stretch - 30 Sec
+  1431→Child's Pose - 30 Sec
+  1432→Lying Twist Stretch Left - 30 Sec
+  1433→Lying Twist Stretch Right - 30 Sec
+  1434→--- Day 27 ---
+  1435→Bent Leg Twist - x6
+  1436→Reverse Crunches - x8
+  1437→V Crunch - x10
+  1438→Flutter Kicks - 40 Sec
+  1439→Heel Touch - x30
+  1440→Cross Arm Crunches - x30
+  1441→Alt V-Up - x22
+  1442→Crunches With Legs Raised - x24
+  1443→Clapping Crunches - x32
+  1444→Leg In & Outs - 30 Sec
+  1445→Cross Knee Plank - x26
+  1446→One Down Two Ups - x20
+  1447→Russian Twist - x32
+  1448→Plank - 40 Sec
+  1449→Cross Arm Crunches - x30
+  1450→Alt V-Up - x22
+  1451→Crunches With Legs Raised - x24
+  1452→Clapping Crunches - x32
+  1453→Leg In & Outs - 30 Sec
+  1454→Cross Knee Plank - x26
+  1455→One Down Two Ups - x20
+  1456→Russian Twist - x32
+  1457→Side Plank Left - 40 Sec
+  1458→Side Plank Right - 40 Sec
+  1459→Cobra Stretch - 30 Sec
+  1460→Child's Pose - 30 Sec
+  1461→Lying Twist Stretch Left - 30 Sec
+  1462→Lying Twist Stretch Right - 30 Sec
+  1463→--- Day 28 ---
+  1464→Rest ☕
+  1465→--- Day 29 ---
+  1466→Bent Leg Twist - x6
+  1467→Reverse Crunches - x8
+  1468→V Crunch - x10
+  1469→Flutter Kicks - 40 Sec
+  1470→Heel Touch - x30
+  1471→Mountain Climber - 46 Sec
+  1472→Crunches With Legs Raised - x26
+  1473→Clapping Crunches - x32
+  1474→Seated Abs Clockwise Circles - x16
+  1475→Seated Abs Counterclockwise Circles - x16
+  1476→V-Up - x26
+  1477→One Down Two Ups - x20
+  1478→Sit-Up Twist - x26
+  1479→Long Arm Crunches - x24
+  1480→Plank - 40 Sec
+  1481→Mountain Climber - 46 Sec
+  1482→Crunches With Legs Raised - x26
+  1483→Clapping Crunches - x32
+  1484→Seated Abs Clockwise Circles - x16
+  1485→Seated Abs Counterclockwise Circles - x16
+  1486→V-Up - x26
+  1487→One Down Two Ups - x20
+  1488→Sit-Up Twist - x26
+  1489→Long Arm Crunches - x24
+  1490→Side Plank Left - 40 Sec
+  1491→Side Plank Right - 40 Sec
+  1492→Cobra Stretch - 30 Sec
+  1493→Child's Pose - 30 Sec
+  1494→Lying Twist Stretch Left - 30 Sec
+  1495→Lying Twist Stretch Right - 30 Sec
+  1496→--- Day 30 ---
+  1497→Bent Leg Twist - x6
+  1498→Reverse Crunches - x8
+  1499→V Crunch - x10
+  1500→Flutter Kicks - 40 Sec
+  1501→Heel Touch - x30
+  1502→X Man Crunch - x24
+  1503→Clapping Crunches - x32
+  1504→Oblique V-Ups Left - x20
+  1505→Oblique V-Ups Right - x20
+  1506→Leg In & Outs - 30 Sec
+  1507→Cross Knee Plank - x28
+  1508→Sit-Up Twist - x26
+  1509→Russian Twist - x34
+  1510→Plank - 40 Sec
+  1511→X Man Crunch - x24
+  1512→Clapping Crunches - x32
+  1513→Oblique V-Ups Left - x20
+  1514→Oblique V-Ups Right - x20
+  1515→Leg In & Outs - 30 Sec
+  1516→Cross Knee Plank - x28
+  1517→Sit-Up Twist - x26
+  1518→Russian Twist - x34
+  1519→Side Plank Left - 40 Sec
+  1520→Side Plank Right - 40 Sec
+  1521→Cobra Stretch - 30 Sec
+  1522→Child's Pose - 30 Sec
+  1523→Lying Twist Stretch Left - 30 Sec
+  1524→Lying Twist Stretch Right - 30 Sec

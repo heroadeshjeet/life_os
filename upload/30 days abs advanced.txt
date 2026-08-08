@@ -1,0 +1,606 @@
+30 days Abs Advance Plan
+--- Day 1 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 36 Sec
+Heel Touch - x30
+Mountain Climber - 12 Sec
+X Man Crunch - x8
+Heels to the Heavens - x12
+Side Crunches Left - x10
+Side Crunches Right - x10
+Russian Twist - x18
+Plank - 40 Sec
+Mountain Climber - 12 Sec
+X Man Crunch - x8
+Heels to the Heavens - x12
+Side Crunches Left - x10
+Side Crunches Right - x10
+Russian Twist - x18
+Side Plank Left - 30 Sec
+Side Plank Right - 30 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+--- Day 2 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 36 Sec
+Heel Touch - x30
+Cross Arm Crunches - x16
+Alt V-Up - x12
+Crunches With Legs Raised - x12
+Oblique V-Ups Left - x10
+Oblique V-Ups Right - x10
+Plank - 40 Sec
+Cross Arm Crunches - x16
+Alt V-Up - x12
+Crunches With Legs Raised - x12
+Oblique V-Ups Left - x10
+Oblique V-Ups Right - x10
+Side Plank Left - 30 Sec
+Side Plank Right - 30 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+--- Day 3 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 36 Sec
+Heel Touch - x30
+Clapping Crunches - x20
+Seated Abs Clockwise Circles - x10
+Seated Abs Counterclockwise Circles - x10
+V-Up - x12
+One Down Two Ups - x12
+Plank - 40 Sec
+Clapping Crunches - x20
+Seated Abs Clockwise Circles - x10
+Seated Abs Counterclockwise Circles - x10
+V-Up - x12
+One Down Two Ups - x12
+Side Plank Left - 30 Sec
+Side Plank Right - 30 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+--- Day 4 ---
+Rest ☕
+--- Day 5 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 36 Sec
+Heel Touch - x30
+Mountain Climber - 12 Sec
+Heels to the Heavens - x14
+Side Crunches Left - x12
+Side Crunches Right - x12
+Leg In & Outs - 30 Sec
+Plank - 40 Sec
+Mountain Climber - 12 Sec
+Heels to the Heavens - x14
+Side Crunches Left - x12
+Side Crunches Right - x12
+Leg In & Outs - 30 Sec
+Side Plank Left - 30 Sec
+Side Plank Right - 30 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+--- Day 6 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 36 Sec
+Heel Touch - x30
+Cross Arm Crunches - x18
+X Man Crunch - x10
+Clapping Crunches - x22
+Seated Abs Clockwise Circles - x10
+Seated Abs Counterclockwise Circles - x10
+Plank - 40 Sec
+Cross Arm Crunches - x18
+X Man Crunch - x10
+Clapping Crunches - x22
+Seated Abs Clockwise Circles - x10
+Seated Abs Counterclockwise Circles - x10
+Side Plank Left - 30 Sec
+Side Plank Right - 30 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+--- Day 7 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 36 Sec
+Heel Touch - x30
+Alt V-Up - x14
+Side Crunches Left - x14
+Side Crunches Right - x14
+Cross Knee Plank - x18
+V-Up - x12
+Plank - 40 Sec
+Alt V-Up - x14
+Side Crunches Left - x14
+Side Crunches Right - x14
+Cross Knee Plank - x18
+V-Up - x12
+Side Plank Left - 30 Sec
+Side Plank Right - 30 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+--- Day 8 ---
+Rest ☕
+--- Day 9 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 36 Sec
+Heel Touch - x30
+Mountain Climber - 12 Sec
+Crunches With Legs Raised - x14
+Clapping Crunches - x24
+Seated Abs Clockwise Circles - x10
+Seated Abs Counterclockwise Circles - x10
+Plank - 40 Sec
+Mountain Climber - 12 Sec
+Crunches With Legs Raised - x14
+Clapping Crunches - x24
+Seated Abs Clockwise Circles - x10
+Seated Abs Counterclockwise Circles - x10
+Side Plank Left - 30 Sec
+Side Plank Right - 30 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+--- Day 10 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 36 Sec
+Heel Touch - x30
+X Man Crunch - x12
+Heels to the Heavens - x16
+One Down Two Ups - x12
+Sit-Up Twist - x16
+Russian Twist - x20
+Plank - 40 Sec
+X Man Crunch - x12
+Heels to the Heavens - x16
+One Down Two Ups - x12
+Sit-Up Twist - x16
+Russian Twist - x20
+Side Plank Left - 30 Sec
+Side Plank Right - 30 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+--- Day 11 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 36 Sec
+Heel Touch - x30
+Cross Arm Crunches - x22
+Side Crunches Left - x16
+Side Crunches Right - x16
+Leg In & Outs - 30 Sec
+Long Arm Crunches - x20
+Plank - 40 Sec
+Cross Arm Crunches - x22
+Side Crunches Left - x16
+Side Crunches Right - x16
+Leg In & Outs - 40 Sec
+Long Arm Crunches - x20
+Side Plank Left - 30 Sec
+Side Plank Right - 30 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+--- Day 12 ---
+Rest ☕
+--- Day 13 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 36 Sec
+Heel Touch - x30
+Mountain Climber - 40 Sec
+Alt V-Up - x16
+Crunches With Legs Raised - x16
+Oblique V-Ups Left - x14
+Oblique V-Ups Right - x14
+V-Up - x16
+One Down Two Ups - x12
+Sit-Up Twist - x18
+Plank - 40 Sec
+Mountain Climber - 40 Sec
+Alt V-Up - x16
+Crunches With Legs Raised - x16
+Oblique V-Ups Left - x14
+Oblique V-Ups Right - x14
+V-Up - x16
+One Down Two Ups - x12
+Sit-Up Twist - x18
+Side Plank Left - 30 Sec
+Side Plank Right - 30 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+Lying Twist Stretch Left - 30 Sec
+Lying Twist Stretch Right - 30 Sec
+--- Day 14 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 40 Sec
+Heel Touch - x30
+Cross Arm Crunches - x24
+Alt V-Up - x18
+Clapping Crunches - x26
+Leg In & Outs - 30 Sec
+Cross Knee Plank - x20
+One Down Two Ups - x12
+Russian Twist - x26
+Plank - 40 Sec
+Cross Arm Crunches - x24
+Alt V-Up - x18
+Clapping Crunches - x26
+Leg In & Outs - 30 Sec
+Cross Knee Plank - x20
+One Down Two Ups - x12
+Russian Twist - x26
+Side Plank Left - 30 Sec
+Side Plank Right - 30 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+Lying Twist Stretch Left - 30 Sec
+Lying Twist Stretch Right - 30 Sec
+--- Day 15 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 40 Sec
+Heel Touch - x30
+Mountain Climber - 40 Sec
+Cross Arm Crunches - x26
+X Man Crunch - x18
+Clapping Crunches - x26
+Seated Abs Clockwise Circles - x12
+Seated Abs Counterclockwise Circles - x12
+Russian Twist - x28
+Plank - 40 Sec
+Mountain Climber - 40 Sec
+Cross Arm Crunches - x26
+X Man Crunch - x18
+Clapping Crunches - x26
+Seated Abs Clockwise Circles - x12
+Seated Abs Counterclockwise Circles - x12
+Russian Twist - x28
+Side Plank Left - 30 Sec
+Side Plank Right - 30 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+Lying Twist Stretch Left - 30 Sec
+Lying Twist Stretch Right - 30 Sec
+--- Day 16 ---
+Rest ☕
+--- Day 17 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 40 Sec
+Heel Touch - x30
+Heels to the Heavens - x18
+Clapping Crunches - x28
+Seated Abs Clockwise Circles - x12
+Seated Abs Counterclockwise Circles - x12
+V-Up - x18
+One Down Two Ups - x14
+Reverse Crunches With Leg Raised - x14
+Plank - 40 Sec
+Heels to the Heavens - x18
+Clapping Crunches - x28
+Seated Abs Clockwise Circles - x12
+Seated Abs Counterclockwise Circles - x12
+V-Up - x18
+One Down Two Ups - x14
+Reverse Crunches With Leg Raised - x14
+Side Plank Left - 40 Sec
+Side Plank Right - 40 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+Lying Twist Stretch Left - 30 Sec
+Lying Twist Stretch Right - 30 Sec
+--- Day 18 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 40 Sec
+Heel Touch - x30
+Alt V-Up - x20
+X Man Crunch - x20
+Side Crunches Left - x18
+Side Crunches Right - x18
+Cross Knee Plank - x22
+V-Up - x20
+Long Arm Crunches - x20
+Plank - 40 Sec
+Alt V-Up - x20
+X Man Crunch - x20
+Side Crunches Left - x18
+Side Crunches Right - x18
+Cross Knee Plank - x22
+V-Up - x20
+Long Arm Crunches - x20
+Side Plank Left - 40 Sec
+Side Plank Right - 40 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+Lying Twist Stretch Left - 30 Sec
+Lying Twist Stretch Right - 30 Sec
+--- Day 19 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 40 Sec
+Heel Touch - x30
+Plank - 30 Sec
+X Man Crunch - x20
+Crunches With Legs Raised - x18
+Oblique V-Ups Left - x16
+Oblique V-Ups Right - x16
+Leg In & Outs - 30 Sec
+Sit-Up Twist - x18
+Plank - 40 Sec
+Standing Bicycle Crunches - x16
+X Man Crunch - x20
+Crunches With Legs Raised - x18
+Oblique V-Ups Left - x16
+Oblique V-Ups Right - x16
+Leg In & Outs - 30 Sec
+Sit-Up Twist - x18
+Side Plank Left - 40 Sec
+Side Plank Right - 40 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+Lying Twist Stretch Left - 30 Sec
+Lying Twist Stretch Right - 30 Sec
+--- Day 20 ---
+Rest ☕
+--- Day 21 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 40 Sec
+Heel Touch - x30
+Mountain Climber - 40 Sec
+Cross Arm Crunches - x28
+Alt V-Up - x20
+Seated Abs Clockwise Circles - x14
+Seated Abs Counterclockwise Circles - x14
+Leg In & Outs - 30 Sec
+One Down Two Ups - x14
+Sit-Up Twist - x20
+Long Arm Crunches - x20
+Plank - 40 Sec
+Mountain Climber - 40 Sec
+Cross Arm Crunches - x28
+Alt V-Up - x20
+Seated Abs Clockwise Circles - x14
+Seated Abs Counterclockwise Circles - x14
+Leg In & Outs - 30 Sec
+One Down Two Ups - x14
+Sit-Up Twist - x20
+Long Arm Crunches - x20
+Side Plank Left - 40 Sec
+Side Plank Right - 40 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+Lying Twist Stretch Left - 30 Sec
+Lying Twist Stretch Right - 30 Sec
+--- Day 22 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 40 Sec
+Heel Touch - x30
+Cross Arm Crunches - x30
+Side Crunches Left - x20
+Side Crunches Right - x20
+Clapping Crunches - x30
+Russian Twist - x30
+Reverse Crunches With Leg Raised - x16
+Long Arm Crunches - x20
+Plank - 40 Sec
+Cross Arm Crunches - x30
+Side Crunches Left - x20
+Side Crunches Right - x20
+Clapping Crunches - x30
+Russian Twist - x30
+Reverse Crunches With Leg Raised - x16
+Long Arm Crunches - x20
+Side Plank Left - 40 Sec
+Side Plank Right - 40 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+Lying Twist Stretch Left - 30 Sec
+Lying Twist Stretch Right - 30 Sec
+--- Day 23 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 40 Sec
+Heel Touch - x30
+Mountain Climber - 46 Sec
+Crunches With Legs Raised - x20
+Clapping Crunches - x30
+Seated Abs Clockwise Circles - x14
+Seated Abs Counterclockwise Circles - x14
+Leg In & Outs - 30 Sec
+Cross Knee Plank - x24
+V-Up - x22
+Sit-Up Twist - x22
+Plank - 40 Sec
+Mountain Climber - 46 Sec
+Crunches With Legs Raised - x20
+Clapping Crunches - x30
+Seated Abs Clockwise Circles - x14
+Seated Abs Counterclockwise Circles - x14
+Leg In & Outs - 30 Sec
+Cross Knee Plank - x24
+V-Up - x22
+Sit-Up Twist - x22
+Side Plank Left - 40 Sec
+Side Plank Right - 40 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+Lying Twist Stretch Left - 30 Sec
+Lying Twist Stretch Right - 30 Sec
+--- Day 24 ---
+Rest ☕
+--- Day 25 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 40 Sec
+Heel Touch - x30
+Alt V-Up - x22
+Clapping Crunches - x32
+Oblique V-Ups Left - x18
+Oblique V-Ups Right - x18
+Leg In & Outs - 30 Sec
+V-Up - x22
+Russian Twist - x30
+Long Arm Crunches - x22
+Plank - 40 Sec
+Alt V-Up - x22
+Clapping Crunches - x32
+Oblique V-Ups Left - x18
+Oblique V-Ups Right - x18
+Leg In & Outs - 30 Sec
+V-Up - x22
+Russian Twist - x30
+Long Arm Crunches - x22
+Side Plank Left - 40 Sec
+Side Plank Right - 40 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+Lying Twist Stretch Left - 30 Sec
+Lying Twist Stretch Right - 30 Sec
+--- Day 26 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 40 Sec
+Heel Touch - x30
+Crunches With Legs Raised - x22
+Clapping Crunches - x32
+Seated Abs Clockwise Circles - x16
+Seated Abs Counterclockwise Circles - x16
+V-Up - x24
+One Down Two Ups - x18
+Sit-Up Twist - x22
+Long Arm Crunches - x22
+Plank - 40 Sec
+Crunches With Legs Raised - x22
+Clapping Crunches - x32
+Seated Abs Clockwise Circles - x16
+Seated Abs Counterclockwise Circles - x16
+V-Up - x24
+One Down Two Ups - x18
+Sit-Up Twist - x22
+Long Arm Crunches - x22
+Side Plank Left - 40 Sec
+Side Plank Right - 40 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+Lying Twist Stretch Left - 30 Sec
+Lying Twist Stretch Right - 30 Sec
+--- Day 27 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 40 Sec
+Heel Touch - x30
+Cross Arm Crunches - x30
+Alt V-Up - x22
+Crunches With Legs Raised - x24
+Clapping Crunches - x32
+Leg In & Outs - 30 Sec
+Cross Knee Plank - x26
+One Down Two Ups - x20
+Russian Twist - x32
+Plank - 40 Sec
+Cross Arm Crunches - x30
+Alt V-Up - x22
+Crunches With Legs Raised - x24
+Clapping Crunches - x32
+Leg In & Outs - 30 Sec
+Cross Knee Plank - x26
+One Down Two Ups - x20
+Russian Twist - x32
+Side Plank Left - 40 Sec
+Side Plank Right - 40 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+Lying Twist Stretch Left - 30 Sec
+Lying Twist Stretch Right - 30 Sec
+--- Day 28 ---
+Rest ☕
+--- Day 29 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 40 Sec
+Heel Touch - x30
+Mountain Climber - 46 Sec
+Crunches With Legs Raised - x26
+Clapping Crunches - x32
+Seated Abs Clockwise Circles - x16
+Seated Abs Counterclockwise Circles - x16
+V-Up - x26
+One Down Two Ups - x20
+Sit-Up Twist - x26
+Long Arm Crunches - x24
+Plank - 40 Sec
+Mountain Climber - 46 Sec
+Crunches With Legs Raised - x26
+Clapping Crunches - x32
+Seated Abs Clockwise Circles - x16
+Seated Abs Counterclockwise Circles - x16
+V-Up - x26
+One Down Two Ups - x20
+Sit-Up Twist - x26
+Long Arm Crunches - x24
+Side Plank Left - 40 Sec
+Side Plank Right - 40 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+Lying Twist Stretch Left - 30 Sec
+Lying Twist Stretch Right - 30 Sec
+--- Day 30 ---
+Bent Leg Twist - x6
+Reverse Crunches - x8
+V Crunch - x10
+Flutter Kicks - 40 Sec
+Heel Touch - x30
+X Man Crunch - x24
+Clapping Crunches - x32
+Oblique V-Ups Left - x20
+Oblique V-Ups Right - x20
+Leg In & Outs - 30 Sec
+Cross Knee Plank - x28
+Sit-Up Twist - x26
+Russian Twist - x34
+Plank - 40 Sec
+X Man Crunch - x24
+Clapping Crunches - x32
+Oblique V-Ups Left - x20
+Oblique V-Ups Right - x20
+Leg In & Outs - 30 Sec
+Cross Knee Plank - x28
+Sit-Up Twist - x26
+Russian Twist - x34
+Side Plank Left - 40 Sec
+Side Plank Right - 40 Sec
+Cobra Stretch - 30 Sec
+Child's Pose - 30 Sec
+Lying Twist Stretch Left - 30 Sec
+Lying Twist Stretch Right - 30 Sec

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0b0d12" />
+  <title>Exerciness — Achieve Six Packs in 30 Days</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" />
+</head>
+
+<style>
+/*  ==================   BLOCKING MACHANISM START ================== */
+/* Disable text selection via CSS */
+body {
+    -webkit-user-select: none; /* Chrome, Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge */
+    user-select: none;         /* Standard */
+}
+</style>
+
+<script>
+(function() {
+    "use strict";
+
+    // Disable right-click context menu
+    document.addEventListener("contextmenu", function(e) {
+        e.preventDefault();
+        alert("Right-click is disabled on this page.");
+    });
+
+    // Disable text selection via JavaScript (extra layer)
+    document.addEventListener("selectstart", function(e) {
+        e.preventDefault();
+    });
+
+    // Disable dragging of links and images
+    document.addEventListener("dragstart", function(e) {
+        e.preventDefault();
+    });
+
+    // Block common developer tools shortcuts
+    document.addEventListener("keydown", function(e) {
+        // F12
+        if (e.key === "F12") {
+            e.preventDefault();
+        }
+        // Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+Shift+C
+        if (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key.toUpperCase())) {
+            e.preventDefault();
+        }
+        // Ctrl+U (View Source)
+        if (e.ctrlKey && e.key.toUpperCase() === "U") {
+            e.preventDefault();
+        }
+        // Ctrl+S (Save Page)
+        if (e.ctrlKey && e.key.toUpperCase() === "S") {
+            e.preventDefault();
+        }
+    });
+})();
+
+// ==================   BLOCKING MACHANISM END ================== 
+</script>
+
+<body>
+  <!-- =================== APP ROOT =================== -->
+  <div id="app">
+
+    <!-- ============= SPLASH / ONBOARDING (Plan selection) ============= -->
+    <section id="screen-onboarding" class="screen active" data-screen="onboarding">
+      <div class="onb-bg"></div>
+      <div class="onb-wrap">
+        <header class="onb-header">
+          <div class="brand">
+            <span class="brand-mark">⚡</span>
+            <span class="brand-name">Exerciness</span>
+          </div>
+          <p class="brand-tag">Achieve Six Packs in 30 Days</p>
+<p class="brand-tag">-- An Adeshjeet_Official App -- ⚡✅</p>
+<br>
+        </header>
+
+        <h1 class="onb-title">Choose your plan</h1>
+        <p class="onb-sub">Pick a level that matches where you are today. You can switch plans anytime from Home.</p>
+
+        <div id="plan-cards" class="plan-cards"></div>
+
+        <div class="onb-foot">
+          <button id="onb-continue" class="btn btn-primary btn-block" disabled>Continue</button>
+          <p class="onb-foot-note">Your choice will be saved on this device.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= HOME ============= -->
+    <section id="screen-home" class="screen" data-screen="home">
+      <header class="topbar">
+        <button class="icon-btn" id="home-back-btn" aria-label="Back" hidden>
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <div class="topbar-title">Exerciness</div>
+        <button class="icon-btn" id="home-settings-btn" aria-label="Settings">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M19.14 12.94c.04-.31.06-.62.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.62-.09.94 0 .32.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.21.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+        </button>
+      </header>
+
+      <div class="home-body">
+        <!-- Streak + greeting -->
+        <div class="home-greet">
+          <div class="greet-text">
+            <p class="greet-hello" id="greet-hello">Hey there</p>
+            <p class="greet-name" id="greet-name">Athlete</p>
+          </div>
+          <div class="streak-chip" id="streak-chip" title="Daily streak">
+            <span class="streak-flame">🔥</span>
+            <span class="streak-num" id="streak-num">0</span>
+            <span class="streak-label">day streak</span>
+          </div>
+        </div>
+
+        <!-- Selected plan card -->
+        <div class="plan-card-home" id="plan-card-home" role="button" tabindex="0">
+          <div class="plan-card-top">
+            <div>
+              <p class="plan-card-eyebrow" id="ph-eyebrow">Beginner Plan</p>
+              <h2 class="plan-card-title" id="ph-title">Lose Belly Fat</h2>
+            </div>
+            <div class="plan-card-bolt" id="ph-bolt">⚡</div>
+          </div>
+          <div class="plan-card-meta">
+            <div class="meta-item">
+              <span class="meta-num" id="ph-day">Day 1</span>
+              <span class="meta-lbl">of 30</span>
+            </div>
+            <div class="meta-divider"></div>
+            <div class="meta-item">
+              <span class="meta-num" id="ph-pct">0%</span>
+              <span class="meta-lbl">complete</span>
+            </div>
+            <div class="meta-divider"></div>
+            <div class="meta-item">
+              <span class="meta-num" id="ph-ex">0</span>
+              <span class="meta-lbl">exercises today</span>
+            </div>
+          </div>
+          <div class="plan-progress">
+            <div class="plan-progress-bar" id="ph-progress-bar"></div>
+          </div>
+          <button class="btn btn-primary btn-block" id="ph-cta">Continue Day 1 →</button>
+        </div>
+
+        <!-- Quick actions -->
+        <div class="quick-actions">
+          <button class="quick-action" id="qa-manage">
+            <span class="qa-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M3 17v2h6v-2H3zm0-7v2h10v-2H3zm0-7v2h14V3H3zm12 14v-3h4v-3l5 4.5L19 20v-3h-4z"/></svg>
+            </span>
+            <span class="qa-label">Manage Plan</span>
+            <span class="qa-sub" id="qa-manage-sub">Switch plan</span>
+          </button>
+          <button class="quick-action" id="qa-progress">
+            <span class="qa-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M3 17h18v2H3v-2zm0-4h12v2H3v-2zm0-4h18v2H3V9zm0-4h12v2H3V5z"/></svg>
+            </span>
+            <span class="qa-label">Progress</span>
+            <span class="qa-sub" id="qa-progress-sub">0/30 days</span>
+          </button>
+        </div>
+
+        <!-- Weekly mini calendar -->
+        <div class="home-week" id="home-week">
+          <div class="home-week-head">
+            <span>This week</span>
+            <span id="home-week-info">—</span>
+          </div>
+          <div class="week-dots" id="week-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= DAY LIST ============= -->
+    <section id="screen-daylist" class="screen" data-screen="daylist">
+      <header class="topbar">
+        <button class="icon-btn" data-back="home" aria-label="Back">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <div class="topbar-title" id="daylist-title">30-Day Plan</div>
+        <div class="topbar-spacer"></div>
+      </header>
+
+      <div class="daylist-body">
+        <div class="daylist-hero">
+          <p class="daylist-eyebrow" id="dl-eyebrow">Beginner</p>
+          <h2 class="daylist-plan" id="dl-plan">Lose Belly Fat</h2>
+          <p class="daylist-progress-line">
+            <span id="dl-done">0</span> / <span id="dl-total">23</span> workout days done
+          </p>
+          <div class="daylist-progress-bar"><div id="dl-bar"></div></div>
+        </div>
+
+        <button class="btn btn-primary btn-block" id="dl-getstarted">Get Started — Day 1</button>
+
+        <div class="days-grid" id="days-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============= DAY EXERCISE LIST ============= -->
+    <section id="screen-dayexercises" class="screen" data-screen="dayexercises">
+      <header class="topbar">
+        <button class="icon-btn" data-back="daylist" aria-label="Back">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <div class="topbar-title" id="dex-title">Day 1</div>
+        <div class="topbar-spacer"></div>
+      </header>
+
+      <div class="dex-body">
+        <div class="dex-hero">
+          <p class="dex-eyebrow" id="dex-eyebrow">Workout</p>
+          <h2 class="dex-h" id="dex-h">Day 1</h2>
+          <div class="dex-stats">
+            <div><span id="dex-count">0</span><label>exercises</label></div>
+            <div><span id="dex-time">0</span><label>est. minutes</label></div>
+            <div><span id="dex-kcal">0</span><label>kcal</label></div>
+          </div>
+        </div>
+
+        <div class="dex-list" id="dex-list"></div>
+
+        <div class="dex-cta-wrap">
+          <button class="btn btn-primary btn-block btn-lg" id="dex-start">Start Workout ▶</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= EXERCISE SESSION ============= -->
+    <section id="screen-session" class="screen screen-session" data-screen="session">
+      <!-- top control row -->
+      <header class="session-top">
+        <button class="icon-btn icon-btn-light" id="session-back" aria-label="Back">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <div class="session-progress-wrap">
+          <div class="session-progress-label">
+            <span id="session-current-idx">1</span>/<span id="session-total-idx">10</span>
+          </div>
+          <div class="session-progress-segments" id="session-segments"></div>
+        </div>
+        <div class="session-toggles">
+          <button class="toggle-btn" id="toggle-coach" aria-label="Coach voice" title="Coach voice">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5-3c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
+            <span class="toggle-cross" hidden></span>
+          </button>
+          <button class="toggle-btn" id="toggle-music" aria-label="Music" title="Music">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+            <span class="toggle-cross" hidden></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- exercise visual -->
+      <div class="session-center">
+        <div class="exercise-name" id="ex-name">High Stepping</div>
+        <div class="exercise-gif-wrap">
+          <img id="ex-gif" alt="" />
+          <div class="gif-ring"></div>
+        </div>
+        <div class="exercise-meta" id="ex-meta">x18 reps</div>
+      </div>
+
+      <!-- countdown overlay (3,2,1) -->
+      <div id="countdown-overlay" class="countdown-overlay" hidden>
+        <div class="countdown-num" id="countdown-num">3</div>
+        <div class="countdown-sub" id="countdown-sub">Get ready</div>
+      </div>
+
+      <!-- pause overlay -->
+      <div id="pause-overlay" class="pause-overlay" hidden>
+        <div class="pause-card">
+          <div class="pause-title">Paused</div>
+          <div class="pause-sub" id="pause-sub">Take a breath</div>
+          <button class="btn btn-primary btn-block" id="pause-resume">Resume</button>
+          <button class="btn btn-ghost btn-block" id="pause-quit">Quit workout</button>
+        </div>
+      </div>
+
+      <!-- bottom controls -->
+      <footer class="session-bottom">
+        <button class="round-btn" id="prev-ex" aria-label="Previous" title="Previous">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M6 6h2v12H6V6zm3.5 6 8.5 6V6l-8.5 6z"/></svg>
+        </button>
+        <button class="center-cta" id="center-cta">
+          <span class="center-cta-num" id="center-cta-num">00:20</span>
+          <span class="center-cta-lbl" id="center-cta-lbl">Time</span>
+        </button>
+        <button class="round-btn" id="next-ex" aria-label="Next" title="Next / Skip">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+        </button>
+      </footer>
+    </section>
+
+    <!-- ============= REST / WAIT SCREEN (between exercises) ============= -->
+    <section id="screen-wait" class="screen screen-wait" data-screen="wait">
+      <div class="wait-wrap">
+        <div class="wait-ring">
+          <svg viewBox="0 0 120 120" class="wait-svg">
+            <circle cx="60" cy="60" r="54" class="wait-track" />
+            <circle cx="60" cy="60" r="54" class="wait-fill" id="wait-fill" />
+          </svg>
+          <div class="wait-center">
+            <div class="wait-num" id="wait-num">15</div>
+            <div class="wait-lbl">Rest</div>
+          </div>
+        </div>
+        <div class="wait-up-next">
+          <span class="wait-up-lbl">Up next</span>
+          <span class="wait-up-name" id="wait-up-next">—</span>
+        </div>
+        <div class="wait-actions">
+          <button class="btn btn-ghost btn-sm" id="wait-extend">+10 sec</button>
+          <button class="btn btn-primary btn-sm" id="wait-skip">Skip ▶</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= REST DAY (full day rest) ============= -->
+    <section id="screen-restday" class="screen screen-restday" data-screen="restday">
+      <div class="restday-wrap">
+        <div class="restday-emoji">☕</div>
+        <h2 class="restday-title">Today is Rest Day</h2>
+        <p class="restday-sub">Your muscles need some rest. Hydrate, stretch, and recover well.</p>
+        <div class="restday-card">
+          <div class="restday-card-row">
+            <span>Day</span><strong id="restday-day">Day 4</strong>
+          </div>
+          <div class="restday-card-row">
+            <span>Reason</span><strong>Scheduled recovery</strong>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-block btn-lg" id="restday-complete">Complete</button>
+      </div>
+    </section>
+
+    <!-- ============= WORKOUT COMPLETE ============= -->
+    <section id="screen-complete" class="screen screen-complete" data-screen="complete">
+      <div class="complete-wrap">
+        <div class="complete-confetti"></div>
+        <div class="complete-emoji">🏆</div>
+        <h2 class="complete-title">Workout Complete!</h2>
+        <p class="complete-sub" id="complete-sub">You crushed Day 1. Streak +1.</p>
+        <div class="complete-stats">
+          <div class="complete-stat">
+            <span class="cs-num" id="cs-ex">0</span>
+            <span class="cs-lbl">exercises</span>
+          </div>
+          <div class="complete-stat">
+            <span class="cs-num" id="cs-time">0:00</span>
+            <span class="cs-lbl">time</span>
+          </div>
+          <div class="complete-stat">
+            <span class="cs-num" id="cs-kcal">0</span>
+            <span class="cs-lbl">kcal</span>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-block btn-lg" id="complete-done">Done</button>
+      </div>
+    </section>
+
+    <!-- ============= LEAVE WORKOUT CONFIRMATION ============= -->
+    <div id="modal-leave" class="modal-overlay" hidden>
+      <div class="modal-card">
+        <div class="modal-emoji">🚪</div>
+        <h3 class="modal-title">Leave workout?</h3>
+        <p class="modal-sub">Your progress in this session will be lost. You'll need to start over next time.</p>
+        <div class="modal-actions">
+          <button class="btn btn-ghost btn-block" id="leave-stay">Stay</button>
+          <button class="btn btn-danger btn-block" id="leave-go">Leave</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============= SETTINGS ============= -->
+    <div id="modal-settings" class="modal-overlay modal-side" hidden>
+      <div class="modal-panel">
+        <header class="modal-topbar">
+          <h3>Settings</h3>
+          <button class="icon-btn" id="settings-close" aria-label="Close">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          </button>
+        </header>
+
+        <div class="modal-body">
+          <!-- Profile -->
+          <div class="set-section">
+            <p class="set-section-title">Profile</p>
+            <div class="set-row">
+              <label for="set-name">Your name</label>
+              <input type="text" id="set-name" placeholder="Athlete" maxlength="20" />
+            </div>
+          </div>
+
+          <!-- Coach -->
+          <div class="set-section">
+            <p class="set-section-title">Coach voice</p>
+            <div class="set-row">
+              <label for="set-voice">Voice</label>
+              <select id="set-voice"></select>
+            </div>
+            <div class="set-row">
+              <label for="set-rate">Speed</label>
+              <input type="range" id="set-rate" min="0.7" max="1.3" step="0.05" value="1" />
+            </div>
+            <div class="set-row">
+              <label for="set-pitch">Pitch</label>
+              <input type="range" id="set-pitch" min="0.6" max="1.6" step="0.05" value="1" />
+            </div>
+            <button class="btn btn-ghost btn-sm" id="set-test-voice">▶ Test voice</button>
+          </div>
+
+          <!-- Music -->
+          <div class="set-section">
+            <p class="set-section-title">Background music</p>
+            <div class="set-row">
+              <label for="set-track">Default track</label>
+              <select id="set-track">
+                <option value="music1.mp3">Music 1</option>
+                <option value="music2.mp3">Music 2</option>
+                <option value="music3.mp3">Music 3</option>
+                <option value="none">No music</option>
+              </select>
+            </div>
+            <div class="set-row">
+              <label for="set-vol">Music volume</label>
+              <input type="range" id="set-vol" min="0" max="1" step="0.05" value="0.5" />
+            </div>
+            <div class="set-row">
+              <label for="set-custom">Add your own</label>
+              <input type="file" id="set-custom" accept="audio/*" multiple />
+            </div>
+            <div class="custom-tracks" id="custom-tracks"></div>
+          </div>
+
+          <!-- Progress -->
+          <div class="set-section">
+            <p class="set-section-title">Your progress</p>
+            <div class="prog-grid" id="prog-grid"></div>
+          </div>
+
+          <!-- Data -->
+          <div class="set-section">
+            <p class="set-section-title">Data</p>
+            <button class="btn btn-ghost btn-block" id="data-export">Export data</button>
+            <button class="btn btn-ghost btn-block" id="data-import">Import data</button>
+            <button class="btn btn-ghost btn-block" id="data-reset">Reset everything</button>
+            <input type="file" id="data-import-input" accept="application/json" hidden />
+          </div>
+
+          <p class="set-foot">Exerciness · v1.0 · Made with ⚡</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- toast -->
+    <div id="toast" class="toast" hidden></div>
+  </div>
+
+  <!-- Audio elements (created here so all screens can share) -->
+  <audio id="audio-music" loop preload="auto"></audio>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1050 @@
+     1→<!DOCTYPE html>
+     2→<html lang="en">
+     3→<head>
+     4→<meta charset="UTF-8">
+     5→<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+     6→<title>Life OS</title>
+     7→<link rel="preconnect" href="https://fonts.googleapis.com">
+     8→<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+     9→<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    10→<style>
+    11→  /* Disable text selection across the entire page */
+    12→  body {
+    13→    -webkit-user-select: none; /* Safari */
+    14→    -ms-user-select: none;     /* IE 10 and Edge */
+    15→    user-select: none;         /* Standard syntax */
+    16→  }
+    17→
+    18→  /* Prevent link dragging visual behavior */
+    19→  a, img {
+    20→    -webkit-user-drag: none;
+    21→    user-drag: none;
+    22→  }
+    23→</style>
+    24→
+    25→<script>
+    26→  // 1. Disable Right-Click (Context Menu)
+    27→  document.addEventListener('contextmenu', (event) => {
+    28→    event.preventDefault();
+    29→  });
+    30→
+    31→  // 2. Disable Link and Image Dragging
+    32→  document.addEventListener('dragstart', (event) => {
+    33→    if (event.target.tagName === 'A' || event.target.tagName === 'IMG') {
+    34→      event.preventDefault();
+    35→    }
+    36→  });
+    37→
+    38→  // 3. Disable DevTools Shortcuts (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
+    39→  document.addEventListener('keydown', (event) => {
+    40→    // Prevent F12
+    41→    if (event.key === 'F12') {
+    42→      event.preventDefault();
+    43→    }
+    44→    
+    45→    // Prevent Ctrl+Shift+I (Inspect element) and Ctrl+Shift+J (Console)
+    46→    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'i' || event.key === 'J' || event.key === 'j')) {
+    47→      event.preventDefault();
+    48→    }
+    49→
+    50→    // Prevent Ctrl+U (View Source)
+    51→    if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+    52→      event.preventDefault();
+    53→    }
+    54→  });
+    55→</script>
+    56→</main>
+    57→<style>
+    58→  :root {
+    59→    --sky-top: #3AA8E0;
+    60→    --sky-mid: #7ECEF4;
+    61→    --sky-low: #B8E4FA;
+    62→    --sky-bottom: #E3F4FC;
+    63→    --glass-bg: rgba(255,255,255,0.22);
+    64→    --glass-border: rgba(255,255,255,0.45);
+    65→    --glass-shadow: rgba(0,60,120,0.12);
+    66→    --text-primary: #0A3D6B;
+    67→    --text-secondary: #2B6DA0;
+    68→    --text-muted: #5A9CC5;
+    69→    --glow-cyan: rgba(0,200,220,0.45);
+    70→    --glow-soft: rgba(100,200,255,0.2);
+    71→    --dock-bg: rgba(255,255,255,0.18);
+    72→    --radius: 18px;
+    73→    --radius-sm: 12px;
+    74→  }
+    75→  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    76→  html, body {
+    77→    height:100%; overflow:hidden;
+    78→    font-family:'Nunito',sans-serif;
+    79→    -webkit-font-smoothing:antialiased;
+    80→  }
+    81→  body {
+    82→    background: linear-gradient(175deg, var(--sky-top) 0%, var(--sky-mid) 30%, var(--sky-low) 60%, var(--sky-bottom) 100%);
+    83→    position:relative;
+    84→  }
+    85→
+    86→  /* === SUN === */
+    87→  .sun {
+    88→    position:absolute; top:-60px; right:40px;
+    89→    width:200px; height:200px; border-radius:50%;
+    90→    background: radial-gradient(circle, #FFF9C4 0%, #FFE082 30%, #FFB300 60%, transparent 72%);
+    91→    box-shadow: 0 0 80px 30px rgba(255,200,50,0.35), 0 0 160px 80px rgba(255,180,0,0.15);
+    92→    animation: sunPulse 6s ease-in-out infinite;
+    93→    z-index:0;
+    94→  }
+    95→  .sun::after {
+    96→    content:''; position:absolute; inset:-60px; border-radius:50%;
+    97→    background: conic-gradient(from 0deg, transparent 0deg, rgba(255,230,100,0.08) 10deg, transparent 20deg,
+    98→      transparent 30deg, rgba(255,230,100,0.06) 40deg, transparent 50deg,
+    99→      transparent 60deg, rgba(255,230,100,0.08) 70deg, transparent 80deg,
+   100→      transparent 90deg, rgba(255,230,100,0.06) 100deg, transparent 110deg,
+   101→      transparent 120deg, rgba(255,230,100,0.08) 130deg, transparent 140deg,
+   102→      transparent 150deg, rgba(255,230,100,0.06) 160deg, transparent 170deg,
+   103→      transparent 180deg, rgba(255,230,100,0.08) 190deg, transparent 200deg,
+   104→      transparent 210deg, rgba(255,230,100,0.06) 220deg, transparent 230deg,
+   105→      transparent 240deg, rgba(255,230,100,0.08) 250deg, transparent 260deg,
+   106→      transparent 270deg, rgba(255,230,100,0.06) 280deg, transparent 290deg,
+   107→      transparent 300deg, rgba(255,230,100,0.08) 310deg, transparent 320deg,
+   108→      transparent 330deg, rgba(255,230,100,0.06) 340deg, transparent 360deg);
+   109→    animation: sunRaysSpin 40s linear infinite;
+   110→  }
+   111→  @keyframes sunPulse {
+   112→    0%,100% { transform:scale(1); opacity:1; }
+   113→    50% { transform:scale(1.05); opacity:0.92; }
+   114→  }
+   115→  @keyframes sunRaysSpin { to { transform:rotate(360deg); } }
+   116→
+   117→  /* === CLOUDS === */
+   118→  .cloud {
+   119→    position:absolute; border-radius:60px;
+   120→    background: rgba(255,255,255,0.92);
+   121→    filter: blur(0.5px);
+   122→    z-index:1;
+   123→  }
+   124→  .cloud::before, .cloud::after {
+   125→    content:''; position:absolute; background:inherit; border-radius:50%;
+   126→  }
+   127→  .cloud-1 { width:180px; height:50px; top:60px; animation: drift 50s linear infinite; }
+   128→  .cloud-1::before { width:70px; height:70px; top:-30px; left:30px; }
+   129→  .cloud-1::after { width:90px; height:55px; top:-20px; left:80px; }
+   130→  .cloud-2 { width:140px; height:40px; top:130px; animation: drift 65s linear infinite; animation-delay:-20s; opacity:0.8; }
+   131→  .cloud-2::before { width:55px; height:55px; top:-25px; left:20px; }
+   132→  .cloud-2::after { width:70px; height:45px; top:-18px; left:60px; }
+   133→  .cloud-3 { width:200px; height:55px; top:40px; animation: drift 55s linear infinite; animation-delay:-35s; opacity:0.7; }
+   134→  .cloud-3::before { width:80px; height:80px; top:-35px; left:35px; }
+   135→  .cloud-3::after { width:100px; height:60px; top:-25px; left:90px; }
+   136→  .cloud-4 { width:120px; height:35px; top:180px; animation: drift 70s linear infinite; animation-delay:-45s; opacity:0.6; }
+   137→  .cloud-4::before { width:45px; height:45px; top:-20px; left:15px; }
+   138→  .cloud-4::after { width:60px; height:38px; top:-14px; left:50px; }
+   139→  .cloud-5 { width:160px; height:45px; top:100px; animation: drift 60s linear infinite; animation-delay:-10s; opacity:0.75; }
+   140→  .cloud-5::before { width:65px; height:65px; top:-28px; left:25px; }
+   141→  .cloud-5::after { width:80px; height:50px; top:-20px; left:70px; }
+   142→  @keyframes drift {
+   143→    from { left: -280px; }
+   144→    to { left: calc(100vw + 80px); }
+   145→  }
+   146→
+   147→  /* === BUBBLES === */
+   148→  .bubble {
+   149→    position:absolute; border-radius:50%; z-index:1;
+   150→    background: radial-gradient(circle at 32% 28%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.15) 35%, rgba(150,220,255,0.08) 65%, transparent 80%);
+   151→    border: 1px solid rgba(255,255,255,0.35);
+   152→    box-shadow: inset 0 -4px 8px rgba(100,200,255,0.1), 0 2px 8px rgba(0,80,140,0.06);
+   153→    pointer-events:none;
+   154→    animation: bubbleRise linear forwards;
+   155→  }
+   156→  @keyframes bubbleRise {
+   157→    0% { transform: translateY(0) scale(0.3); opacity:0; }
+   158→    8% { opacity:0.7; transform: translateY(-8vh) scale(1); }
+   159→    85% { opacity:0.5; }
+   160→    100% { transform: translateY(-110vh) scale(0.8); opacity:0; }
+   161→  }
+   162→
+   163→  /* === LAUNCHER CONTAINER === */
+   164→  .launcher {
+   165→    position:relative; z-index:10;
+   166→    max-width:460px; margin:0 auto; height:100vh;
+   167→    display:flex; flex-direction:column;
+   168→    padding: 20px 20px 0;
+   169→    overflow-y:auto; overflow-x:hidden;
+   170→    scrollbar-width:none;
+   171→  }
+   172→  .launcher::-webkit-scrollbar { display:none; }
+   173→
+   174→  /* === STATUS BAR === */
+   175→  .status-bar {
+   176→    display:flex; justify-content:space-between; align-items:center;
+   177→    padding:4px 4px 12px; font-size:12px; font-weight:700;
+   178→    color: var(--text-primary); opacity:0.85;
+   179→  }
+   180→  .status-icons { display:flex; gap:8px; font-size:13px; }
+   181→
+   182→  /* === CLOCK WIDGET === */
+   183→  .clock-widget {
+   184→    background: var(--glass-bg);
+   185→    backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+   186→    border: 1px solid var(--glass-border);
+   187→    border-radius: var(--radius);
+   188→    padding: 24px 28px 20px;
+   189→    text-align:center;
+   190→    box-shadow: 0 8px 32px var(--glass-shadow), inset 0 1px 0 rgba(255,255,255,0.5);
+   191→    position:relative; overflow:hidden;
+   192→    animation: fadeSlideDown 0.7s cubic-bezier(0.34,1.56,0.64,1) both;
+   193→  }
+   194→  .clock-widget::before {
+   195→    content:''; position:absolute; top:0; left:0; right:0; height:50%;
+   196→    background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, transparent 100%);
+   197→    pointer-events:none; border-radius: var(--radius) var(--radius) 0 0;
+   198→  }
+   199→  .clock-glow {
+   200→    position:absolute; top:50%; left:50%; width:200px; height:200px;
+   201→    transform:translate(-50%,-50%); border-radius:50%;
+   202→    background: radial-gradient(circle, var(--glow-cyan) 0%, transparent 70%);
+   203→    opacity:0.3; animation: glowPulse 4s ease-in-out infinite;
+   204→    pointer-events:none;
+   205→  }
+   206→  @keyframes glowPulse {
+   207→    0%,100% { opacity:0.25; transform:translate(-50%,-50%) scale(1); }
+   208→    50% { opacity:0.4; transform:translate(-50%,-50%) scale(1.15); }
+   209→  }
+   210→  .greeting { font-size:15px; font-weight:600; color:var(--text-secondary); margin-bottom:4px; position:relative; }
+   211→  .clock-time {
+   212→    font-size:56px; font-weight:900; letter-spacing:-2px; line-height:1;
+   213→    color:var(--text-primary); position:relative;
+   214→    text-shadow: 0 2px 12px rgba(0,100,180,0.12);
+   215→  }
+   216→  .clock-time .seconds { font-size:24px; font-weight:600; color:var(--text-muted); vertical-align:super; margin-left:2px; }
+   217→  .clock-date { font-size:14px; font-weight:600; color:var(--text-secondary); margin-top:6px; position:relative; }
+   218→  .clock-weather {
+   219→    display:inline-flex; align-items:center; gap:6px;
+   220→    margin-top:8px; padding:5px 14px;
+   221→    background: rgba(255,255,255,0.25); border-radius:20px;
+   222→    font-size:13px; font-weight:600; color:var(--text-secondary);
+   223→    position:relative;
+   224→  }
+   225→  .clock-weather i { color:#FFB300; font-size:15px; }
+   226→
+   227→  /* === SEARCH BAR === */
+   228→  .search-wrap {
+   229→    margin-top:16px; position:relative;
+   230→    animation: fadeSlideDown 0.7s cubic-bezier(0.34,1.56,0.64,1) 0.1s both;
+   231→  }
+   232→  .search-bar {
+   233→    width:100%; padding:13px 18px 13px 44px;
+   234→    background: var(--glass-bg);
+   235→    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+   236→    border: 1px solid var(--glass-border);
+   237→    border-radius: var(--radius-sm);
+   238→    font-family:inherit; font-size:15px; font-weight:500;
+   239→    color:var(--text-primary); outline:none;
+   240→    box-shadow: 0 4px 16px var(--glass-shadow), inset 0 1px 0 rgba(255,255,255,0.4);
+   241→    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+   242→  }
+   243→  .search-bar::placeholder { color: var(--text-muted); }
+   244→  .search-bar:focus {
+   245→    border-color: rgba(100,210,255,0.6);
+   246→    box-shadow: 0 4px 16px var(--glass-shadow), 0 0 20px var(--glow-cyan), 0 0 40px var(--glow-soft), inset 0 1px 0 rgba(255,255,255,0.4);
+   247→  }
+   248→  .search-icon {
+   249→    position:absolute; left:16px; top:50%; transform:translateY(-50%);
+   250→    color:var(--text-muted); font-size:15px; pointer-events:none;
+   251→    transition: color 0.3s ease;
+   252→  }
+   253→  .search-bar:focus ~ .search-icon { color: var(--text-secondary); }
+   254→
+   255→  /* === APP GRID === */
+   256→  .app-grid {
+   257→    display:grid; grid-template-columns: repeat(4,1fr);
+   258→    gap:16px 12px; padding:20px 4px;
+   259→    animation: fadeSlideDown 0.7s cubic-bezier(0.34,1.56,0.64,1) 0.2s both;
+   260→  }
+   261→  .app-item {
+   262→    display:flex; flex-direction:column; align-items:center; gap:6px;
+   263→    cursor:pointer; -webkit-tap-highlight-color:transparent;
+   264→  }
+   265→  .app-icon {
+   266→    width:60px; height:60px; border-radius:16px;
+   267→    display:flex; align-items:center; justify-content:center;
+   268→    position:relative; overflow:hidden;
+   269→    border: 1px solid rgba(255,255,255,0.35);
+   270→    box-shadow: 0 3px 10px rgba(0,40,80,0.18), inset 0 1px 0 rgba(255,255,255,0.45);
+   271→    transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
+   272→                box-shadow 0.35s ease;
+   273→    will-change:transform;
+   274→  }
+   275→  .app-icon::after {
+   276→    content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+   277→    background: linear-gradient(180deg,
+   278→      rgba(255,255,255,0.65) 0%,
+   279→      rgba(255,255,255,0.25) 22%,
+   280→      rgba(255,255,255,0.05) 44%,
+   281→      transparent 50%,
+   282→      rgba(0,0,0,0.06) 100%);
+   283→  }
+   284→  .app-icon i { font-size:24px; color:#fff; position:relative; z-index:2;
+   285→    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2)); }
+   286→  .app-item:hover .app-icon {
+   287→    transform: scale(1.12) translateY(-3px);
+   288→    box-shadow: 0 8px 24px rgba(0,40,80,0.22), 0 0 18px var(--icon-glow, var(--glow-cyan)),
+   289→                inset 0 1px 0 rgba(255,255,255,0.45);
+   290→  }
+   291→  .app-item:active .app-icon {
+   292→    transform: scale(0.95);
+   293→    transition-duration: 0.12s;
+   294→  }
+   295→  .app-name {
+   296→    font-size:11px; font-weight:700; color:var(--text-primary);
+   297→    text-shadow: 0 1px 3px rgba(255,255,255,0.6);
+   298→    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+   299→    max-width:72px; text-align:center;
+   300→  }
+   301→  .app-item.hidden { display:none; }
+   302→
+   303→  /* === DOCK === */
+   304→  .dock-wrap {
+   305→    margin-bottom:auto; margin-top:auto; padding-bottom: env(safe-area-inset-bottom, 12px);
+   306→    animation: fadeSlideUp 0.7s cubic-bezier(0.34,1.56,0.64,1) 0.4s both;
+   307→  }
+   308→  .dock {
+   309→    background: var(--dock-bg);
+   310→    backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
+   311→    border: 1px solid var(--glass-border);
+   312→    border-radius: 22px;
+   313→    padding:12px 16px;
+   314→    display:flex; justify-content:space-around; align-items:center;
+   315→    box-shadow: 0 -4px 24px rgba(0,60,120,0.1), 0 8px 32px var(--glass-shadow),
+   316→                inset 0 1px 0 rgba(255,255,255,0.4);
+   317→    position:relative; overflow:hidden;
+   318→  }
+   319→  .dock::before {
+   320→    content:''; position:absolute; top:0; left:0; right:0; height:50%;
+   321→    background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 100%);
+   322→    pointer-events:none; border-radius: 22px 22px 0 0;
+   323→  }
+   324→  .dock-item {
+   325→    display:flex; flex-direction:column; align-items:center; gap:4px;
+   326→    cursor:pointer; -webkit-tap-highlight-color:transparent;
+   327→    padding:4px 8px; border-radius:12px;
+   328→    transition: background 0.25s ease;
+   329→  }
+   330→  .dock-item:hover { background: rgba(255,255,255,0.15); }
+   331→  .dock-icon {
+   332→    width:50px; height:50px; border-radius:14px;
+   333→    display:flex; align-items:center; justify-content:center;
+   334→    position:relative; overflow:hidden;
+   335→    border: 1px solid rgba(255,255,255,0.35);
+   336→    box-shadow: 0 2px 8px rgba(0,40,80,0.15), inset 0 1px 0 rgba(255,255,255,0.45);
+   337→    transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease;
+   338→  }
+   339→  .dock-icon::after {
+   340→    content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+   341→    background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 25%, transparent 50%);
+   342→  }
+   343→  .dock-icon i { font-size:20px; color:#fff; position:relative; z-index:2;
+   344→    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2)); }
+   345→  .dock-item:hover .dock-icon {
+   346→    transform: scale(1.1) translateY(-2px);
+   347→    box-shadow: 0 6px 18px rgba(0,40,80,0.2), 0 0 14px var(--icon-glow, var(--glow-cyan)),
+   348→                inset 0 1px 0 rgba(255,255,255,0.45);
+   349→  }
+   350→  .dock-item:active .dock-icon { transform:scale(0.93); transition-duration:0.1s; }
+   351→  .dock-name { font-size:10px; font-weight:700; color:var(--text-primary);
+   352→    text-shadow: 0 1px 2px rgba(255,255,255,0.5); }
+   353→
+   354→  /* === APP PANEL === */
+   355→  .panel-overlay {
+   356→    position:fixed; inset:0; z-index:100;
+   357→    background: rgba(0,40,80,0.25);
+   358→    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+   359→    opacity:0; pointer-events:none;
+   360→    transition: opacity 0.4s ease;
+   361→  }
+   362→  .panel-overlay.active { opacity:1; pointer-events:auto; }
+   363→  .panel {
+   364→    position:fixed; bottom:0; left:50%; transform:translateX(-50%) translateY(100%);
+   365→    width:100%; max-width:500px; max-height:80vh;
+   366→    z-index:101;
+   367→    background: linear-gradient(180deg, rgba(230,245,255,0.92) 0%, rgba(210,235,250,0.95) 100%);
+   368→    backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+   369→    border: 1px solid rgba(255,255,255,0.5);
+   370→    border-bottom:none;
+   371→    border-radius: 24px 24px 0 0;
+   372→    box-shadow: 0 -8px 40px rgba(0,60,120,0.15), 0 0 60px var(--glow-soft);
+   373→    overflow:hidden;
+   374→    transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
+   375→  }
+   376→  .panel.active { transform:translateX(-50%) translateY(0); }
+   377→  .panel-handle {
+   378→    width:36px; height:4px; border-radius:2px;
+   379→    background: rgba(0,60,120,0.2); margin:10px auto 0;
+   380→  }
+   381→  .panel-header {
+   382→    display:flex; align-items:center; gap:12px;
+   383→    padding:14px 20px 10px;
+   384→    border-bottom:1px solid rgba(0,60,120,0.08);
+   385→  }
+   386→  .panel-header-icon {
+   387→    width:36px; height:36px; border-radius:10px;
+   388→    display:flex; align-items:center; justify-content:center;
+   389→    position:relative; overflow:hidden;
+   390→    border: 1px solid rgba(255,255,255,0.35);
+   391→  }
+   392→  .panel-header-icon::after {
+   393→    content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+   394→    background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, transparent 50%);
+   395→  }
+   396→  .panel-header-icon i { font-size:16px; color:#fff; position:relative; z-index:2; }
+   397→  .panel-title { font-size:18px; font-weight:800; color:var(--text-primary); flex:1; }
+   398→  .panel-close {
+   399→    width:30px; height:30px; border-radius:50%; border:none;
+   400→    background: rgba(0,60,120,0.08); cursor:pointer;
+   401→    display:flex; align-items:center; justify-content:center;
+   402→    color:var(--text-secondary); font-size:14px;
+   403→    transition: background 0.2s, transform 0.2s;
+   404→  }
+   405→  .panel-close:hover { background: rgba(0,60,120,0.15); transform:scale(1.1); }
+   406→  .panel-content {
+   407→    padding:16px 20px 28px; overflow-y:auto; max-height: calc(80vh - 80px);
+   408→    scrollbar-width:thin; scrollbar-color: rgba(0,60,120,0.15) transparent;
+   409→  }
+   410→  .panel-content::-webkit-scrollbar { width:4px; }
+   411→  .panel-content::-webkit-scrollbar-thumb { background:rgba(0,60,120,0.15); border-radius:2px; }
+   412→
+   413→  /* Panel inner styles */
+   414→  .task-input-wrap {
+   415→    display:flex; gap:8px; margin-bottom:16px; flex-wrap: wrap;
+   416→  }
+   417→  .task-input {
+   418→    flex:1; padding:10px 14px;
+   419→    background: rgba(255,255,255,0.6); border:1px solid rgba(0,60,120,0.12);
+   420→    border-radius:10px; font-family:inherit; font-size:14px; font-weight:500;
+   421→    color:var(--text-primary); outline:none;
+   422→    transition: border-color 0.3s, box-shadow 0.3s;
+   423→  }
+   424→  .task-input:focus {
+   425→    border-color: rgba(100,210,255,0.5);
+   426→    box-shadow: 0 0 12px var(--glow-soft);
+   427→  }
+   428→  .task-add-btn {
+   429→    padding:10px 16px; border:none; border-radius:10px;
+   430→    background: linear-gradient(135deg, #4DB6AC, #00897B);
+   431→    color:#fff; font-family:inherit; font-size:14px; font-weight:700;
+   432→    cursor:pointer; white-space:nowrap;
+   433→    box-shadow: 0 2px 8px rgba(0,137,123,0.3);
+   434→    transition: transform 0.2s, box-shadow 0.2s;
+   435→  }
+   436→  .task-add-btn:hover { transform:scale(1.05); box-shadow: 0 4px 14px rgba(0,137,123,0.4); }
+   437→  .task-add-btn:active { transform:scale(0.96); }
+   438→  .task-list { display:flex; flex-direction:column; gap:8px; }
+   439→  .task-item {
+   440→    display:flex; align-items:center; gap:10px;
+   441→    padding:10px 14px; border-radius:10px;
+   442→    background: rgba(255,255,255,0.5);
+   443→    border: 1px solid rgba(0,60,120,0.06);
+   444→    transition: background 0.2s, transform 0.2s, opacity 0.3s;
+   445→    animation: taskIn 0.35s cubic-bezier(0.34,1.56,0.64,1) both;
+   446→  }
+   447→  @keyframes taskIn { from { opacity:0; transform:translateY(-8px) scale(0.95); } }
+   448→  .task-item.done { opacity:0.5; }
+   449→  .task-item.done .task-text { text-decoration:line-through; }
+   450→  .task-check {
+   451→    width:22px; height:22px; border-radius:50%; flex-shrink:0;
+   452→    border:2px solid rgba(0,137,123,0.4); background:transparent;
+   453→    cursor:pointer; display:flex; align-items:center; justify-content:center;
+   454→    transition: background 0.25s, border-color 0.25s, transform 0.2s;
+   455→  }
+   456→  .task-check:hover { transform:scale(1.15); }
+   457→  .task-item.done .task-check {
+   458→    background: linear-gradient(135deg, #4DB6AC, #00897B);
+   459→    border-color: #00897B;
+   460→  }
+   461→  .task-check i { font-size:11px; color:#fff; opacity:0; transition:opacity 0.2s; }
+   462→  .task-item.done .task-check i { opacity:1; }
+   463→  .task-text { flex:1; font-size:14px; font-weight:600; color:var(--text-primary); }
+   464→  .task-delete {
+   465→    width:24px; height:24px; border:none; border-radius:6px;
+   466→    background:transparent; cursor:pointer; color:var(--text-muted);
+   467→    font-size:12px; display:flex; align-items:center; justify-content:center;
+   468→    transition: background 0.2s, color 0.2s;
+   469→  }
+   470→  .task-delete:hover { background:rgba(239,83,80,0.12); color:#EF5350; }
+   471→  .empty-state {
+   472→    text-align:center; padding:24px; color:var(--text-muted);
+   473→    font-size:14px; font-weight:600;
+   474→  }
+   475→  .empty-state i { font-size:32px; margin-bottom:8px; display:block; opacity:0.5; }
+   476→
+   477→  .note-area {
+   478→    width:100%; min-height:200px; padding:14px;
+   479→    background: rgba(255,255,255,0.5); border:1px solid rgba(0,60,120,0.1);
+   480→    border-radius:12px; font-family:inherit; font-size:14px; font-weight:500;
+   481→    color:var(--text-primary); outline:none; resize:vertical;
+   482→    transition: border-color 0.3s, box-shadow 0.3s;
+   483→    line-height:1.6;
+   484→  }
+   485→  .note-area:focus { border-color:rgba(100,210,255,0.5); box-shadow:0 0 12px var(--glow-soft); }
+   486→
+   487→  .placeholder-panel {
+   488→    text-align:center; padding:40px 20px;
+   489→  }
+   490→  .placeholder-panel .ph-icon {
+   491→    width:64px; height:64px; border-radius:18px; margin:0 auto 16px;
+   492→    display:flex; align-items:center; justify-content:center;
+   493→    position:relative; overflow:hidden;
+   494→    border:1px solid rgba(255,255,255,0.35);
+   495→    box-shadow:0 4px 14px rgba(0,40,80,0.15);
+   496→  }
+   497→  .placeholder-panel .ph-icon::after {
+   498→    content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+   499→    background: linear-gradient(180deg, rgba(255,255,255,0.55) 0%, transparent 50%);
+   500→  }
+   501→  .placeholder-panel .ph-icon i { font-size:26px; color:#fff; position:relative; z-index:2; }
+   502→  .placeholder-panel h3 { font-size:18px; font-weight:800; color:var(--text-primary); margin-bottom:6px; }
+   503→  .placeholder-panel p { font-size:13px; color:var(--text-secondary); line-height:1.5; }
+   504→
+   505→  /* === TOAST === */
+   506→  .toast {
+   507→    position:fixed; top:20px; left:50%; transform:translateX(-50%) translateY(-80px);
+   508→    z-index:200; padding:10px 20px;
+   509→    background: rgba(230,245,255,0.95);
+   510→    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+   511→    border:1px solid rgba(255,255,255,0.5);
+   512→    border-radius:14px;
+   513→    box-shadow: 0 4px 20px rgba(0,60,120,0.12), 0 0 20px var(--glow-soft);
+   514→    font-size:13px; font-weight:700; color:var(--text-primary);
+   515→    transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1), opacity 0.4s;
+   516→    opacity:0; pointer-events:none; white-space:nowrap;
+   517→  }
+   518→  .toast.show { transform:translateX(-50%) translateY(0); opacity:1; }
+   519→
+   520→  /* === KEYFRAMES === */
+   521→  @keyframes fadeSlideDown {
+   522→    from { opacity:0; transform:translateY(-20px) scale(0.96); }
+   523→    to { opacity:1; transform:translateY(0) scale(1); }
+   524→  }
+   525→  @keyframes fadeSlideUp {
+   526→    from { opacity:0; transform:translateY(20px); }
+   527→    to { opacity:1; transform:translateY(0); }
+   528→  }
+   529→
+   530→  /* === REDUCED MOTION === */
+   531→  @media (prefers-reduced-motion: reduce) {
+   532→    *, *::before, *::after {
+   533→      animation-duration:0.01ms !important;
+   534→      transition-duration:0.01ms !important;
+   535→    }
+   536→    .bubble { display:none; }
+   537→  }
+   538→
+   539→  /* === RESPONSIVE === */
+   540→  @media (max-width:380px) {
+   541→    .clock-time { font-size:44px; }
+   542→    .app-icon { width:52px; height:52px; border-radius:14px; }
+   543→    .app-icon i { font-size:20px; }
+   544→    .app-grid { gap:12px 8px; }
+   545→  }
+   546→</style>
+   547→</head>
+   548→<body>
+   549→
+   550→<!-- Background scene -->
+   551→<div class="sun" aria-hidden="true"></div>
+   552→<div class="cloud cloud-1" aria-hidden="true"></div>
+   553→<div class="cloud cloud-2" aria-hidden="true"></div>
+   554→<div class="cloud cloud-3" aria-hidden="true"></div>
+   555→<div class="cloud cloud-4" aria-hidden="true"></div>
+   556→<div class="cloud cloud-5" aria-hidden="true"></div>
+   557→<div id="bubbles" aria-hidden="true"></div>
+   558→
+   559→<!-- Main launcher -->
+   560→<main class="launcher" role="main">
+   561→  <!-- Status bar -->
+   562→  <div class="status-bar" aria-label="Status bar">
+   563→    <span id="statusTime"></span>
+   564→    <div class="status-icons">
+   565→      <i class="fa-solid fa-wifi"></i>
+   566→      <i class="fa-solid fa-signal"></i>
+   567→      <i class="fa-solid fa-battery-three-quarters"></i>
+   568→    </div>
+   569→  </div>
+   570→
+   571→  <!-- Clock widget -->
+   572→  <section class="clock-widget" aria-label="Clock and weather">
+   573→    <div class="clock-glow"></div>
+   574→    <div class="greeting" id="greeting"></div>
+   575→    <div class="clock-time" id="clockTime"></div>
+   576→    <div class="clock-date" id="clockDate"></div>
+   577→    <div class="clock-weather">
+   578→      <i class="fa-solid fa-sun"></i>
+   579→      <span>24°C &middot; Sunny</span>
+   580→    </div>
+   581→  </section>
+   582→
+   583→  <!-- Search -->
+   584→  <div class="search-wrap">
+   585→    <input type="text" class="search-bar" id="searchBar" placeholder="Search your Life OS..." aria-label="Search apps">
+   586→    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+   587→  </div>
+   588→
+   589→  <!-- App grid -->
+   590→  <div class="app-grid" id="appGrid" role="list" aria-label="Apps"></div>
+   591→
+   592→  <!-- Dock -->
+   593→  <nav class="dock-wrap" aria-label="Quick access dock">
+   594→    <div class="dock" id="dock"></div>
+   595→  </nav>
+   596→</main>
+   597→
+   598→<!-- Panel overlay -->
+   599→<div class="panel-overlay" id="panelOverlay" aria-hidden="true"></div>
+   600→<!-- App panel -->
+   601→<aside class="panel" id="appPanel" role="dialog" aria-label="App panel">
+   602→  <div class="panel-handle"></div>
+   603→  <div class="panel-header">
+   604→    <div class="panel-header-icon" id="panelIcon"><i></i></div>
+   605→    <div class="panel-title" id="panelTitle"></div>
+   606→    <button class="panel-close" id="panelClose" aria-label="Close panel"><i class="fa-solid fa-xmark"></i></button>
+   607→  </div>
+   608→  <div class="panel-content" id="panelContent"></div>
+   609→</aside>
+   610→
+   611→<!-- Toast -->
+   612→<div class="toast" id="toast" role="alert" aria-live="polite"></div>
+   613→
+   614→<script>
+   615→/* ========================================
+   616→   AUDIO ENGINE — Web Audio API sound FX
+   617→   ======================================== */
+   618→let audioCtx = null;
+   619→function ensureAudio() {
+   620→  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+   621→  if (audioCtx.state === 'suspended') audioCtx.resume();
+   622→}
+   623→
+   624→function sfxHover() {
+   625→  ensureAudio();
+   626→  const t = audioCtx.currentTime;
+   627→  const osc = audioCtx.createOscillator();
+   628→  const g = audioCtx.createGain();
+   629→  osc.connect(g); g.connect(audioCtx.destination);
+   630→  osc.type = 'sine';
+   631→  osc.frequency.setValueAtTime(1400, t);
+   632→  osc.frequency.exponentialRampToValueAtTime(1800, t + 0.04);
+   633→  g.gain.setValueAtTime(0.018, t);
+   634→  g.gain.exponentialRampToValueAtTime(0.0001, t + 0.08);
+   635→  osc.start(t); osc.stop(t + 0.08);
+   636→}
+   637→
+   638→function sfxClick() {
+   639→  ensureAudio();
+   640→  const t = audioCtx.currentTime;
+   641→  const osc1 = audioCtx.createOscillator();
+   642→  const g1 = audioCtx.createGain();
+   643→  osc1.connect(g1); g1.connect(audioCtx.destination);
+   644→  osc1.type = 'sine';
+   645→  osc1.frequency.setValueAtTime(660, t);
+   646→  g1.gain.setValueAtTime(0.07, t);
+   647→  g1.gain.exponentialRampToValueAtTime(0.0001, t + 0.12);
+   648→  osc1.start(t); osc1.stop(t + 0.12);
+   649→  
+   650→  const osc2 = audioCtx.createOscillator();
+   651→  const g2 = audioCtx.createGain();
+   652→  osc2.connect(g2); g2.connect(audioCtx.destination);
+   653→  osc2.type = 'sine';
+   654→  osc2.frequency.setValueAtTime(1200, t);
+   655→  g2.gain.setValueAtTime(0.04, t);
+   656→  g2.gain.exponentialRampToValueAtTime(0.0001, t + 0.06);
+   657→  osc2.start(t); osc2.stop(t + 0.06);
+   658→}
+   659→
+   660→function sfxOpen() {
+   661→  ensureAudio();
+   662→  const t = audioCtx.currentTime;
+   663→  const len = 0.28;
+   664→  const bufSize = Math.floor(audioCtx.sampleRate * len);
+   665→  const buf = audioCtx.createBuffer(1, bufSize, audioCtx.sampleRate);
+   666→  const d = buf.getChannelData(0);
+   667→  for (let i = 0; i < bufSize; i++) {
+   668→    d[i] = (Math.random() * 2 - 1) * Math.exp(-i / (audioCtx.sampleRate * 0.04));
+   669→  }
+   670→  const src = audioCtx.createBufferSource();
+   671→  src.buffer = buf;
+   672→  const bp = audioCtx.createBiquadFilter();
+   673→  bp.type = 'bandpass'; bp.frequency.value = 2800; bp.Q.value = 0.6;
+   674→  const g = audioCtx.createGain();
+   675→  g.gain.setValueAtTime(0.045, t);
+   676→  g.gain.linearRampToValueAtTime(0.06, t + 0.03);
+   677→  g.gain.exponentialRampToValueAtTime(0.0001, t + len);
+   678→  src.connect(bp); bp.connect(g); g.connect(audioCtx.destination);
+   679→  src.start(t);
+   680→}
+   681→
+   682→function sfxClose() {
+   683→  ensureAudio();
+   684→  const t = audioCtx.currentTime;
+   685→  const len = 0.22;
+   686→  const bufSize = Math.floor(audioCtx.sampleRate * len);
+   687→  const buf = audioCtx.createBuffer(1, bufSize, audioCtx.sampleRate);
+   688→  const d = buf.getChannelData(0);
+   689→  for (let i = 0; i < bufSize; i++) {
+   690→    d[i] = (Math.random() * 2 - 1) * Math.exp(-i / (audioCtx.sampleRate * 0.03));
+   691→  }
+   692→  const src = audioCtx.createBufferSource();
+   693→  src.buffer = buf;
+   694→  const bp = audioCtx.createBiquadFilter();
+   695→  bp.type = 'bandpass'; bp.frequency.value = 1400; bp.Q.value = 0.5;
+   696→  const g = audioCtx.createGain();
+   697→  g.gain.setValueAtTime(0.035, t);
+   698→  g.gain.exponentialRampToValueAtTime(0.0001, t + len);
+   699→  src.connect(bp); bp.connect(g); g.connect(audioCtx.destination);
+   700→  src.start(t);
+   701→}
+   702→
+   703→function sfxBubble() {
+   704→  ensureAudio();
+   705→  const t = audioCtx.currentTime;
+   706→  const osc = audioCtx.createOscillator();
+   707→  const g = audioCtx.createGain();
+   708→  osc.connect(g); g.connect(audioCtx.destination);
+   709→  osc.type = 'sine';
+   710→  osc.frequency.setValueAtTime(900, t);
+   711→  osc.frequency.exponentialRampToValueAtTime(300, t + 0.08);
+   712→  g.gain.setValueAtTime(0.02, t);
+   713→  g.gain.exponentialRampToValueAtTime(0.0001, t + 0.09);
+   714→  osc.start(t); osc.stop(t + 0.09);
+   715→}
+   716→
+   717→function sfxComplete() {
+   718→  ensureAudio();
+   719→  const t = audioCtx.currentTime;
+   720→  [880, 1100, 1320].forEach((f, i) => {
+   721→    const osc = audioCtx.createOscillator();
+   722→    const g = audioCtx.createGain();
+   723→    osc.connect(g); g.connect(audioCtx.destination);
+   724→    osc.type = 'sine';
+   725→    osc.frequency.value = f;
+   726→    const start = t + i * 0.07;
+   727→    g.gain.setValueAtTime(0, start);
+   728→    g.gain.linearRampToValueAtTime(0.05, start + 0.02);
+   729→    g.gain.exponentialRampToValueAtTime(0.0001, start + 0.2);
+   730→    osc.start(start); osc.stop(start + 0.2);
+   731→  });
+   732→}
+   733→
+   734→/* ========================================
+   735→   APP DATA
+   736→   ======================================== */
+   737→const gridApps = [
+   738→  { id:'journal', name:'Journal', icon:'fa-diagram-project', grad:'linear-gradient(135deg,#FF8A65,#D84315)', glow:'rgba(255,110,64,0.45)', url:'./dd/dd.html' },
+   739→  { id:'tasks', name:'Tasks', icon:'fa-circle-check', grad:'linear-gradient(135deg,#81C784,#2E7D32)', glow:'rgba(76,175,80,0.45)', url:'./taskiee/taskiee.html' },
+   740→  { id:'exercise', name:'Exercise', icon:'fa-dumbbell', grad:'linear-gradient(135deg,#4DB6AC,#00695C)', glow:'rgba(0,150,136,0.45)', url:'./exercise/exercise.html' },
+   741→  { id:'goals', name:'Life_OS', icon:'fa-bullseye', grad:'linear-gradient(135deg,#FFD54F,#F57F17)', glow:'rgba(255,145,0,0.45)', url:'./life_os/index.html' },
+   742→  { id:'financia', name:'Financia', icon:'fa-wallet', grad:'linear-gradient(135deg,#AED581,#558B2F)', glow:'rgba(139,195,74,0.45)', url:'./finances/finance.html' },
+   743→  { id:'vault', name:'vault', icon:'fa-vault', grad:'linear-gradient(135deg,#EF5350,#C62828)', glow:'rgba(244,67,54,0.45)', url:'./vault/vault.html' },
+   744→  { id:'notes', name:'Notes', icon:'fa-note-sticky', grad:'linear-gradient(135deg,#64B5F6,#1565C0)', glow:'rgba(33,150,243,0.45)' },
+   745→  { id:'Aura', name:'Meditation', icon:'fa-om', grad:'linear-gradient(135deg,#64B5F6,#1565C0)', glow:'rgba(33,150,243,0.45)', url:'./meditation_zone.html' },
+   746→  { id:'rulebook', name:'Life Rulebook', icon:'fa-heart', grad:'linear-gradient(135deg,#4DB6AC,#00695C)', glow:'rgba(0,150,136,0.45)', url:'./life_manual.html' },
+   747→  { id:'calendar', name:'Calendar', icon:'fa-calendar-days', grad:'linear-gradient(135deg,#7986CB,#283593)', glow:'rgba(63,81,181,0.45)' },
+   748→];
+   749→
+   750→const dockApps = [
+   751→  { id:'music', name:'Musezx', icon:'fa-music', url:'./MUSEZX.html', grad:'linear-gradient(135deg,#F48FB1,#AD1457)', glow:'rgba(233,30,99,0.45)' },
+   752→  { id:'gallery', name:'Gallery', icon:'fa-images', url:'./comingsoon.html', grad:'linear-gradient(135deg,#4DD0E1,#006064)', glow:'rgba(0,188,212,0.45)' },
+   753→  { id:'reader', name:'Reading', icon:'fa-book-open', url:'./reading/reader.html', grad:'linear-gradient(135deg,#FF7043,#BF360C)', glow:'rgba(255,87,34,0.45)' },
+   754→  { id:'settings', name:'Settings', icon:'fa-gear', url:'./comingsoon.html', grad:'linear-gradient(135deg,#90A4AE,#37474F)', glow:'rgba(96,125,139,0.45)' },
+   755→];
+   756→
+   757→const allApps = [...gridApps, ...dockApps];
+   758→
+   759→/* ========================================
+   760→   STATE DATA
+   761→   ======================================== */
+   762→let notesContent = 'Key priorities this week:\n\n1. Launch the new dashboard design\n2. Complete exercise tracking setup\n3. Schedule team sync for Friday\n4. Update financial projections\n\nRemember: small consistent steps lead to big results.';
+   763→let calendarEvents = [];
+   764→
+   765→/* ========================================
+   766→   RENDER APPS
+   767→   ======================================== */
+   768→function renderGrid() {
+   769→  const grid = document.getElementById('appGrid');
+   770→  grid.innerHTML = '';
+   771→  gridApps.forEach((app, i) => {
+   772→    const el = document.createElement('div');
+   773→    el.className = 'app-item';
+   774→    el.setAttribute('role','listitem');
+   775→    el.setAttribute('data-name', app.name.toLowerCase());
+   776→    el.style.animationDelay = `${0.25 + i * 0.05}s`;
+   777→    el.innerHTML = `
+   778→      <div class="app-icon" style="background:${app.grad}; --icon-glow:${app.glow}">
+   779→        <i class="fa-solid ${app.icon}"></i>
+   780→      </div>
+   781→      <span class="app-name">${app.name}</span>
+   782→    `;
+   783→    el.addEventListener('mouseenter', sfxHover);
+   784→    el.addEventListener('click', () => { 
+   785→      sfxClick(); 
+   786→      if(app.url) {
+   787→        window.location.href = app.url;
+   788→      } else {
+   789→        openApp(app); 
+   790→      }
+   791→    });
+   792→    grid.appendChild(el);
+   793→  });
+   794→}
+   795→
+   796→function renderDock() {
+   797→  const dock = document.getElementById('dock');
+   798→  dock.innerHTML = '';
+   799→  dockApps.forEach(app => {
+   800→    const el = document.createElement('div');
+   801→    el.className = 'dock-item';
+   802→    el.innerHTML = `
+   803→      <div class="dock-icon" style="background:${app.grad}; --icon-glow:${app.glow}">
+   804→        <i class="fa-solid ${app.icon}"></i>
+   805→      </div>
+   806→      <span class="dock-name">${app.name}</span>
+   807→    `;
+   808→    el.addEventListener('mouseenter', sfxHover);
+   809→    el.addEventListener('click', () => { sfxClick(); openApp(app); });
+   810→    dock.appendChild(el);
+   811→  });
+   812→}
+   813→
+   814→/* ========================================
+   815→   PANEL SYSTEM
+   816→   ======================================== */
+   817→const panel = document.getElementById('appPanel');
+   818→const overlay = document.getElementById('panelOverlay');
+   819→const panelIcon = document.getElementById('panelIcon');
+   820→const panelTitle = document.getElementById('panelTitle');
+   821→const panelContent = document.getElementById('panelContent');
+   822→const panelClose = document.getElementById('panelClose');
+   823→let currentApp = null;
+   824→
+   825→function openApp(app) {
+   826→  currentApp = app;
+   827→  panelIcon.style.background = app.grad;
+   828→  panelIcon.querySelector('i').className = 'fa-solid ' + app.icon;
+   829→  panelTitle.textContent = app.name;
+   830→  panelContent.innerHTML = getAppContent(app);
+   831→  bindPanelEvents(app);
+   832→  panel.classList.add('active');
+   833→  overlay.classList.add('active');
+   834→  overlay.setAttribute('aria-hidden','false');
+   835→  sfxOpen();
+   836→}
+   837→
+   838→function closePanel() {
+   839→  panel.classList.remove('active');
+   840→  overlay.classList.remove('active');
+   841→  overlay.setAttribute('aria-hidden','true');
+   842→  sfxClose();
+   843→  currentApp = null;
+   844→}
+   845→
+   846→panelClose.addEventListener('click', closePanel);
+   847→overlay.addEventListener('click', closePanel);
+   848→document.addEventListener('keydown', e => { if (e.key === 'Escape' && currentApp) closePanel(); });
+   849→
+   850→function getAppContent(app) {
+   851→  if (app.id === 'notes') return buildNotesHTML();
+   852→  if (app.id === 'calendar') return buildCalendarHTML();
+   853→  return buildPlaceholderHTML(app);
+   854→}
+   855→
+   856→function buildNotesHTML() {
+   857→  return `<textarea class="note-area" id="noteArea" placeholder="Start typing your notes...">${notesContent}</textarea>`;
+   858→}
+   859→
+   860→function buildCalendarHTML() {
+   861→  return `
+   862→    <div class="task-input-wrap">
+   863→      <input type="date" class="task-input" id="calDate" style="flex:1;">
+   864→      <input type="time" class="task-input" id="calTime" style="flex:1;">
+   865→      <input type="text" class="task-input" id="calEvent" placeholder="Event details..." style="min-width: 100%;">
+   866→      <button class="task-add-btn" id="calAddBtn" style="width: 100%; margin-top: 8px;">Add Event</button>
+   867→    </div>
+   868→    <div class="task-list" id="eventList"></div>
+   869→  `;
+   870→}
+   871→
+   872→function buildPlaceholderHTML(app) {
+   873→  return `
+   874→    <div class="placeholder-panel">
+   875→      <div class="ph-icon" style="background:${app.grad}">
+   876→        <i class="fa-solid ${app.icon}"></i>
+   877→<a href="${app.url}">
+   878→      </div>
+   879→      <h3>${app.name}</h3>  </a>
+   880→      <p>This module is ready to be configured. Start tracking and organizing your life data here.</p>
+   881→    </div>
+   882→  `;
+   883→}
+   884→
+   885→function bindPanelEvents(app) {
+   886→  if (app.id === 'notes') {
+   887→    setTimeout(() => {
+   888→      const area = document.getElementById('noteArea');
+   889→      area.addEventListener('input', () => { notesContent = area.value; });
+   890→    }, 50);
+   891→  }
+   892→
+   893→  if (app.id === 'calendar') {
+   894→    setTimeout(() => {
+   895→      const dateIn = document.getElementById('calDate');
+   896→      const timeIn = document.getElementById('calTime');
+   897→      const eventIn = document.getElementById('calEvent');
+   898→      const btn = document.getElementById('calAddBtn');
+   899→
+   900→      const today = new Date().toISOString().split('T')[0];
+   901→      dateIn.value = today;
+   902→
+   903→      function refreshEvents() {
+   904→         const list = document.getElementById('eventList');
+   905→         if(calendarEvents.length === 0) {
+   906→           list.innerHTML = '<div class="empty-state"><i class="fa-solid fa-calendar-xmark"></i>No events scheduled.</div>';
+   907→           return;
+   908→         }
+   909→         calendarEvents.sort((a,b) => new Date(a.date+'T'+a.time) - new Date(b.date+'T'+b.time));
+   910→
+   911→         list.innerHTML = calendarEvents.map((ev, i) => `
+   912→           <div class="task-item" data-idx="${i}">
+   913→             <div style="flex:1;">
+   914→               <div class="task-text">${ev.title}</div>
+   915→               <div style="font-size:12px; color:var(--text-muted); font-weight: 600;">${ev.date} at ${ev.time}</div>
+   916→             </div>
+   917→             <button class="task-delete cal-delete" aria-label="Delete event"><i class="fa-solid fa-trash-can"></i></button>
+   918→           </div>
+   919→         `).join('');
+   920→      }
+   921→
+   922→      btn.addEventListener('click', () => {
+   923→        if(!eventIn.value || !dateIn.value || !timeIn.value) {
+   924→          showToast('Please fill all fields');
+   925→          return;
+   926→        }
+   927→        calendarEvents.push({
+   928→          date: dateIn.value,
+   929→          time: timeIn.value,
+   930→          title: eventIn.value
+   931→        });
+   932→        eventIn.value = '';
+   933→        sfxClick();
+   934→        refreshEvents();
+   935→        showToast('Event added');
+   936→      });
+   937→
+   938→      document.getElementById('eventList').addEventListener('click', e => {
+   939→        const item = e.target.closest('.task-item');
+   940→        if(!item) return;
+   941→        if(e.target.closest('.cal-delete')) {
+   942→          const idx = parseInt(item.dataset.idx);
+   943→          item.style.transform = 'translateX(60px) scale(0.9)';
+   944→          item.style.opacity = '0';
+   945→          setTimeout(() => {
+   946→            calendarEvents.splice(idx, 1);
+   947→            sfxClick();
+   948→            refreshEvents();
+   949→            showToast('Event removed');
+   950→          }, 250);
+   951→        }
+   952→      });
+   953→
+   954→      refreshEvents();
+   955→    }, 50);
+   956→  }
+   957→}
+   958→
+   959→/* ========================================
+   960→   TOAST
+   961→   ======================================== */
+   962→let toastTimer = null;
+   963→function showToast(msg) {
+   964→  const toast = document.getElementById('toast');
+   965→  toast.textContent = msg;
+   966→  toast.classList.add('show');
+   967→  clearTimeout(toastTimer);
+   968→  toastTimer = setTimeout(() => toast.classList.remove('show'), 2000);
+   969→}
+   970→
+   971→/* ========================================
+   972→   SEARCH
+   973→   ======================================== */
+   974→document.getElementById('searchBar').addEventListener('input', e => {
+   975→  const q = e.target.value.toLowerCase().trim();
+   976→  document.querySelectorAll('.app-item').forEach(item => {
+   977→    const name = item.dataset.name;
+   978→    item.classList.toggle('hidden', q !== '' && !name.includes(q));
+   979→  });
+   980→});
+   981→
+   982→/* ========================================
+   983→   CLOCK
+   984→   ======================================== */
+   985→function updateClock() {
+   986→  const now = new Date();
+   987→  const h = now.getHours();
+   988→  const m = String(now.getMinutes()).padStart(2, '0');
+   989→  const s = String(now.getSeconds()).padStart(2, '0');
+   990→  const h12 = h % 12 || 12;
+   991→  const ampm = h >= 12 ? 'PM' : 'AM';
+   992→
+   993→  document.getElementById('clockTime').innerHTML = `${h12}:${m}<span class="seconds">${s} ${ampm}</span>`;
+   994→  document.getElementById('statusTime').textContent = `${h12}:${m} ${ampm}`;
+   995→
+   996→  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+   997→  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+   998→  document.getElementById('clockDate').textContent = `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}`;
+   999→
+  1000→  let greeting = 'Good Evening';
+  1001→  if (h < 12) greeting = 'Good Morning';
+  1002→  else if (h < 17) greeting = 'Good Afternoon';
+  1003→  document.getElementById('greeting').textContent = greeting;
+  1004→}
+  1005→
+  1006→/* ========================================
+  1007→   BUBBLES
+  1008→   ======================================== */
+  1009→function spawnBubble() {
+  1010→  const container = document.getElementById('bubbles');
+  1011→  const bubble = document.createElement('div');
+  1012→  bubble.className = 'bubble';
+  1013→  const size = 8 + Math.random() * 28;
+  1014→  const left = Math.random() * 100;
+  1015→  const dur = 10 + Math.random() * 14;
+  1016→  bubble.style.cssText = `
+  1017→    width:${size}px; height:${size}px;
+  1018→    left:${left}%; bottom:-${size}px;
+  1019→    animation-duration:${dur}s;
+  1020→  `;
+  1021→  container.appendChild(bubble);
+  1022→  bubble.addEventListener('animationend', () => {
+  1023→    bubble.remove();
+  1024→    sfxBubble();
+  1025→  });
+  1026→}
+  1027→
+  1028→/* ========================================
+  1029→   INIT
+  1030→   ======================================== */
+  1031→function init() {
+  1032→  renderGrid();
+  1033→  renderDock();
+  1034→  updateClock();
+  1035→  setInterval(updateClock, 1000);
+  1036→
+  1037→  // Spawn bubbles periodically
+  1038→  setInterval(spawnBubble, 1800);
+  1039→  // Initial batch
+  1040→  for (let i = 0; i < 6; i++) setTimeout(spawnBubble, i * 400);
+  1041→
+  1042→  // Init audio on first interaction
+  1043→  document.addEventListener('click', ensureAudio, { once: true });
+  1044→  document.addEventListener('touchstart', ensureAudio, { once: true });
+  1045→}
+  1046→
+  1047→init();
+  1048→</script>
+  1049→</body>
+  1050→</html>

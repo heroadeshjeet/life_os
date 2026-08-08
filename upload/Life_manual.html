@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life_OS — Your Personal Manual</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Outfit:wght@200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  /* 🟤 Change text selection color */
+  ::selection {
+    background: brown;
+    color: white;
+  }
+
+  /* 📱 Remove blue tap highlight on mobile */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* 🚫 Prevent dragging links */
+  a {
+    -webkit-user-drag: none;
+    user-drag: none;
+  }
+</style>
+
+<script>
+  // 🚫 Disable right-click
+  document.addEventListener("contextmenu", e => e.preventDefault());
+
+  // 🚫 Block common DevTools shortcuts
+  document.addEventListener("keydown", e => {
+    if (
+      (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key.toUpperCase())) || // Ctrl+Shift+I/J/C
+      (e.ctrlKey && e.key.toUpperCase() === "U") || // Ctrl+U (view source)
+      (e.key === "F12") // F12
+    ) {
+      e.preventDefault();
+    }
+  });
+</script>
+
+<style>
+  :root {
+    --bg: #0e0b08;
+    --bg-2: #15110b;
+    --surface: #1c1610;
+    --surface-2: #251e15;
+    --border: #3a2e1f;
+    --fg: #f4ead8;
+    --fg-muted: #a89a82;
+    --fg-dim: #6b614f;
+    --accent: #e0a96d;
+    --accent-2: #c97b4a;
+    --growth: #8aa884;
+    --trigger: #c97b5a;
+    --serif: 'Fraunces', serif;
+    --sans: 'Outfit', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--sans);
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    font-weight: 300;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(224, 169, 109, 0.10), transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(138, 168, 132, 0.07), transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(201, 123, 74, 0.04), transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+  body::after {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.035; pointer-events: none; z-index: 1;
+  }
+  .orb {
+    position: fixed; border-radius: 50%;
+    filter: blur(80px); pointer-events: none;
+    z-index: 0; opacity: 0.5;
+    animation: float 24s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(40px, -30px) scale(1.05); }
+    66% { transform: translate(-30px, 40px) scale(0.95); }
+  }
+  main, nav, footer { position: relative; z-index: 2; }
+  .font-serif { font-family: var(--serif); }
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+  .input, .textarea {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    color: var(--fg);
+    font-family: var(--sans);
+    transition: all 0.3s;
+    font-weight: 300;
+  }
+  .input:focus, .textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(224, 169, 109, 0.04);
+    box-shadow: 0 0 0 3px rgba(224, 169, 109, 0.08);
+  }
+  .textarea { resize: vertical; min-height: 90px; line-height: 1.7; }
+  .input::placeholder, .textarea::placeholder { color: var(--fg-dim); font-style: italic; }
+
+  .card {
+    background: linear-gradient(135deg, var(--surface) 0%, var(--bg-2) 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover {
+    border-color: rgba(224, 169, 109, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(224, 169, 109, 0.08);
+  }
+  .card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(224, 169, 109, 0.4), transparent);
+    opacity: 0; transition: opacity 0.4s;
+  }
+  .card:hover::before { opacity: 1; }
+
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #1a1208; font-weight: 600;
+    padding: 12px 28px; border-radius: 8px;
+    border: none; cursor: pointer;
+    transition: all 0.3s; letter-spacing: 0.02em;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(224, 169, 109, 0.3); }
+  .btn-ghost {
+    background: transparent; color: var(--fg-muted);
+    border: 1px solid var(--border);
+    padding: 10px 20px; border-radius: 8px;
+    cursor: pointer; transition: all 0.3s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  .section-eyebrow {
+    font-size: 0.7rem; letter-spacing: 0.35em;
+    text-transform: uppercase; color: var(--accent);
+    font-weight: 500;
+  }
+  .section-title {
+    font-family: var(--serif); font-weight: 300;
+    font-style: italic; letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .accent-line {
+    width: 60px; height: 1px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    margin-top: 16px;
+  }
+
+  .tag {
+    display: inline-flex; align-items: center;
+    padding: 4px 12px; border-radius: 20px;
+    font-size: 0.65rem; letter-spacing: 0.1em;
+    text-transform: uppercase; font-weight: 600;
+    border: 1px solid; cursor: pointer;
+    transition: all 0.3s;
+  }
+  .tag-health { color: #e0a96d; border-color: rgba(224, 169, 109, 0.35); background: rgba(224, 169, 109, 0.08); }
+  .tag-relationships { color: #d97a8e; border-color: rgba(217, 122, 142, 0.35); background: rgba(217, 122, 142, 0.08); }
+  .tag-productivity { color: #8aa884; border-color: rgba(138, 168, 132, 0.35); background: rgba(138, 168, 132, 0.08); }
+  .tag-money { color: #c9a96e; border-color: rgba(201, 169, 110, 0.35); background: rgba(201, 169, 110, 0.08); }
+  .tag-learning { color: #7a9ec9; border-color: rgba(122, 158, 201, 0.35); background: rgba(122, 158, 201, 0.08); }
+  .tag-mind { color: #b08ac9; border-color: rgba(176, 138, 201, 0.35); background: rgba(176, 138, 201, 0.08); }
+
+  .nav-link {
+    position: relative; color: var(--fg-muted);
+    transition: color 0.3s; font-size: 0.82rem;
+    letter-spacing: 0.08em;
+  }
+  .nav-link::after {
+    content: ''; position: absolute; bottom: -6px; left: 0;
+    width: 0; height: 1px; background: var(--accent);
+    transition: width 0.3s;
+  }
+  .nav-link:hover, .nav-link.active { color: var(--accent); }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+  .hero-title {
+    font-family: var(--serif); font-weight: 200;
+    letter-spacing: -0.04em; line-height: 0.95;
+  }
+  .hero-title em {
+    font-style: italic; font-weight: 400; color: var(--accent);
+    background: linear-gradient(135deg, #e0a96d, #c97b4a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .breath-circle {
+    width: 220px; height: 220px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(224, 169, 109, 0.25), rgba(224, 169, 109, 0.02));
+    border: 1px solid rgba(224, 169, 109, 0.3);
+    animation: breathe 8s ease-in-out infinite;
+    display: flex; align-items: center; justify-content: center;
+  }
+  @keyframes breathe {
+    0%, 100% { transform: scale(0.85); box-shadow: 0 0 40px rgba(224, 169, 109, 0.2); }
+    50% { transform: scale(1.1); box-shadow: 0 0 80px rgba(224, 169, 109, 0.4); }
+  }
+
+  .tab {
+    padding: 12px 18px; color: var(--fg-muted);
+    cursor: pointer; border-bottom: 2px solid transparent;
+    transition: all 0.3s; font-size: 0.82rem;
+    letter-spacing: 0.06em; white-space: nowrap;
+    font-weight: 400;
+  }
+  .tab:hover { color: var(--fg); }
+  .tab.active { color: var(--accent); border-color: var(--accent); }
+
+  .identity-card {
+    background: linear-gradient(135deg, rgba(224, 169, 109, 0.05), rgba(224, 169, 109, 0.01));
+    border: 1px solid rgba(224, 169, 109, 0.18);
+    border-radius: 12px; padding: 18px;
+    transition: all 0.3s; position: relative;
+  }
+  .identity-card:hover {
+    border-color: rgba(224, 169, 109, 0.45);
+    background: linear-gradient(135deg, rgba(224, 169, 109, 0.08), rgba(224, 169, 109, 0.02));
+  }
+
+  .check-btn {
+    width: 24px; height: 24px; border-radius: 50%;
+    border: 2px solid var(--border);
+    cursor: pointer; transition: all 0.3s;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .check-btn:hover { border-color: var(--accent); }
+  .check-btn.checked {
+    border-color: var(--growth); background: var(--growth);
+    box-shadow: 0 0 12px rgba(138, 168, 132, 0.4);
+  }
+  .check-btn.checked::after {
+    content: '✓'; color: #0e0b08; font-size: 13px; font-weight: bold;
+  }
+
+  .emergency-overlay {
+    position: fixed; inset: 0;
+    background: radial-gradient(circle at 50% 30%, #1a1208, #0a0805);
+    z-index: 100; overflow-y: auto;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.5s;
+  }
+  .emergency-overlay.active { opacity: 1; pointer-events: auto; }
+
+  .toast {
+    position: fixed; bottom: 30px; right: 30px;
+    background: var(--surface); border: 1px solid var(--accent);
+    color: var(--fg); padding: 14px 24px; border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    transform: translateY(100px); opacity: 0;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 200; font-size: 0.88rem;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+
+  .question-card {
+    background: rgba(255,255,255,0.015);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px;
+    transition: all 0.3s;
+  }
+  .question-card:hover { border-color: rgba(224, 169, 109, 0.3); }
+
+  .remove-btn {
+    color: var(--fg-dim); cursor: pointer;
+    transition: all 0.2s; font-size: 0.85rem;
+    padding: 4px 8px; border-radius: 6px;
+  }
+  .remove-btn:hover { color: var(--trigger); background: rgba(201, 123, 90, 0.1); }
+
+  .stat-number {
+    font-family: var(--serif); font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  .constellation { position: absolute; inset: 0; pointer-events: none; }
+  .star {
+    position: absolute; width: 2px; height: 2px;
+    background: var(--accent); border-radius: 50%;
+    box-shadow: 0 0 6px var(--accent);
+    animation: twinkle 3s ease-in-out infinite;
+  }
+  @keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+
+  .tabs-strip::-webkit-scrollbar { display: none; }
+  .tabs-strip { -ms-overflow-style: none; scrollbar-width: none; }
+
+  select.input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23a89a82' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center;
+    padding-right: 36px;
+  }
+
+  .saved-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--growth);
+    box-shadow: 0 0 8px var(--growth);
+    animation: pulse 2.5s infinite;
+  }
+  @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+
+  .identity-orb {
+    width: 100px; height: 100px; border-radius: 50%;
+    background: conic-gradient(var(--growth) 0deg, var(--border) 0deg);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; transition: all 0.8s;
+    flex-shrink: 0;
+  }
+  .identity-orb::before {
+    content: ''; position: absolute; inset: 8px;
+    background: var(--surface); border-radius: 50%;
+  }
+  .identity-orb span {
+    position: relative; z-index: 1;
+    font-family: var(--serif); font-size: 1.5rem;
+    color: var(--accent); font-weight: 400;
+  }
+
+  .insight-card {
+    background: linear-gradient(135deg, rgba(138, 168, 132, 0.08), rgba(138, 168, 132, 0.01));
+    border: 1px solid rgba(138, 168, 132, 0.25);
+    border-radius: 12px; padding: 16px 20px;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-title { font-size: 3rem !important; }
+  }
+
+  .quote-mark {
+    font-family: var(--serif); font-size: 5rem;
+    line-height: 0.5; color: var(--accent);
+    opacity: 0.4; font-style: italic;
+  }
+
+  /* Filter button active state */
+  .filter-btn.active {
+    background: rgba(224,169,109,0.15) !important;
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+  }
+</style>
+</head>
+<body>
+
+<!-- Atmospheric orbs -->
+<div class="orb" style="width: 400px; height: 400px; background: rgba(224, 169, 109, 0.18); top: 8%; left: -8%;"></div>
+<div class="orb" style="width: 350px; height: 350px; background: rgba(138, 168, 132, 0.12); top: 55%; right: -5%; animation-delay: -8s;"></div>
+<div class="orb" style="width: 280px; height: 280px; background: rgba(201, 123, 74, 0.12); top: 35%; left: 45%; animation-delay: -16s;"></div>
+
+<!-- Navigation -->
+<nav class="sticky top-0 z-50 backdrop-blur-xl bg-[#0e0b08]/85 border-b border-[#3a2e1f]/50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#e0a96d] to-[#c97b4a] flex items-center justify-center shadow-lg shadow-[#e0a96d]/20">
+        <span class="font-serif text-[#1a1208] font-bold text-xl italic">L</span>
+      </div>
+      <div>
+        <div class="font-serif italic text-lg leading-none">Life_OS</div>
+        <div class="text-[10px] tracking-[0.3em] uppercase text-[#a89a82] mt-1">Your Manual</div>
+      </div>
+    </div>
+    <div class="nav-links hidden md:flex items-center gap-8">
+      <a href="#hero" class="nav-link active">Home</a>
+      <a href="#life-map" class="nav-link">Life Map</a>
+      <a href="#identity" class="nav-link">Identity</a>
+      <a href="#reflection" class="nav-link">Reflection</a>
+      <a href="#rules" class="nav-link">Rules</a>
+      <a href="#future-self" class="nav-link">Future Self</a>
+    </div>
+    <button onclick="openEmergency()" class="btn-ghost text-xs">
+      <i class="fas fa-life-ring"></i>
+      <span class="hidden sm:inline">Emergency</span>
+    </button>
+  </div>
+</nav>
+
+<main class="max-w-7xl mx-auto px-6">
+
+  <!-- HERO -->
+  <section id="hero" class="min-h-[88vh] flex flex-col justify-center py-20 relative">
+    <div class="constellation" id="constellation"></div>
+    <div class="max-w-4xl relative">
+      <div class="section-eyebrow mb-6">A Manual For Living Intentionally</div>
+      <h1 class="hero-title text-6xl md:text-8xl mb-8">
+        Design your life,<br>
+        <em>not someone else's.</em>
+      </h1>
+      <p class="text-xl text-[#a89a82] max-w-2xl leading-relaxed mb-10 font-light">
+        Most people drift because they never wrote down who they want to become.
+        This is your operating system — a place to define your direction,
+        build your identity, and reflect with radical honesty.
+      </p>
+      <div class="flex flex-wrap gap-4 mb-16">
+        <a href="#life-map" class="btn-primary">Begin Mapping <i class="fas fa-arrow-right text-xs"></i></a>
+        <a href="#identity" class="btn-ghost">Build Identity</a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 border-t border-[#3a2e1f]/50">
+        <div>
+          <div class="stat-number text-5xl text-[#e0a96d]" id="stat-identity">0</div>
+          <div class="text-xs uppercase tracking-wider text-[#a89a82] mt-2">Identity Statements</div>
+        </div>
+        <div>
+          <div class="stat-number text-5xl text-[#e0a96d]" id="stat-rules">0</div>
+          <div class="text-xs uppercase tracking-wider text-[#a89a82] mt-2">Personal Rules</div>
+        </div>
+        <div>
+          <div class="stat-number text-5xl text-[#e0a96d]" id="stat-reflections">0</div>
+          <div class="text-xs uppercase tracking-wider text-[#a89a82] mt-2">Reflections Written</div>
+        </div>
+        <div>
+          <div class="stat-number text-5xl text-[#e0a96d]" id="stat-streak">1</div>
+          <div class="text-xs uppercase tracking-wider text-[#a89a82] mt-2">Day Present</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIFE MAP -->
+  <section id="life-map" class="py-24 reveal">
+    <div class="mb-16">
+      <div class="section-eyebrow mb-4">Chapter I</div>
+      <h2 class="section-title text-5xl md:text-6xl mb-4">The Life Map</h2>
+      <div class="accent-line"></div>
+      <p class="text-[#a89a82] max-w-2xl mt-6 text-lg leading-relaxed">
+        A place where you design your future. Direction is the cure for distraction —
+        answer these honestly, and revisit them often. Clarity here will pull you forward when motivation fails.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="life-map-grid"></div>
+  </section>
+
+  <!-- IDENTITY BUILDER -->
+  <section id="identity" class="py-24 reveal">
+    <div class="mb-16">
+      <div class="section-eyebrow mb-4">Chapter II</div>
+      <h2 class="section-title text-5xl md:text-6xl mb-4">Identity Builder</h2>
+      <div class="accent-line"></div>
+      <p class="text-[#a89a82] max-w-2xl mt-6 text-lg leading-relaxed">
+        Don't say "I want to wake up early." Say <em class="text-[#e0a96d]">"I am someone who respects my time."</em>
+        Behavior follows identity. Define who you are — then ask each night if today's actions matched that person.
+      </p>
+    </div>
+
+    <!-- Daily check -->
+    <div class="card p-8 mb-10">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="identity-orb" id="identity-orb">
+          <span id="identity-percent">0%</span>
+        </div>
+        <div class="flex-1 text-center md:text-left">
+          <div class="section-eyebrow mb-2">Tonight's Question</div>
+          <h3 class="font-serif text-2xl md:text-3xl mb-2 italic">Did today's actions match your identity?</h3>
+          <p class="text-[#a89a82] text-sm">Check each statement you lived up to today. Be honest — this is for you, not for show.</p>
+        </div>
+        <div class="text-center md:text-right">
+          <div class="text-xs uppercase tracking-wider text-[#a89a82] mb-1">Last check</div>
+          <div class="text-sm text-[#f4ead8]" id="last-check-date">Not yet today</div>
+          <div class="flex items-center gap-2 justify-center md:justify-end mt-2">
+            <div class="saved-dot"></div>
+            <span class="text-xs text-[#8aa884]">Auto-saved</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Identity statements -->
+    <div class="mb-6 flex items-center justify-between">
+      <h3 class="font-serif text-2xl italic">Your Identity Statements</h3>
+      <button onclick="addIdentity()" class="btn-ghost text-xs">
+        <i class="fas fa-plus"></i> New Statement
+      </button>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12" id="identity-list"></div>
+
+    <!-- Screen time + Urge journal -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div class="card p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-lg bg-[#c97b4a]/20 flex items-center justify-center">
+            <i class="fas fa-mobile-screen text-[#c97b4a]"></i>
+          </div>
+          <h4 class="font-serif text-xl italic">Screen Time Today</h4>
+        </div>
+        <p class="text-xs text-[#a89a82] mb-4">Track honestly. Awareness is the first step toward change.</p>
+        <div class="flex gap-2 items-center">
+          <input type="number" min="0" max="24" id="screen-hours" class="input w-20 px-3 py-2 rounded-lg text-center" placeholder="0">
+          <span class="text-[#a89a82] text-sm">hrs</span>
+          <input type="number" min="0" max="59" id="screen-minutes" class="input w-20 px-3 py-2 rounded-lg text-center" placeholder="0">
+          <span class="text-[#a89a82] text-sm">min</span>
+        </div>
+        <div class="mt-4 text-xs text-[#a89a82]" id="screen-streak">No entries yet</div>
+      </div>
+
+      <div class="card p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-lg bg-[#c97b5a]/20 flex items-center justify-center">
+            <i class="fas fa-wind text-[#c97b5a]"></i>
+          </div>
+          <h4 class="font-serif text-xl italic">Urge Journal</h4>
+        </div>
+        <p class="text-xs text-[#a89a82] mb-4">When the urge hit, what happened? Patterns will reveal themselves.</p>
+        <div class="space-y-2">
+          <input type="text" id="urge-trigger" class="input w-full px-3 py-2 rounded-lg text-sm" placeholder="What triggered me?">
+          <input type="text" id="urge-emotion" class="input w-full px-3 py-2 rounded-lg text-sm" placeholder="What emotion was I feeling?">
+          <input type="text" id="urge-choice" class="input w-full px-3 py-2 rounded-lg text-sm" placeholder="What did I choose instead?">
+        </div>
+        <button onclick="saveUrge()" class="btn-primary mt-4 text-xs py-2 px-4">Log Entry</button>
+      </div>
+    </div>
+
+    <!-- Pattern insight -->
+    <div id="insight-container" class="mb-6"></div>
+
+    <!-- Digital detox -->
+    <div class="card p-6">
+      <div class="flex items-center justify-between mb-4 flex-wrap gap-3">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-[#8aa884]/20 flex items-center justify-center">
+            <i class="fas fa-leaf text-[#8aa884]"></i>
+          </div>
+          <h4 class="font-serif text-xl italic">Digital Detox Challenges</h4>
+        </div>
+        <button onclick="addDetox()" class="btn-ghost text-xs">
+          <i class="fas fa-plus"></i> Add Challenge
+        </button>
+      </div>
+      <div id="detox-list" class="space-y-2"></div>
+    </div>
+  </section>
+
+  <!-- REFLECTION -->
+  <section id="reflection" class="py-24 reveal">
+    <div class="mb-16">
+      <div class="section-eyebrow mb-4">Chapter III</div>
+      <h2 class="section-title text-5xl md:text-6xl mb-4">Reflection</h2>
+      <div class="accent-line"></div>
+      <p class="text-[#a89a82] max-w-2xl mt-6 text-lg leading-relaxed">
+        Six collections of questions. Defaults are here to start — remove what
+        doesn't serve you, add what does. Over time, patterns emerge. Insight beats information.
+      </p>
+    </div>
+    <div class="tabs-strip flex gap-2 overflow-x-auto border-b border-[#3a2e1f]/50 mb-8 pb-px" id="reflection-tabs"></div>
+    <div id="reflection-content"></div>
+    <div class="mt-8 card p-6">
+      <h4 class="font-serif text-lg italic mb-3">Add Your Own Question to This Category</h4>
+      <div class="flex gap-3 flex-wrap">
+        <input type="text" id="new-question-text" class="input flex-1 px-4 py-3 rounded-lg min-w-[200px]" placeholder="What do you need to ask yourself?">
+        <button onclick="addCustomQuestion()" class="btn-primary">Add Question</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAL RULES -->
+  <section id="rules" class="py-24 reveal">
+    <div class="mb-16">
+      <div class="section-eyebrow mb-4">Chapter IV</div>
+      <h2 class="section-title text-5xl md:text-6xl mb-4">Personal Rules</h2>
+      <div class="accent-line"></div>
+      <p class="text-[#a89a82] max-w-2xl mt-6 text-lg leading-relaxed">
+        Rules are decisions made in advance. When emotion tries to override reason,
+        these are what you return to. Tag them, refine them, live by them.
+      </p>
+    </div>
+    <div class="card p-6 mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+        <input type="text" id="new-rule" class="input md:col-span-7 px-4 py-3 rounded-lg" placeholder="e.g., No phone during meals.">
+        <select id="new-rule-tag" class="input md:col-span-3 px-4 py-3 rounded-lg">
+          <option value="health">Health</option>
+          <option value="relationships">Relationships</option>
+          <option value="productivity">Productivity</option>
+          <option value="money">Money</option>
+          <option value="learning">Learning</option>
+          <option value="mind">Mind</option>
+        </select>
+        <button onclick="addRule()" class="btn-primary md:col-span-2 justify-center">Add Rule</button>
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-2 mb-6" id="rule-filters">
+      <button class="tag filter-btn active" data-filter="all">All</button>
+      <button class="tag tag-health filter-btn" data-filter="health">Health</button>
+      <button class="tag tag-relationships filter-btn" data-filter="relationships">Relationships</button>
+      <button class="tag tag-productivity filter-btn" data-filter="productivity">Productivity</button>
+      <button class="tag tag-money filter-btn" data-filter="money">Money</button>
+      <button class="tag tag-learning filter-btn" data-filter="learning">Learning</button>
+      <button class="tag tag-mind filter-btn" data-filter="mind">Mind</button>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="rules-list"></div>
+  </section>
+
+  <!-- FUTURE SELF -->
+  <section id="future-self" class="py-24 reveal">
+    <div class="mb-16">
+      <div class="section-eyebrow mb-4">Chapter V</div>
+      <h2 class="section-title text-5xl md:text-6xl mb-4">Future Self</h2>
+      <div class="accent-line"></div>
+      <p class="text-[#a89a82] max-w-2xl mt-6 text-lg leading-relaxed">
+        A conversation across time. The person you become is being built right now,
+        by every choice you make today.
+      </p>
+    </div>
+    <div class="card p-8 md:p-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div>
+          <div class="quote-mark mb-2">"</div>
+          <h4 class="font-serif text-2xl italic mb-4 text-[#e0a96d]">From your future self</h4>
+          <p class="text-[#a89a82] text-sm leading-relaxed mb-6">
+            Imagine yourself ten years from today, looking back at this exact moment.
+            What would they say? What would they thank you for? What would they beg you to start — or stop — right now?
+          </p>
+          <div class="space-y-5">
+            <div>
+              <label class="text-xs uppercase tracking-wider text-[#e0a96d] block mb-2">What would my future self tell me right now?</label>
+              <textarea class="textarea input w-full p-3 rounded-lg" data-future="future-message" placeholder="Listen carefully..."></textarea>
+            </div>
+            <div>
+              <label class="text-xs uppercase tracking-wider text-[#e0a96d] block mb-2">If I keep my current habits for 5 years, where will I end up?</label>
+              <textarea class="textarea input w-full p-3 rounded-lg" data-future="five-year-habits" placeholder="Be brutally honest..."></textarea>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="quote-mark mb-2 text-[#8aa884]">"</div>
+          <h4 class="font-serif text-2xl italic mb-4 text-[#8aa884]">From your younger self</h4>
+          <p class="text-[#a89a82] text-sm leading-relaxed mb-6">
+            The child you once were had dreams without limits. The version of you from
+            five years ago had lessons to learn. Listen to them both.
+          </p>
+          <div class="space-y-5">
+            <div>
+              <label class="text-xs uppercase tracking-wider text-[#8aa884] block mb-2">What advice would my younger self need?</label>
+              <textarea class="textarea input w-full p-3 rounded-lg" data-future="younger-advice" placeholder="Speak kindly..."></textarea>
+            </div>
+            <div>
+              <label class="text-xs uppercase tracking-wider text-[#8aa884] block mb-2">What skill should I start learning today?</label>
+              <textarea class="textarea input w-full p-3 rounded-lg" data-future="skill-today" placeholder="Begin before you're ready..."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOTTO -->
+  <section class="py-24 reveal">
+    <div class="card p-12 md:p-20 text-center relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-[#e0a96d]/8 to-transparent"></div>
+      <div class="relative">
+        <div class="section-eyebrow mb-6">Your Personal Motto</div>
+        <input type="text" id="motto" class="bg-transparent text-center font-serif italic text-3xl md:text-5xl text-[#f4ead8] border-none outline-none w-full placeholder-[#6b614f] placeholder:italic" placeholder="Write the words you live by...">
+        <div class="accent-line mx-auto mt-8" style="margin-left:auto;margin-right:auto;"></div>
+        <p class="text-[#a89a82] text-sm mt-6 max-w-lg mx-auto">A single sentence to return to when the world gets loud. Let it anchor you.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-[#3a2e1f]/50 mt-12 py-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <div class="font-serif italic text-2xl mb-3">Life_OS</div>
+        <p class="text-sm text-[#a89a82] leading-relaxed">
+          A manual for intentional living. Built for those who refuse to drift through their one precious life.
+        </p>
+      </div>
+      <div>
+        <div class="text-xs uppercase tracking-wider text-[#e0a96d] mb-3">Reminder</div>
+        <p class="text-sm text-[#a89a82] leading-relaxed italic">
+          "You are the author of your life. Don't let someone else hold the pen."
+        </p>
+      </div>
+      <div>
+        <div class="text-xs uppercase tracking-wider text-[#e0a96d] mb-3">Your Data</div>
+        <p class="text-sm text-[#a89a82] leading-relaxed mb-3">
+          Everything stays in your browser. Nothing is sent anywhere. Only you can read this.
+        </p>
+        <button onclick="exportData()" class="btn-ghost text-xs">
+          <i class="fas fa-download"></i> Export My Manual
+        </button>
+      </div>
+    </div>
+    <div class="pt-6 border-t border-[#3a2e1f]/50 flex flex-col md:flex-row justify-between items-center gap-3">
+      <div class="text-xs text-[#6b614f]">
+        © <span id="year"></span> Life_OS · Crafted with intention
+      </div>
+      <div class="text-xs text-[#6b614f]">© Adeshjeet_Official</div>
+    </div>
+  </div>
+</footer>
+
+<!-- EMERGENCY OVERLAY -->
+<div class="emergency-overlay" id="emergency-overlay">
+  <div class="max-w-4xl mx-auto px-6 py-16">
+    <div class="flex justify-between items-center mb-12">
+      <div>
+        <div class="section-eyebrow mb-2">Emergency Page</div>
+        <h2 class="font-serif italic text-4xl text-[#f4ead8]">You are not lost.</h2>
+      </div>
+      <button onclick="closeEmergency()" class="btn-ghost">
+        <i class="fas fa-times"></i> Close
+      </button>
+    </div>
+
+    <div class="flex flex-col items-center mb-16">
+      <div class="breath-circle">
+        <div class="text-center">
+          <div class="font-serif italic text-xl text-[#e0a96d]" id="breath-text">Breathe in</div>
+        </div>
+      </div>
+      <p class="text-[#a89a82] text-sm mt-6 max-w-md text-center leading-relaxed">
+        Before you read on, breathe. Four seconds in. Four seconds out.
+        You came here for a reason — and that reason is already passing.
+      </p>
+    </div>
+
+    <div class="space-y-5">
+      <div class="card p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="fas fa-fire text-[#e0a96d]"></i>
+          <h3 class="font-serif text-xl italic">Why am I fighting for my goals?</h3>
+        </div>
+        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="why-fighting" placeholder="The reason has to be bigger than the resistance..."></textarea>
+      </div>
+      <div class="card p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="fas fa-heart text-[#d97a8e]"></i>
+          <h3 class="font-serif text-xl italic">Who loves and supports me?</h3>
+        </div>
+        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="who-loves" placeholder="Names, faces, the people who would show up..."></textarea>
+      </div>
+      <div class="card p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="fas fa-trophy text-[#c9a96e]"></i>
+          <h3 class="font-serif text-xl italic">My proudest moments</h3>
+        </div>
+        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="proudest" placeholder="Times you surprised yourself. Times you didn't quit..."></textarea>
+      </div>
+      <div class="card p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="fas fa-mountain text-[#8aa884]"></i>
+          <h3 class="font-serif text-xl italic">Problems I have already overcome</h3>
+        </div>
+        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="overcome" placeholder="Things that once felt impossible..."></textarea>
+      </div>
+      <div class="card p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="fas fa-seedling text-[#8aa884]"></i>
+          <h3 class="font-serif text-xl italic">Things worth living for</h3>
+        </div>
+        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="worth-living" placeholder="Small things. Big things. The taste of morning coffee..."></textarea>
+      </div>
+      <div class="card p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="fas fa-quote-right text-[#e0a96d]"></i>
+          <h3 class="font-serif text-xl italic">My personal motto</h3>
+        </div>
+        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="motto" placeholder="The words that bring you back..."></textarea>
+      </div>
+
+      <div class="card p-6" style="background: linear-gradient(135deg, rgba(138, 168, 132, 0.08), rgba(138, 168, 132, 0.01)); border-color: rgba(138, 168, 132, 0.3);">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="fas fa-hand-holding-heart text-[#8aa884]"></i>
+          <h3 class="font-serif text-xl italic text-[#8aa884]">Grounding — 5-4-3-2-1</h3>
+        </div>
+        <p class="text-sm text-[#a89a82] mb-4">Name out loud, right now:</p>
+        <ul class="space-y-2 text-sm text-[#f4ead8]">
+          <li class="flex gap-3"><span class="text-[#8aa884] font-bold w-4">5</span> things you can see around you</li>
+          <li class="flex gap-3"><span class="text-[#8aa884] font-bold w-4">4</span> things you can touch</li>
+          <li class="flex gap-3"><span class="text-[#8aa884] font-bold w-4">3</span> things you can hear</li>
+          <li class="flex gap-3"><span class="text-[#8aa884] font-bold w-4">2</span> things you can smell</li>
+          <li class="flex gap-3"><span class="text-[#8aa884] font-bold w-4">1</span> thing you can taste</li>
+        </ul>
+      </div>
+
+      <div class="text-center pt-8 pb-4">
+        <p class="font-serif italic text-2xl text-[#e0a96d] mb-3">
+          "This feeling is weather. It will pass."
+        </p>
+        <p class="text-sm text-[#a89a82]">
+          You have survived every hard day so far. That is a 100% record.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ============ DATA LAYER ============
+const STORE_KEY = 'life_os_v1';
+let store = loadStore();
+
+function loadStore() {
+  try {
+    const raw = localStorage.getItem(STORE_KEY);
+    if (raw) return { ...getDefaultStore(), ...JSON.parse(raw) };
+  } catch(e) {}
+  return getDefaultStore();
+}
+
+function getDefaultStore() {
+  return {
+    lifeMap: {},
+    identity: [
+      { text: 'I am a disciplined person.', checked: false },
+      { text: 'I finish what I start.', checked: false },
+      { text: 'I protect my mind.', checked: false },
+      { text: 'I learn every day.', checked: false }
+    ],
+    identityLastCheck: null,
+    screenTime: [],
+    urges: [],
+    detox: [
+      { text: 'No phone in the first hour after waking', active: true },
+      { text: 'No phone in bed', active: true },
+      { text: 'One screen-free meal per day', active: false }
+    ],
+    questions: getDefaultQuestions(),
+    questionAnswers: {},
+    rules: [
+      { text: 'No phone during meals.', tag: 'mind' },
+      { text: 'Sleep before 11 PM.', tag: 'health' },
+      { text: 'Never make important decisions when angry.', tag: 'mind' },
+      { text: 'Read before sleeping.', tag: 'learning' },
+      { text: 'Exercise at least three times a week.', tag: 'health' }
+    ],
+    future: {},
+    emergency: {},
+    motto: '',
+    activeTab: 'identity',
+    ruleFilter: 'all'
+  };
+}
+
+function getDefaultQuestions() {
+  return {
+    identity: {
+      title: 'Identity', icon: 'fa-user', color: '#e0a96d',
+      items: [
+        'Who am I becoming?',
+        'What kind of person do I respect?',
+        'What are my three strongest qualities?',
+        'What are my biggest weaknesses?',
+        'What values do I refuse to compromise on?',
+        'What do I want people to remember about me?'
+      ]
+    },
+    triggers: {
+      title: 'Triggers & Emotions', icon: 'fa-bolt', color: '#c97b5a',
+      items: [
+        'What made me anxious today?',
+        'What made me procrastinate?',
+        'What emotion pushed me to open social media?',
+        'Was I bored, lonely, stressed, or avoiding something?',
+        'What activity improved my mood?'
+      ]
+    },
+    decisions: {
+      title: 'Decision Review', icon: 'fa-scale-balanced', color: '#c9a96e',
+      items: [
+        'What important decision did I make today?',
+        'Why did I make it?',
+        'Was it emotional or logical?',
+        'Will my future self thank me for this decision?',
+        'What would happen if I repeated this choice for a year?'
+      ]
+    },
+    fomo: {
+      title: 'Anti-FOMO', icon: 'fa-shield', color: '#8aa884',
+      items: [
+        'What exactly did I feel I was missing?',
+        'Did seeing others online change my mood?',
+        "Am I comparing someone's highlight reel to my real life?",
+        'Did social media make me want something I didn\'t actually need?',
+        'What meaningful thing did I do instead?'
+      ]
+    },
+    future: {
+      title: 'Future Self', icon: 'fa-hourglass', color: '#b08ac9',
+      items: [
+        'What would my 25-year-old self tell me right now?',
+        'What advice would my younger self need?',
+        'What skill should I start learning today?',
+        'If I continue my current habits for five years, where will I end up?'
+      ]
+    },
+    principles: {
+      title: 'Life Principles', icon: 'fa-book', color: '#7a9ec9',
+      items: [
+        'What lesson did life teach me recently?',
+        'What mistake do I never want to repeat?',
+        'What belief changed this year?',
+        'What truth do most people ignore?',
+        'What quote or idea changed my thinking?'
+      ]
+    }
+  };
+}
+
+function save() { localStorage.setItem(STORE_KEY, JSON.stringify(store)); }
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._tm);
+  t._tm = setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str || '';
+  return div.innerHTML;
+}
+
+// ============ LIFE MAP ============
+const lifeMapSections = [
+  { key: 'who-am-i', label: 'Who am I?', placeholder: 'Describe yourself honestly — your roles, your nature, your current state of being...' },
+  { key: 'who-become', label: 'Who do I want to become?', placeholder: 'The person you are becoming. Be specific. Be bold.' },
+  { key: 'vision-1yr', label: 'My 1-year vision', placeholder: 'Where do you want to be in one year? What does an ordinary Tuesday look like?' },
+  { key: 'vision-5yr', label: 'My 5-year vision', placeholder: 'Paint the picture of five years from now. Who is around you? What are you doing?' },
+  { key: 'skills', label: 'Skills I want to master', placeholder: 'List them. Be specific. Set priorities. Avoid vague words like "good at".' },
+  { key: 'stop-doing', label: 'Things I want to stop doing', placeholder: 'What behaviors are no longer serving the person you are becoming?' },
+  { key: 'become-like', label: 'People I want to become like', placeholder: 'Who do you admire? What specific qualities do they have that you want?' }
+];
+
+function renderLifeMap() {
+  const grid = document.getElementById('life-map-grid');
+  grid.innerHTML = lifeMapSections.map((s, i) => `
+    <div class="card p-6">
+      <div class="flex items-start justify-between mb-3">
+        <div>
+          <div class="text-xs text-[#6b614f] mb-1 tracking-widest">0${i+1}</div>
+          <h3 class="font-serif text-2xl italic">${s.label}</h3>
+        </div>
+        <i class="fas fa-feather text-[#e0a96d]/40"></i>
+      </div>
+      <textarea class="textarea input w-full p-3 rounded-lg" placeholder="${s.placeholder}" data-life-map="${s.key}">${escapeHtml(store.lifeMap[s.key])}</textarea>
+    </div>
+  `).join('');
+  grid.querySelectorAll('[data-life-map]').forEach(el => {
+    el.addEventListener('input', e => {
+      store.lifeMap[e.target.dataset.lifeMap] = e.target.value;
+      save();
+    });
+  });
+}
+
+// ============ IDENTITY BUILDER ============
+function renderIdentity() {
+  const list = document.getElementById('identity-list');
+  if (store.identity.length === 0) {
+    list.innerHTML = `<div class="md:col-span-2 text-center py-12 text-[#6b614f] italic">No identity statements yet. Add one above to begin.</div>`;
+  } else {
+    list.innerHTML = store.identity.map((id, i) => `
+      <div class="identity-card">
+        <div class="flex items-start gap-3">
+          <div class="check-btn ${id.checked ? 'checked' : ''}" onclick="toggleIdentity(${i})"></div>
+          <div class="flex-1">
+            <input type="text" class="bg-transparent border-none outline-none w-full font-serif italic text-lg text-[#f4ead8] placeholder-[#6b614f]" 
+                   value="${escapeHtml(id.text)}" 
+                   onchange="updateIdentityText(${i}, this.value)"
+                   placeholder="I am...">
+            <div class="text-xs mt-2 ${id.checked ? 'text-[#8aa884]' : 'text-[#a89a82]'}">
+              ${id.checked ? '✓ Lived up to today' : 'Not yet checked today'}
+            </div>
+          </div>
+          <button onclick="removeIdentity(${i})" class="remove-btn"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+    `).join('');
+  }
+  updateIdentityOrb();
+  document.getElementById('stat-identity').textContent = store.identity.length;
+}
+
+function toggleIdentity(i) {
+  store.identity[i].checked = !store.identity[i].checked;
+  store.identityLastCheck = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  save();
+  renderIdentity();
+}
+function updateIdentityText(i, text) { store.identity[i].text = text; save(); }
+function addIdentity() {
+  store.identity.push({ text: 'I am someone who...', checked: false });
+  save();
+  renderIdentity();
+  toast('New identity statement added.');
+}
+function removeIdentity(i) {
+  store.identity.splice(i, 1);
+  save();
+  renderIdentity();
+}
+function updateIdentityOrb() {
+  const checked = store.identity.filter(i => i.checked).length;
+  const total = store.identity.length;
+  const pct = total > 0 ? Math.round((checked / total) * 100) : 0;
+  const orb = document.getElementById('identity-orb');
+  orb.style.background = `conic-gradient(var(--growth) ${pct * 3.6}deg, var(--border) ${pct * 3.6}deg)`;
+  document.getElementById('identity-percent').textContent = pct + '%';
+  if (store.identityLastCheck) {
+    document.getElementById('last-check-date').textContent = store.identityLastCheck;
+  }
+}
+
+// ============ URGE JOURNAL ============
+function saveUrge() {
+  const trigger = document.getElementById('urge-trigger').value.trim();
+  const emotion = document.getElementById('urge-emotion').value.trim();
+  const choice = document.getElementById('urge-choice').value.trim();
+  if (!trigger && !emotion && !choice) { toast('Write something first.'); return; }
+  store.urges.push({ date: new Date().toISOString(), trigger, emotion, choice });
+  save();
+  document.getElementById('urge-trigger').value = '';
+  document.getElementById('urge-emotion').value = '';
+  document.getElementById('urge-choice').value = '';
+  renderInsight();
+  toast('Urge logged. Awareness is power.');
+}
+
+// ============ PATTERN INSIGHT ============
+function renderInsight() {
+  const container = document.getElementById('insight-container');
+  if (store.urges.length < 2) {
+    container.innerHTML = '';
+    return;
+  }
+  // Find most common words in triggers and emotions
+  const wordCount = {};
+  store.urges.forEach(u => {
+    [u.trigger, u.emotion].forEach(field => {
+      if (!field) return;
+      field.toLowerCase().split(/\s+/).forEach(w => {
+        w = w.replace(/[^a-z]/g, '');
+        if (w.length > 3 && !['that','this','with','have','were','they','them','what','when','from'].includes(w)) {
+          wordCount[w] = (wordCount[w] || 0) + 1;
+        }
+      });
+    });
+  });
+  const sorted = Object.entries(wordCount).sort((a,b) => b[1] - a[1]).slice(0, 3);
+  if (sorted.length === 0 || sorted[0][1] < 2) {
+    container.innerHTML = `
+      <div class="insight-card">
+        <div class="flex items-start gap-3">
+          <i class="fas fa-lightbulb text-[#8aa884] mt-1"></i>
+          <div>
+            <div class="text-xs uppercase tracking-wider text-[#8aa884] mb-1">Pattern Emerging</div>
+            <p class="text-sm text-[#f4ead8]">You've logged ${store.urges.length} urge${store.urges.length>1?'s':''}. Keep journaling — patterns will reveal themselves as you add more entries.</p>
+          </div>
+        </div>
+      </div>`;
+    return;
+  }
+  const top = sorted.map(s => s[0]).join(', ');
+  container.innerHTML = `
+    <div class="insight-card">
+      <div class="flex items-start gap-3">
+        <i class="fas fa-lightbulb text-[#8aa884] mt-1"></i>
+        <div>
+          <div class="text-xs uppercase tracking-wider text-[#8aa884] mb-1">Pattern Detected</div>
+          <p class="text-sm text-[#f4ead8]">Across ${store.urges.length} entries, your most common triggers and emotions involve: <span class="text-[#8aa884] font-semibold">${top}</span>. Awareness is the first step. What will you change?</p>
+        </div>
+      </div>
+    </div>`;
+}
+
+// ============ DETOX ============
+function renderDetox() {
+  const list = document.getElementById('detox-list');
+  if (store.detox.length === 0) {
+    list.innerHTML = `<div class="text-center py-6 text-[#6b614f] italic text-sm">No active challenges. Add one above.</div>`;
+    return;
+  }
+  list.innerHTML = store.detox.map((d, i) => `
+    <div class="flex items-center gap-3 p-3 rounded-lg bg-white/[0.02] border border-[#3a2e1f]/50">
+      <div class="check-btn ${d.active ? 'checked' : ''}" onclick="toggleDetox(${i})"></div>
+      <input type="text" class="flex-1 bg-transparent border-none outline-none text-sm text-[#f4ead8]" value="${escapeHtml(d.text)}" onchange="updateDetox(${i}, this.value)">
+      <button onclick="removeDetox(${i})" class="remove-btn"><i class="fas fa-times"></i></button>
+    </div>
+  `).join('');
+}
+function toggleDetox(i) { store.detox[i].active = !store.detox[i].active; save(); renderDetox(); }
+function updateDetox(i, text) { store.detox[i].text = text; save(); }
+function addDetox() { store.detox.push({ text: 'New challenge — click to edit', active: true }); save(); renderDetox(); }
+function removeDetox(i) { store.detox.splice(i, 1); save(); renderDetox(); }
+
+// ============ SCREEN TIME ============
+function setupScreenTime() {
+  const today = new Date().toDateString();
+  const todayEntry = store.screenTime.find(s => s.date === today);
+  if (todayEntry) {
+    document.getElementById('screen-hours').value = todayEntry.hours;
+    document.getElementById('screen-minutes').value = todayEntry.minutes;
+  }
+  ['screen-hours', 'screen-minutes'].forEach(id => {
+    document.getElementById(id).addEventListener('input', () => {
+      const h = parseInt(document.getElementById('screen-hours').value) || 0;
+      const m = parseInt(document.getElementById('screen-minutes').value) || 0;
+      const today = new Date().toDateString();
+      store.screenTime = store.screenTime.filter(s => s.date !== today);
+      store.screenTime.push({ date: today, hours: h, minutes: m });
+      save();
+      updateScreenStreak();
+    });
+  });
+  updateScreenStreak();
+}
+function updateScreenStreak() {
+  const el = document.getElementById('screen-streak');
+  if (store.screenTime.length === 0) { el.textContent = 'No entries yet'; return; }
+  const last = store.screenTime[store.screenTime.length - 1];
+  el.textContent = `Today: ${last.hours}h ${last.minutes}m logged`;
+}
+
+// ============ REFLECTION ============
+function renderReflectionTabs() {
+  const tabs = document.getElementById('reflection-tabs');
+  tabs.innerHTML = Object.entries(store.questions).map(([key, q]) => `
+    <div class="tab ${key === store.activeTab ? 'active' : ''}" onclick="setTab('${key}')">
+      <i class="fas ${q.icon} mr-2" style="color: ${q.color}"></i>${q.title}
+    </div>
+  `).join('');
+  renderReflectionContent();
+}
+function setTab(key) { store.activeTab = key; save(); renderReflectionTabs(); }
+function renderReflectionContent() {
+  const content = document.getElementById('reflection-content');
+  const q = store.questions[store.activeTab];
+  if (!store.questionAnswers[store.activeTab]) store.questionAnswers[store.activeTab] = {};
+  const answers = store.questionAnswers[store.activeTab];
+  if (q.items.length === 0) {
+    content.innerHTML = `<div class="card p-12 text-center"><p class="text-[#6b614f] italic">No questions in this category yet. Add your own below.</p></div>`;
+    return;
+  }
+  content.innerHTML = q.items.map((item, i) => `
+    <div class="question-card mb-4">
+      <div class="flex items-start justify-between mb-3 gap-3">
+        <h4 class="font-serif text-lg italic text-[#f4ead8] flex-1">${escapeHtml(item)}</h4>
+        <button onclick="removeQuestion(${i})" class="remove-btn" title="Remove this question">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <textarea class="textarea input w-full p-3 rounded-lg" 
+                placeholder="Write your honest answer..."
+                data-question-index="${i}">${escapeHtml(answers[i])}</textarea>
+    </div>
+  `).join('');
+  content.querySelectorAll('[data-question-index]').forEach(el => {
+    el.addEventListener('input', e => {
+      if (!store.questionAnswers[store.activeTab]) store.questionAnswers[store.activeTab] = {};
+      store.questionAnswers[store.activeTab][e.target.dataset.questionIndex] = e.target.value;
+      save();
+      updateStats();
+    });
+  });
+}
+function removeQuestion(i) {
+  store.questions[store.activeTab].items.splice(i, 1);
+  // Reindex answers
+  if (store.questionAnswers[store.activeTab]) {
+    const old = store.questionAnswers[store.activeTab];
+    const newAns = {};
+    Object.keys(old).forEach(k => {
+      const ki = parseInt(k);
+      if (ki < i) newAns[ki] = old[k];
+      else if (ki > i) newAns[ki - 1] = old[k];
+    });
+    store.questionAnswers[store.activeTab] = newAns;
+  }
+  save();
+  renderReflectionContent();
+  toast('Question removed.');
+}
+function addCustomQuestion() {
+  const input = document.getElementById('new-question-text');
+  const text = input.value.trim();
+  if (!text) { toast('Write a question first.'); return; }
+  store.questions[store.activeTab].items.push(text);
+  save();
+  input.value = '';
+  renderReflectionContent();
+  toast('Question added to ' + store.questions[store.activeTab].title);
+}
+
+// ============ RULES ============
+function renderRules() {
+  const list = document.getElementById('rules-list');
+  const filtered = store.ruleFilter === 'all' ? store.rules : store.rules.filter(r => r.tag === store.ruleFilter);
+  if (filtered.length === 0) {
+    list.innerHTML = `<div class="md:col-span-2 text-center py-12 text-[#6b614f] italic">No rules in this category yet. Add one above.</div>`;
+  } else {
+    list.innerHTML = filtered.map(r => {
+      const idx = store.rules.indexOf(r);
+      return `
+      <div class="card p-5 flex items-start gap-3">
+        <div class="text-2xl text-[#e0a96d] font-serif italic mt-1">§</div>
+        <div class="flex-1">
+          <input type="text" class="bg-transparent border-none outline-none w-full text-[#f4ead8] font-serif italic text-lg" 
+                 value="${escapeHtml(r.text)}" 
+                 onchange="updateRule(${idx}, this.value)">
+          <div class="mt-3">
+            <span class="tag tag-${r.tag}">${r.tag}</span>
+          </div>
+        </div>
+        <button onclick="removeRule(${idx})" class="remove-btn"><i class="fas fa-times"></i></button>
+      </div>`;
+    }).join('');
+  }
+  document.getElementById('stat-rules').textContent = store.rules.length;
+}
+function addRule() {
+  const text = document.getElementById('new-rule').value.trim();
+  if (!text) { toast('Write a rule first.'); return; }
+  const tag = document.getElementById('new-rule-tag').value;
+  store.rules.push({ text, tag });
+  save();
+  document.getElementById('new-rule').value = '';
+  renderRules();
+  toast('Rule added.');
+}
+function updateRule(i, text) { store.rules[i].text = text; save(); }
+function removeRule(i) { store.rules.splice(i, 1); save(); renderRules(); }
+
+function setupRuleFilters() {
+  document.querySelectorAll('#rule-filters .filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#rule-filters .filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      store.ruleFilter = btn.dataset.filter;
+      save();
+      renderRules();
+    });
+  });
+}
+
+// ============ FUTURE SELF ============
+function setupFuture() {
+  document.querySelectorAll('[data-future]').forEach(el => {
+    el.value = store.future[el.dataset.future] || '';
+    el.addEventListener('input', e => {
+      store.future[e.target.dataset.future] = e.target.value;
+      save();
+    });
+  });
+}
+
+// ============ EMERGENCY ============
+function setupEmergency() {
+  document.querySelectorAll('[data-emergency]').forEach(el => {
+    el.value = store.emergency[el.dataset.emergency] || '';
+    el.addEventListener('input', e => {
+      store.emergency[e.target.dataset.emergency] = e.target.value;
+      save();
+    });
+  });
+}
+function openEmergency() {
+  document.getElementById('emergency-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeEmergency() {
+  document.getElementById('emergency-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// ============ MOTTO ============
+function setupMotto() {
+  const m = document.getElementById('motto');
+  m.value = store.motto || '';
+  m.addEventListener('input', e => { store.motto = e.target.value; save(); });
+}
+
+// ============ BREATHING ============
+function setupBreathing() {
+  const text = document.getElementById('breath-text');
+  const phases = ['Breathe in...', 'Hold...', 'Breathe out...', 'Hold...'];
+  let i = 0;
+  setInterval(() => { i = (i + 1) % phases.length; text.textContent = phases[i]; }, 4000);
+}
+
+// ============ STATS ============
+function updateStats() {
+  let count = 0;
+  Object.values(store.questionAnswers).forEach(cat => {
+    Object.values(cat).forEach(v => { if (v && v.trim()) count++; });
+  });
+  document.getElementById('stat-reflections').textContent = count;
+  // Day streak - days since first visit
+  const firstVisit = localStorage.getItem('life_os_first_visit');
+  if (!firstVisit) {
+    localStorage.setItem('life_os_first_visit', new Date().toDateString());
+    document.getElementById('stat-streak').textContent = '1';
+  } else {
+    const days = Math.floor((new Date() - new Date(firstVisit)) / (1000*60*60*24)) + 1;
+    document.getElementById('stat-streak').textContent = days;
+  }
+}
+
+// ============ CONSTELLATION ============
+function makeConstellation() {
+  const c = document.getElementById('constellation');
+  for (let i = 0; i < 35; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.animationDelay = Math.random() * 3 + 's';
+    star.style.opacity = 0.3 + Math.random() * 0.7;
+    c.appendChild(star);
+  }
+}
+
+// ============ REVEAL ============
+function setupReveal() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+// ============ NAV SCROLL ============
+function setupNavScroll() {
+  const sections = ['hero', 'life-map', 'identity', 'reflection', 'rules', 'future-self'];
+  const links = document.querySelectorAll('.nav-link');
+  window.addEventListener('scroll', () => {
+    let current = 'hero';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 200) current = id;
+    });
+    links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+  });
+}
+
+// ============ EXPORT ============
+function exportData() {
+  const blob = new Blob([JSON.stringify(store, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `life_os_manual_${new Date().toISOString().split('T')[0]}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  toast('Your manual has been exported.');
+}
+
+// ============ KEYBOARD ============
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeEmergency();
+});
+
+// ============ INIT ============
+document.getElementById('year').textContent = new Date().getFullYear();
+renderLifeMap();
+renderIdentity();
+renderDetox();
+setupScreenTime();
+renderInsight();
+renderReflectionTabs();
+renderRules();
+setupRuleFilters();
+setupFuture();
+setupEmergency();
+setupMotto();
+setupBreathing();
+makeConstellation();
+setupReveal();
+setupNavScroll();
+updateStats();
+</script>
+</body>
+</html>

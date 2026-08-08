@@ -1,0 +1,502 @@
+   400→   400→        <div class="font-serif italic text-lg leading-none">Life_OS</div>
+   401→   401→        <div class="text-[10px] tracking-[0.3em] uppercase text-[#a89a82] mt-1">Your Manual</div>
+   402→   402→      </div>
+   403→   403→    </div>
+   404→   404→    <div class="nav-links hidden md:flex items-center gap-8">
+   405→   405→      <a href="#hero" class="nav-link active">Home</a>
+   406→   406→      <a href="#life-map" class="nav-link">Life Map</a>
+   407→   407→      <a href="#identity" class="nav-link">Identity</a>
+   408→   408→      <a href="#reflection" class="nav-link">Reflection</a>
+   409→   409→      <a href="#rules" class="nav-link">Rules</a>
+   410→   410→      <a href="#future-self" class="nav-link">Future Self</a>
+   411→   411→    </div>
+   412→   412→    <button onclick="openEmergency()" class="btn-ghost text-xs">
+   413→   413→      <i class="fas fa-life-ring"></i>
+   414→   414→      <span class="hidden sm:inline">Emergency</span>
+   415→   415→    </button>
+   416→   416→  </div>
+   417→   417→</nav>
+   418→   418→
+   419→   419→<main class="max-w-7xl mx-auto px-6">
+   420→   420→
+   421→   421→  <!-- HERO -->
+   422→   422→  <section id="hero" class="min-h-[88vh] flex flex-col justify-center py-20 relative">
+   423→   423→    <div class="constellation" id="constellation"></div>
+   424→   424→    <div class="max-w-4xl relative">
+   425→   425→      <div class="section-eyebrow mb-6">A Manual For Living Intentionally</div>
+   426→   426→      <h1 class="hero-title text-6xl md:text-8xl mb-8">
+   427→   427→        Design your life,<br>
+   428→   428→        <em>not someone else's.</em>
+   429→   429→      </h1>
+   430→   430→      <p class="text-xl text-[#a89a82] max-w-2xl leading-relaxed mb-10 font-light">
+   431→   431→        Most people drift because they never wrote down who they want to become.
+   432→   432→        This is your operating system — a place to define your direction,
+   433→   433→        build your identity, and reflect with radical honesty.
+   434→   434→      </p>
+   435→   435→      <div class="flex flex-wrap gap-4 mb-16">
+   436→   436→        <a href="#life-map" class="btn-primary">Begin Mapping <i class="fas fa-arrow-right text-xs"></i></a>
+   437→   437→        <a href="#identity" class="btn-ghost">Build Identity</a>
+   438→   438→      </div>
+   439→   439→      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 border-t border-[#3a2e1f]/50">
+   440→   440→        <div>
+   441→   441→          <div class="stat-number text-5xl text-[#e0a96d]" id="stat-identity">0</div>
+   442→   442→          <div class="text-xs uppercase tracking-wider text-[#a89a82] mt-2">Identity Statements</div>
+   443→   443→        </div>
+   444→   444→        <div>
+   445→   445→          <div class="stat-number text-5xl text-[#e0a96d]" id="stat-rules">0</div>
+   446→   446→          <div class="text-xs uppercase tracking-wider text-[#a89a82] mt-2">Personal Rules</div>
+   447→   447→        </div>
+   448→   448→        <div>
+   449→   449→          <div class="stat-number text-5xl text-[#e0a96d]" id="stat-reflections">0</div>
+   450→   450→          <div class="text-xs uppercase tracking-wider text-[#a89a82] mt-2">Reflections Written</div>
+   451→   451→        </div>
+   452→   452→        <div>
+   453→   453→          <div class="stat-number text-5xl text-[#e0a96d]" id="stat-streak">1</div>
+   454→   454→          <div class="text-xs uppercase tracking-wider text-[#a89a82] mt-2">Day Present</div>
+   455→   455→        </div>
+   456→   456→      </div>
+   457→   457→    </div>
+   458→   458→  </section>
+   459→   459→
+   460→   460→  <!-- LIFE MAP -->
+   461→   461→  <section id="life-map" class="py-24 reveal">
+   462→   462→    <div class="mb-16">
+   463→   463→      <div class="section-eyebrow mb-4">Chapter I</div>
+   464→   464→      <h2 class="section-title text-5xl md:text-6xl mb-4">The Life Map</h2>
+   465→   465→      <div class="accent-line"></div>
+   466→   466→      <p class="text-[#a89a82] max-w-2xl mt-6 text-lg leading-relaxed">
+   467→   467→        A place where you design your future. Direction is the cure for distraction —
+   468→   468→        answer these honestly, and revisit them often. Clarity here will pull you forward when motivation fails.
+   469→   469→      </p>
+   470→   470→    </div>
+   471→   471→    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="life-map-grid"></div>
+   472→   472→  </section>
+   473→   473→
+   474→   474→  <!-- IDENTITY BUILDER -->
+   475→   475→  <section id="identity" class="py-24 reveal">
+   476→   476→    <div class="mb-16">
+   477→   477→      <div class="section-eyebrow mb-4">Chapter II</div>
+   478→   478→      <h2 class="section-title text-5xl md:text-6xl mb-4">Identity Builder</h2>
+   479→   479→      <div class="accent-line"></div>
+   480→   480→      <p class="text-[#a89a82] max-w-2xl mt-6 text-lg leading-relaxed">
+   481→   481→        Don't say "I want to wake up early." Say <em class="text-[#e0a96d]">"I am someone who respects my time."</em>
+   482→   482→        Behavior follows identity. Define who you are — then ask each night if today's actions matched that person.
+   483→   483→      </p>
+   484→   484→    </div>
+   485→   485→
+   486→   486→    <!-- Daily check -->
+   487→   487→    <div class="card p-8 mb-10">
+   488→   488→      <div class="flex flex-col md:flex-row items-center gap-8">
+   489→   489→        <div class="identity-orb" id="identity-orb">
+   490→   490→          <span id="identity-percent">0%</span>
+   491→   491→        </div>
+   492→   492→        <div class="flex-1 text-center md:text-left">
+   493→   493→          <div class="section-eyebrow mb-2">Tonight's Question</div>
+   494→   494→          <h3 class="font-serif text-2xl md:text-3xl mb-2 italic">Did today's actions match your identity?</h3>
+   495→   495→          <p class="text-[#a89a82] text-sm">Check each statement you lived up to today. Be honest — this is for you, not for show.</p>
+   496→   496→        </div>
+   497→   497→        <div class="text-center md:text-right">
+   498→   498→          <div class="text-xs uppercase tracking-wider text-[#a89a82] mb-1">Last check</div>
+   499→   499→          <div class="text-sm text-[#f4ead8]" id="last-check-date">Not yet today</div>
+   500→   500→          <div class="flex items-center gap-2 justify-center md:justify-end mt-2">
+   501→   501→            <div class="saved-dot"></div>
+   502→   502→            <span class="text-xs text-[#8aa884]">Auto-saved</span>
+   503→   503→          </div>
+   504→   504→        </div>
+   505→   505→      </div>
+   506→   506→    </div>
+   507→   507→
+   508→   508→    <!-- Identity statements -->
+   509→   509→    <div class="mb-6 flex items-center justify-between">
+   510→   510→      <h3 class="font-serif text-2xl italic">Your Identity Statements</h3>
+   511→   511→      <button onclick="addIdentity()" class="btn-ghost text-xs">
+   512→   512→        <i class="fas fa-plus"></i> New Statement
+   513→   513→      </button>
+   514→   514→    </div>
+   515→   515→    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12" id="identity-list"></div>
+   516→   516→
+   517→   517→    <!-- Screen time + Urge journal -->
+   518→   518→    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+   519→   519→      <div class="card p-6">
+   520→   520→        <div class="flex items-center gap-3 mb-4">
+   521→   521→          <div class="w-10 h-10 rounded-lg bg-[#c97b4a]/20 flex items-center justify-center">
+   522→   522→            <i class="fas fa-mobile-screen text-[#c97b4a]"></i>
+   523→   523→          </div>
+   524→   524→          <h4 class="font-serif text-xl italic">Screen Time Today</h4>
+   525→   525→        </div>
+   526→   526→        <p class="text-xs text-[#a89a82] mb-4">Track honestly. Awareness is the first step toward change.</p>
+   527→   527→        <div class="flex gap-2 items-center">
+   528→   528→          <input type="number" min="0" max="24" id="screen-hours" class="input w-20 px-3 py-2 rounded-lg text-center" placeholder="0">
+   529→   529→          <span class="text-[#a89a82] text-sm">hrs</span>
+   530→   530→          <input type="number" min="0" max="59" id="screen-minutes" class="input w-20 px-3 py-2 rounded-lg text-center" placeholder="0">
+   531→   531→          <span class="text-[#a89a82] text-sm">min</span>
+   532→   532→        </div>
+   533→   533→        <div class="mt-4 text-xs text-[#a89a82]" id="screen-streak">No entries yet</div>
+   534→   534→      </div>
+   535→   535→
+   536→   536→      <div class="card p-6">
+   537→   537→        <div class="flex items-center gap-3 mb-4">
+   538→   538→          <div class="w-10 h-10 rounded-lg bg-[#c97b5a]/20 flex items-center justify-center">
+   539→   539→            <i class="fas fa-wind text-[#c97b5a]"></i>
+   540→   540→          </div>
+   541→   541→          <h4 class="font-serif text-xl italic">Urge Journal</h4>
+   542→   542→        </div>
+   543→   543→        <p class="text-xs text-[#a89a82] mb-4">When the urge hit, what happened? Patterns will reveal themselves.</p>
+   544→   544→        <div class="space-y-2">
+   545→   545→          <input type="text" id="urge-trigger" class="input w-full px-3 py-2 rounded-lg text-sm" placeholder="What triggered me?">
+   546→   546→          <input type="text" id="urge-emotion" class="input w-full px-3 py-2 rounded-lg text-sm" placeholder="What emotion was I feeling?">
+   547→   547→          <input type="text" id="urge-choice" class="input w-full px-3 py-2 rounded-lg text-sm" placeholder="What did I choose instead?">
+   548→   548→        </div>
+   549→   549→        <button onclick="saveUrge()" class="btn-primary mt-4 text-xs py-2 px-4">Log Entry</button>
+   550→   550→      </div>
+   551→   551→    </div>
+   552→   552→
+   553→   553→    <!-- Pattern insight -->
+   554→   554→    <div id="insight-container" class="mb-6"></div>
+   555→   555→
+   556→   556→    <!-- Digital detox -->
+   557→   557→    <div class="card p-6">
+   558→   558→      <div class="flex items-center justify-between mb-4 flex-wrap gap-3">
+   559→   559→        <div class="flex items-center gap-3">
+   560→   560→          <div class="w-10 h-10 rounded-lg bg-[#8aa884]/20 flex items-center justify-center">
+   561→   561→            <i class="fas fa-leaf text-[#8aa884]"></i>
+   562→   562→          </div>
+   563→   563→          <h4 class="font-serif text-xl italic">Digital Detox Challenges</h4>
+   564→   564→        </div>
+   565→   565→        <button onclick="addDetox()" class="btn-ghost text-xs">
+   566→   566→          <i class="fas fa-plus"></i> Add Challenge
+   567→   567→        </button>
+   568→   568→      </div>
+   569→   569→      <div id="detox-list" class="space-y-2"></div>
+   570→   570→    </div>
+   571→   571→  </section>
+   572→   572→
+   573→   573→  <!-- REFLECTION -->
+   574→   574→  <section id="reflection" class="py-24 reveal">
+   575→   575→    <div class="mb-16">
+   576→   576→      <div class="section-eyebrow mb-4">Chapter III</div>
+   577→   577→      <h2 class="section-title text-5xl md:text-6xl mb-4">Reflection</h2>
+   578→   578→      <div class="accent-line"></div>
+   579→   579→      <p class="text-[#a89a82] max-w-2xl mt-6 text-lg leading-relaxed">
+   580→   580→        Six collections of questions. Defaults are here to start — remove what
+   581→   581→        doesn't serve you, add what does. Over time, patterns emerge. Insight beats information.
+   582→   582→      </p>
+   583→   583→    </div>
+   584→   584→    <div class="tabs-strip flex gap-2 overflow-x-auto border-b border-[#3a2e1f]/50 mb-8 pb-px" id="reflection-tabs"></div>
+   585→   585→    <div id="reflection-content"></div>
+   586→   586→    <div class="mt-8 card p-6">
+   587→   587→      <h4 class="font-serif text-lg italic mb-3">Add Your Own Question to This Category</h4>
+   588→   588→      <div class="flex gap-3 flex-wrap">
+   589→   589→        <input type="text" id="new-question-text" class="input flex-1 px-4 py-3 rounded-lg min-w-[200px]" placeholder="What do you need to ask yourself?">
+   590→   590→        <button onclick="addCustomQuestion()" class="btn-primary">Add Question</button>
+   591→   591→      </div>
+   592→   592→    </div>
+   593→   593→  </section>
+   594→   594→
+   595→   595→  <!-- PERSONAL RULES -->
+   596→   596→  <section id="rules" class="py-24 reveal">
+   597→   597→    <div class="mb-16">
+   598→   598→      <div class="section-eyebrow mb-4">Chapter IV</div>
+   599→   599→      <h2 class="section-title text-5xl md:text-6xl mb-4">Personal Rules</h2>
+   600→   600→      <div class="accent-line"></div>
+   601→   601→      <p class="text-[#a89a82] max-w-2xl mt-6 text-lg leading-relaxed">
+   602→   602→        Rules are decisions made in advance. When emotion tries to override reason,
+   603→   603→        these are what you return to. Tag them, refine them, live by them.
+   604→   604→      </p>
+   605→   605→    </div>
+   606→   606→    <div class="card p-6 mb-8">
+   607→   607→      <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+   608→   608→        <input type="text" id="new-rule" class="input md:col-span-7 px-4 py-3 rounded-lg" placeholder="e.g., No phone during meals.">
+   609→   609→        <select id="new-rule-tag" class="input md:col-span-3 px-4 py-3 rounded-lg">
+   610→   610→          <option value="health">Health</option>
+   611→   611→          <option value="relationships">Relationships</option>
+   612→   612→          <option value="productivity">Productivity</option>
+   613→   613→          <option value="money">Money</option>
+   614→   614→          <option value="learning">Learning</option>
+   615→   615→          <option value="mind">Mind</option>
+   616→   616→        </select>
+   617→   617→        <button onclick="addRule()" class="btn-primary md:col-span-2 justify-center">Add Rule</button>
+   618→   618→      </div>
+   619→   619→    </div>
+   620→   620→    <div class="flex flex-wrap gap-2 mb-6" id="rule-filters">
+   621→   621→      <button class="tag filter-btn active" data-filter="all">All</button>
+   622→   622→      <button class="tag tag-health filter-btn" data-filter="health">Health</button>
+   623→   623→      <button class="tag tag-relationships filter-btn" data-filter="relationships">Relationships</button>
+   624→   624→      <button class="tag tag-productivity filter-btn" data-filter="productivity">Productivity</button>
+   625→   625→      <button class="tag tag-money filter-btn" data-filter="money">Money</button>
+   626→   626→      <button class="tag tag-learning filter-btn" data-filter="learning">Learning</button>
+   627→   627→      <button class="tag tag-mind filter-btn" data-filter="mind">Mind</button>
+   628→   628→    </div>
+   629→   629→    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="rules-list"></div>
+   630→   630→  </section>
+   631→   631→
+   632→   632→  <!-- FUTURE SELF -->
+   633→   633→  <section id="future-self" class="py-24 reveal">
+   634→   634→    <div class="mb-16">
+   635→   635→      <div class="section-eyebrow mb-4">Chapter V</div>
+   636→   636→      <h2 class="section-title text-5xl md:text-6xl mb-4">Future Self</h2>
+   637→   637→      <div class="accent-line"></div>
+   638→   638→      <p class="text-[#a89a82] max-w-2xl mt-6 text-lg leading-relaxed">
+   639→   639→        A conversation across time. The person you become is being built right now,
+   640→   640→        by every choice you make today.
+   641→   641→      </p>
+   642→   642→    </div>
+   643→   643→    <div class="card p-8 md:p-12">
+   644→   644→      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+   645→   645→        <div>
+   646→   646→          <div class="quote-mark mb-2">"</div>
+   647→   647→          <h4 class="font-serif text-2xl italic mb-4 text-[#e0a96d]">From your future self</h4>
+   648→   648→          <p class="text-[#a89a82] text-sm leading-relaxed mb-6">
+   649→   649→            Imagine yourself ten years from today, looking back at this exact moment.
+   650→   650→            What would they say? What would they thank you for? What would they beg you to start — or stop — right now?
+   651→   651→          </p>
+   652→   652→          <div class="space-y-5">
+   653→   653→            <div>
+   654→   654→              <label class="text-xs uppercase tracking-wider text-[#e0a96d] block mb-2">What would my future self tell me right now?</label>
+   655→   655→              <textarea class="textarea input w-full p-3 rounded-lg" data-future="future-message" placeholder="Listen carefully..."></textarea>
+   656→   656→            </div>
+   657→   657→            <div>
+   658→   658→              <label class="text-xs uppercase tracking-wider text-[#e0a96d] block mb-2">If I keep my current habits for 5 years, where will I end up?</label>
+   659→   659→              <textarea class="textarea input w-full p-3 rounded-lg" data-future="five-year-habits" placeholder="Be brutally honest..."></textarea>
+   660→   660→            </div>
+   661→   661→          </div>
+   662→   662→        </div>
+   663→   663→        <div>
+   664→   664→          <div class="quote-mark mb-2 text-[#8aa884]">"</div>
+   665→   665→          <h4 class="font-serif text-2xl italic mb-4 text-[#8aa884]">From your younger self</h4>
+   666→   666→          <p class="text-[#a89a82] text-sm leading-relaxed mb-6">
+   667→   667→            The child you once were had dreams without limits. The version of you from
+   668→   668→            five years ago had lessons to learn. Listen to them both.
+   669→   669→          </p>
+   670→   670→          <div class="space-y-5">
+   671→   671→            <div>
+   672→   672→              <label class="text-xs uppercase tracking-wider text-[#8aa884] block mb-2">What advice would my younger self need?</label>
+   673→   673→              <textarea class="textarea input w-full p-3 rounded-lg" data-future="younger-advice" placeholder="Speak kindly..."></textarea>
+   674→   674→            </div>
+   675→   675→            <div>
+   676→   676→              <label class="text-xs uppercase tracking-wider text-[#8aa884] block mb-2">What skill should I start learning today?</label>
+   677→   677→              <textarea class="textarea input w-full p-3 rounded-lg" data-future="skill-today" placeholder="Begin before you're ready..."></textarea>
+   678→   678→            </div>
+   679→   679→          </div>
+   680→   680→        </div>
+   681→   681→      </div>
+   682→   682→    </div>
+   683→   683→  </section>
+   684→   684→
+   685→   685→  <!-- MOTTO -->
+   686→   686→  <section class="py-24 reveal">
+   687→   687→    <div class="card p-12 md:p-20 text-center relative overflow-hidden">
+   688→   688→      <div class="absolute inset-0 bg-gradient-to-br from-[#e0a96d]/8 to-transparent"></div>
+   689→   689→      <div class="relative">
+   690→   690→        <div class="section-eyebrow mb-6">Your Personal Motto</div>
+   691→   691→        <input type="text" id="motto" class="bg-transparent text-center font-serif italic text-3xl md:text-5xl text-[#f4ead8] border-none outline-none w-full placeholder-[#6b614f] placeholder:italic" placeholder="Write the words you live by...">
+   692→   692→        <div class="accent-line mx-auto mt-8" style="margin-left:auto;margin-right:auto;"></div>
+   693→   693→        <p class="text-[#a89a82] text-sm mt-6 max-w-lg mx-auto">A single sentence to return to when the world gets loud. Let it anchor you.</p>
+   694→   694→      </div>
+   695→   695→    </div>
+   696→   696→  </section>
+   697→   697→
+   698→   698→</main>
+   699→   699→
+   700→   700→<!-- FOOTER -->
+   701→   701→<footer class="border-t border-[#3a2e1f]/50 mt-12 py-12">
+   702→   702→  <div class="max-w-7xl mx-auto px-6">
+   703→   703→    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+   704→   704→      <div>
+   705→   705→        <div class="font-serif italic text-2xl mb-3">Life_OS</div>
+   706→   706→        <p class="text-sm text-[#a89a82] leading-relaxed">
+   707→   707→          A manual for intentional living. Built for those who refuse to drift through their one precious life.
+   708→   708→        </p>
+   709→   709→      </div>
+   710→   710→      <div>
+   711→   711→        <div class="text-xs uppercase tracking-wider text-[#e0a96d] mb-3">Reminder</div>
+   712→   712→        <p class="text-sm text-[#a89a82] leading-relaxed italic">
+   713→   713→          "You are the author of your life. Don't let someone else hold the pen."
+   714→   714→        </p>
+   715→   715→      </div>
+   716→   716→      <div>
+   717→   717→        <div class="text-xs uppercase tracking-wider text-[#e0a96d] mb-3">Your Data</div>
+   718→   718→        <p class="text-sm text-[#a89a82] leading-relaxed mb-3">
+   719→   719→          Everything stays in your browser. Nothing is sent anywhere. Only you can read this.
+   720→   720→        </p>
+   721→   721→        <button onclick="exportData()" class="btn-ghost text-xs">
+   722→   722→          <i class="fas fa-download"></i> Export My Manual
+   723→   723→        </button>
+   724→   724→      </div>
+   725→   725→    </div>
+   726→   726→    <div class="pt-6 border-t border-[#3a2e1f]/50 flex flex-col md:flex-row justify-between items-center gap-3">
+   727→   727→      <div class="text-xs text-[#6b614f]">
+   728→   728→        © <span id="year"></span> Life_OS · Crafted with intention
+   729→   729→      </div>
+   730→   730→      <div class="text-xs text-[#6b614f]">© Adeshjeet_Official</div>
+   731→   731→    </div>
+   732→   732→  </div>
+   733→   733→</footer>
+   734→   734→
+   735→   735→<!-- EMERGENCY OVERLAY -->
+   736→   736→<div class="emergency-overlay" id="emergency-overlay">
+   737→   737→  <div class="max-w-4xl mx-auto px-6 py-16">
+   738→   738→    <div class="flex justify-between items-center mb-12">
+   739→   739→      <div>
+   740→   740→        <div class="section-eyebrow mb-2">Emergency Page</div>
+   741→   741→        <h2 class="font-serif italic text-4xl text-[#f4ead8]">You are not lost.</h2>
+   742→   742→      </div>
+   743→   743→      <button onclick="closeEmergency()" class="btn-ghost">
+   744→   744→        <i class="fas fa-times"></i> Close
+   745→   745→      </button>
+   746→   746→    </div>
+   747→   747→
+   748→   748→    <div class="flex flex-col items-center mb-16">
+   749→   749→      <div class="breath-circle">
+   750→   750→        <div class="text-center">
+   751→   751→          <div class="font-serif italic text-xl text-[#e0a96d]" id="breath-text">Breathe in</div>
+   752→   752→        </div>
+   753→   753→      </div>
+   754→   754→      <p class="text-[#a89a82] text-sm mt-6 max-w-md text-center leading-relaxed">
+   755→   755→        Before you read on, breathe. Four seconds in. Four seconds out.
+   756→   756→        You came here for a reason — and that reason is already passing.
+   757→   757→      </p>
+   758→   758→    </div>
+   759→   759→
+   760→   760→    <div class="space-y-5">
+   761→   761→      <div class="card p-6">
+   762→   762→        <div class="flex items-center gap-3 mb-3">
+   763→   763→          <i class="fas fa-fire text-[#e0a96d]"></i>
+   764→   764→          <h3 class="font-serif text-xl italic">Why am I fighting for my goals?</h3>
+   765→   765→        </div>
+   766→   766→        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="why-fighting" placeholder="The reason has to be bigger than the resistance..."></textarea>
+   767→   767→      </div>
+   768→   768→      <div class="card p-6">
+   769→   769→        <div class="flex items-center gap-3 mb-3">
+   770→   770→          <i class="fas fa-heart text-[#d97a8e]"></i>
+   771→   771→          <h3 class="font-serif text-xl italic">Who loves and supports me?</h3>
+   772→   772→        </div>
+   773→   773→        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="who-loves" placeholder="Names, faces, the people who would show up..."></textarea>
+   774→   774→      </div>
+   775→   775→      <div class="card p-6">
+   776→   776→        <div class="flex items-center gap-3 mb-3">
+   777→   777→          <i class="fas fa-trophy text-[#c9a96e]"></i>
+   778→   778→          <h3 class="font-serif text-xl italic">My proudest moments</h3>
+   779→   779→        </div>
+   780→   780→        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="proudest" placeholder="Times you surprised yourself. Times you didn't quit..."></textarea>
+   781→   781→      </div>
+   782→   782→      <div class="card p-6">
+   783→   783→        <div class="flex items-center gap-3 mb-3">
+   784→   784→          <i class="fas fa-mountain text-[#8aa884]"></i>
+   785→   785→          <h3 class="font-serif text-xl italic">Problems I have already overcome</h3>
+   786→   786→        </div>
+   787→   787→        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="overcome" placeholder="Things that once felt impossible..."></textarea>
+   788→   788→      </div>
+   789→   789→      <div class="card p-6">
+   790→   790→        <div class="flex items-center gap-3 mb-3">
+   791→   791→          <i class="fas fa-seedling text-[#8aa884]"></i>
+   792→   792→          <h3 class="font-serif text-xl italic">Things worth living for</h3>
+   793→   793→        </div>
+   794→   794→        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="worth-living" placeholder="Small things. Big things. The taste of morning coffee..."></textarea>
+   795→   795→      </div>
+   796→   796→      <div class="card p-6">
+   797→   797→        <div class="flex items-center gap-3 mb-3">
+   798→   798→          <i class="fas fa-quote-right text-[#e0a96d]"></i>
+   799→   799→          <h3 class="font-serif text-xl italic">My personal motto</h3>
+   800→   800→        </div>
+   801→   801→        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="motto" placeholder="The words that bring you back..."></textarea>
+   802→   802→      </div>
+   803→   803→
+   804→   804→      <div class="card p-6" style="background: linear-gradient(135deg, rgba(138, 168, 132, 0.08), rgba(138, 168, 132, 0.01)); border-color: rgba(138, 168, 132, 0.3);">
+   805→   805→        <div class="flex items-center gap-3 mb-4">
+   806→   806→          <i class="fas fa-hand-holding-heart text-[#8aa884]"></i>
+   807→   807→          <h3 class="font-serif text-xl italic text-[#8aa884]">Grounding — 5-4-3-2-1</h3>
+   808→   808→        </div>
+   809→   809→        <p class="text-sm text-[#a89a82] mb-4">Name out loud, right now:</p>
+   810→   810→        <ul class="space-y-2 text-sm text-[#f4ead8]">
+   811→   811→          <li class="flex gap-3"><span class="text-[#8aa884] font-bold w-4">5</span> things you can see around you</li>
+   812→   812→          <li class="flex gap-3"><span class="text-[#8aa884] font-bold w-4">4</span> things you can touch</li>
+   813→   813→          <li class="flex gap-3"><span class="text-[#8aa884] font-bold w-4">3</span> things you can hear</li>
+   814→   814→          <li class="flex gap-3"><span class="text-[#8aa884] font-bold w-4">2</span> things you can smell</li>
+   815→   815→          <li class="flex gap-3"><span class="text-[#8aa884] font-bold w-4">1</span> thing you can taste</li>
+   816→   816→        </ul>
+   817→   817→      </div>
+   818→   818→
+   819→   819→      <div class="text-center pt-8 pb-4">
+   820→   820→        <p class="font-serif italic text-2xl text-[#e0a96d] mb-3">
+   821→   821→          "This feeling is weather. It will pass."
+   822→   822→        </p>
+   823→   823→        <p class="text-sm text-[#a89a82]">
+   824→   824→          You have survived every hard day so far. That is a 100% record.
+   825→   825→        </p>
+   826→   826→      </div>
+   827→   827→    </div>
+   828→   828→  </div>
+   829→   829→</div>
+   830→   830→
+   831→   831→<div class="toast" id="toast"></div>
+   832→   832→
+   833→   833→<script>
+   834→   834→// ============ DATA LAYER ============
+   835→   835→const STORE_KEY = 'life_os_v1';
+   836→   836→let store = loadStore();
+   837→   837→
+   838→   838→function loadStore() {
+   839→   839→  try {
+   840→   840→    const raw = localStorage.getItem(STORE_KEY);
+   841→   841→    if (raw) return { ...getDefaultStore(), ...JSON.parse(raw) };
+   842→   842→  } catch(e) {}
+   843→   843→  return getDefaultStore();
+   844→   844→}
+   845→   845→
+   846→   846→function getDefaultStore() {
+   847→   847→  return {
+   848→   848→    lifeMap: {},
+   849→   849→    identity: [
+   850→   850→      { text: 'I am a disciplined person.', checked: false },
+   851→   851→      { text: 'I finish what I start.', checked: false },
+   852→   852→      { text: 'I protect my mind.', checked: false },
+   853→   853→      { text: 'I learn every day.', checked: false }
+   854→   854→    ],
+   855→   855→    identityLastCheck: null,
+   856→   856→    screenTime: [],
+   857→   857→    urges: [],
+   858→   858→    detox: [
+   859→   859→      { text: 'No phone in the first hour after waking', active: true },
+   860→   860→      { text: 'No phone in bed', active: true },
+   861→   861→      { text: 'One screen-free meal per day', active: false }
+   862→   862→    ],
+   863→   863→    questions: getDefaultQuestions(),
+   864→   864→    questionAnswers: {},
+   865→   865→    rules: [
+   866→   866→      { text: 'No phone during meals.', tag: 'mind' },
+   867→   867→      { text: 'Sleep before 11 PM.', tag: 'health' },
+   868→   868→      { text: 'Never make important decisions when angry.', tag: 'mind' },
+   869→   869→      { text: 'Read before sleeping.', tag: 'learning' },
+   870→   870→      { text: 'Exercise at least three times a week.', tag: 'health' }
+   871→   871→    ],
+   872→   872→    future: {},
+   873→   873→    emergency: {},
+   874→   874→    motto: '',
+   875→   875→    activeTab: 'identity',
+   876→   876→    ruleFilter: 'all'
+   877→   877→  };
+   878→   878→}
+   879→   879→
+   880→   880→function getDefaultQuestions() {
+   881→   881→  return {
+   882→   882→    identity: {
+   883→   883→      title: 'Identity', icon: 'fa-user', color: '#e0a96d',
+   884→   884→      items: [
+   885→   885→        'Who am I becoming?',
+   886→   886→        'What kind of person do I respect?',
+   887→   887→        'What are my three strongest qualities?',
+   888→   888→        'What are my biggest weaknesses?',
+   889→   889→        'What values do I refuse to compromise on?',
+   890→   890→        'What do I want people to remember about me?'
+   891→   891→      ]
+   892→   892→    },
+   893→   893→    triggers: {
+   894→   894→      title: 'Triggers & Emotions', icon: 'fa-bolt', color: '#c97b5a',
+   895→   895→      items: [
+   896→   896→        'What made me anxious today?',
+   897→   897→        'What made me procrastinate?',
+   898→   898→        'What emotion pushed me to open social media?',
+   899→   899→        'Was I bored, lonely, stressed, or avoiding something?',
+
+[showing lines 400-899 of 1419; use offset=900 with limit to continue reading]

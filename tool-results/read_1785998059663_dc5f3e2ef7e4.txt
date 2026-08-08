@@ -1,0 +1,168 @@
+   600→      document.getElementById('auth-screen').classList.remove('hidden');
+   601→      document.getElementById('auth-email').value='';
+   602→      document.getElementById('auth-password').value='';
+   603→      document.getElementById('auth-name').value='';
+   604→      setError('');
+   605→      App.goTo('home');
+   606→    });
+   607→  }
+   608→  function init(){
+   609→    auth.onAuthStateChanged(user=>{
+   610→      if(user){
+   611→        document.getElementById('auth-screen').classList.add('hidden');
+   612→        App.onUserReady();
+   613→      }else{
+   614→        document.getElementById('auth-screen').classList.remove('hidden');
+   615→      }
+   616→    });
+   617→  }
+   618→  return{init,toggleMode,handleAuth,googleSignIn,signOut};
+   619→})();
+   620→
+   621→// ===== Main App =====
+   622→const App=(()=>{
+   623→  let state={entries:{},settings:{theme:'light',fontSize:15,notifEnabled:false,notifTime:'21:00',dailyGoal:100,userName:''},currentViewDate:new Date(),calMonth:new Date().getMonth(),calYear:new Date().getFullYear(),viewingEntryDate:null,previousPage:'home',notifTimer:null,isPremium:false,premiumSource:'',isSyncing:false};
+   624→  const moods=[{key:'great',face:'&#128516;',label:'Great'},{key:'good',face:'&#128578;',label:'Good'},{key:'okay',face:'&#128528;',label:'Okay'},{key:'bad',face:'&#128533;',label:'Bad'},{key:'awful',face:'&#128546;',label:'Awful'}];
+   625→  const stickerCats={'Faces':['&#128512;','&#128513;','&#129392;','&#128526;','&#129300;','&#128564;','&#129321;','&#128524;','&#128545;'],'Nature':['&#127793;','&#127800;','&#127803;','&#127810;','&#127769;','&#11088;','&#127752;','&#129424;','&#127804;'],'Food':['&#9749;','&#127829;','&#127874;','&#127861;','&#127837;','&#129472;','&#127843;','&#129367;','&#127851;'],'Activity':['&#128218;','&#127925;','&#127939;','&#128170;','&#127912;','&#129495;','&#9992;&#65039;','&#127918;','&#128248;'],'Express':['&#10084;&#65039;','&#128149;','&#128171;','&#10024;','&#128293;','&#128175;','&#128591;','&#128157;','&#127801;']};
+   626→  const prompts=["What made you smile today?","Describe a moment of peace you experienced.","What challenge did you face and how did you handle it?","Who are you grateful for today and why?","What's something new you learned?","If you could replay one moment from today, what would it be?","What are you looking forward to tomorrow?","Describe the weather and how it made you feel.","What song or sound stuck with you today?","Write about a small act of kindness you witnessed or did.","What would you tell your future self about today?","What's one thing you'd change about today?","Describe the best meal or drink you had today.","What thought kept coming back to you?","How did you take care of yourself today?","What surprised you today?","Write about a conversation that left an impression.","What are three good things that happened today?","Describe where you spent the most time today.","What made today different from yesterday?"];
+   627→  const toolbarBtns=[{cmd:'bold',icon:'fa-bold'},{cmd:'italic',icon:'fa-italic'},{cmd:'underline',icon:'fa-underline'},{cmd:'strikeThrough',icon:'fa-strikethrough'},{cmd:'|'},{cmd:'formatBlock',val:'H1',icon:'fa-heading'},{cmd:'formatBlock',val:'H2',icon:null,text:'H2'},{cmd:'|'},{cmd:'insertUnorderedList',icon:'fa-list-ul'},{cmd:'insertOrderedList',icon:'fa-list-ol'},{cmd:'formatBlock',val:'BLOCKQUOTE',icon:'fa-quote-left'},{cmd:'|'},{cmd:'removeFormat',icon:'fa-eraser'}];
+   628→  let activeStickerCat=Object.keys(stickerCats)[0];
+   629→  let currentPrompt='';
+   630→  let confirmCb=null;
+   631→
+   632→  // Storage
+   633→  function save(){try{localStorage.setItem('inkwell_entries',JSON.stringify(state.entries));localStorage.setItem('inkwell_settings',JSON.stringify(state.settings));}catch(e){toast('Storage full! Try removing images.','error');}}
+   634→  function load(){try{const e=localStorage.getItem('inkwell_entries'),s=localStorage.getItem('inkwell_settings');if(e)state.entries=JSON.parse(e);if(s)state.settings={...state.settings,...JSON.parse(s)};}catch(e){}}
+   635→
+   636→  // Date utils
+   637→  function fmtD(d){const dt=d instanceof Date?d:new Date(d);return dt.getFullYear()+'-'+String(dt.getMonth()+1).padStart(2,'0')+'-'+String(dt.getDate()).padStart(2,'0');}
+   638→  function parseD(s){const p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2]);}
+   639→  function friendlyD(d){return(d instanceof Date?d:new Date(d)).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});}
+   640→  function shortD(d){return(d instanceof Date?d:new Date(d)).toLocaleDateString('en-US',{month:'short',day:'numeric'});}
+   641→  function isToday(d){return fmtD(d)===fmtD(new Date());}
+   642→  function isPast(d){return fmtD(d)<fmtD(new Date());}
+   643→  function addDays(d,n){const dt=new Date(d);dt.setDate(dt.getDate()+n);return dt;}
+   644→
+   645→  // Streaks
+   646→  function calcStreaks(){let cur=0,long=0,tmp=0;const hasT=!!state.entries[fmtD(new Date())];let d=hasT?new Date():addDays(new Date(),-1);while(true){if(state.entries[fmtD(d)]){tmp++;d=addDays(d,-1);}else break;}cur=tmp;const dates=Object.keys(state.entries).sort();tmp=0;for(let i=0;i<dates.length;i++){if(i===0)tmp=1;else{const diff=(parseD(dates[i])-parseD(dates[i-1]))/864e5;tmp=diff===1?tmp+1:1;}if(tmp>long)long=tmp;}if(cur>long)long=cur;return{current:cur,longest:long};}
+   647→
+   648→  function getGreeting(){const h=new Date().getHours(),n=state.settings.userName?', '+state.settings.userName:'';if(h<12)return'Good morning'+n;if(h<17)return'Good afternoon'+n;if(h<21)return'Good evening'+n;return'Night owl'+n;}
+   649→
+   650→  function toast(msg,type='info'){const c=document.getElementById('toast-container'),icons={success:'fa-circle-check',error:'fa-circle-xmark',info:'fa-circle-info'};const el=document.createElement('div');el.className='toast '+type;el.innerHTML=`<i class="fas ${icons[type]||icons.info}"></i><span>${msg}</span>`;c.appendChild(el);setTimeout(()=>el.remove(),3200);}
+   651→
+   652→  // Render moods
+   653→  function renderMoods(){const c=document.getElementById('mood-selector'),key=fmtD(state.currentViewDate),e=state.entries[key],sel=e?e.mood:null;c.innerHTML=moods.map(m=>`<button class="mood-btn ${sel===m.key?'selected':''}" data-mood="${m.key}" onclick="App.selectMood('${m.key}')" aria-label="${m.label}">${m.face}<span class="mood-label">${m.label}</span></button>`).join('');}
+   654→
+   655→  // Render toolbar
+   656→  function renderToolbar(){const c=document.getElementById('editor-toolbar');c.innerHTML=toolbarBtns.map(b=>{if(b.cmd==='|')return'<div style="width:1px;height:24px;background:var(--border);margin:0 4px;flex-shrink:0"></div>';return`<button class="toolbar-btn" onclick="App.execCmd('${b.cmd}'${b.val?",'"+b.val+"'":''})" title="${b.label||b.cmd}" aria-label="${b.cmd}">${b.icon?'<i class="fas '+b.icon+'"></i>':(b.text||'')}</button>`;}).join('');}
+   657→
+   658→  function execCmd(cmd,val){document.getElementById('editor').focus();if(cmd==='formatBlock'&&val)document.execCommand(cmd,false,'<'+val+'>');else document.execCommand(cmd,false,val||null);}
+   659→
+   660→  // Stickers
+   661→  function renderStickers(){const tabs=document.getElementById('sticker-tabs'),grid=document.getElementById('sticker-grid');tabs.innerHTML=Object.keys(stickerCats).map(c=>`<button class="sticker-tab ${c===activeStickerCat?'active':''}" onclick="App.switchStickerCat('${c}')">${c}</button>`).join('');grid.innerHTML=stickerCats[activeStickerCat].map(s=>`<button class="sticker-item" onclick="App.insertSticker('${s.replace(/'/g,"\\'")}')">${s}</button>`).join('');}
+   662→  function switchStickerCat(c){activeStickerCat=c;renderStickers();}
+   663→  function openStickers(){document.getElementById('sticker-overlay').classList.add('show');document.getElementById('sticker-panel').classList.add('show');}
+   664→  function closeStickers(){document.getElementById('sticker-overlay').classList.remove('show');document.getElementById('sticker-panel').classList.remove('show');}
+   665→  function insertSticker(html){document.getElementById('editor').focus();document.execCommand('insertHTML',false,html);closeStickers();}
+   666→
+   667→  // Image
+   668→  function addImage(){document.getElementById('image-input').click();}
+   669→  function handleImage(e){const f=e.target.files[0];if(!f)return;if(f.size>5*1024*1024){toast('Image too large. Max 5MB.','error');return;}const r=new FileReader();r.onload=ev=>{const img=new Image();img.onload=()=>{const c=document.createElement('canvas'),mx=800;let w=img.width,h=img.height;if(w>mx){h=h*mx/w;w=mx;}c.width=w;c.height=h;c.getContext('2d').drawImage(img,0,0,w,h);const b64=c.toDataURL('image/jpeg',0.7);document.getElementById('editor').focus();document.execCommand('insertHTML',false,`<img src="${b64}" alt="Photo" style="max-width:100%;border-radius:8px;margin:8px 0">`);};img.src=ev.target.result;};r.readAsDataURL(f);e.target.value='';}
+   670→
+   671→  // Prompt
+   672→  function showPrompt(){currentPrompt=prompts[Math.floor(Math.random()*prompts.length)];document.getElementById('prompt-text').textContent=currentPrompt;document.getElementById('prompt-modal').classList.add('show');}
+   673→  function closePrompt(){document.getElementById('prompt-modal').classList.remove('show');}
+   674→  function usePrompt(){document.getElementById('editor').focus();document.execCommand('insertHTML',false,`<p>${currentPrompt}</p><p><br></p>`);closePrompt();}
+   675→
+   676→  // Confirm
+   677→  function showConfirm(title,text,cb){document.getElementById('confirm-title').textContent=title;document.getElementById('confirm-text').textContent=text;confirmCb=cb;document.getElementById('confirm-action').onclick=()=>{closeConfirm();if(confirmCb)confirmCb();};document.getElementById('confirm-modal').classList.add('show');}
+   678→  function closeConfirm(){document.getElementById('confirm-modal').classList.remove('show');}
+   679→
+   680→  // Mood
+   681→  function selectMood(key){const dk=fmtD(state.currentViewDate);if(!state.entries[dk])state.entries[dk]={content:'',mood:null,gratitude:'',wordCount:0,isFavorite:false,createdAt:Date.now()};state.entries[dk].mood=state.entries[dk].mood===key?null:key;renderMoods();save();}
+   682→
+   683→  // Date nav
+   684→  function navigateDate(dir){state.currentViewDate=addDays(state.currentViewDate,dir);loadDateEntry();}
+   685→  function loadDateEntry(){const d=state.currentViewDate,key=fmtD(d),e=state.entries[key];document.getElementById('date-label').textContent=friendlyD(d);renderMoods();document.getElementById('editor').innerHTML=e?e.content:'';document.getElementById('gratitude-input').value=e?(e.gratitude||''):'';updateWordCount();}
+   686→
+   687→  // Word count
+   688→  function updateWordCount(){const t=(document.getElementById('editor').innerText||'').trim(),w=t?t.split(/\s+/).length:0,g=state.settings.dailyGoal,pct=g>0?Math.min(100,Math.round(w/g*100)):0;document.getElementById('word-count').textContent=w+' word'+(w!==1?'s':'');document.getElementById('goal-fill').style.width=pct+'%';document.getElementById('goal-text').textContent=pct+'%';}
+   689→
+   690→  // Save entry
+   691→  function saveEntry(){const ed=document.getElementById('editor'),content=ed.innerHTML.trim(),text=ed.innerText.trim(),key=fmtD(state.currentViewDate);if(!text&&!document.getElementById('gratitude-input').value.trim()){toast('Write something before saving!','error');return;}if(!state.entries[key])state.entries[key]={content:'',mood:null,gratitude:'',wordCount:0,isFavorite:false,createdAt:Date.now()};state.entries[key].content=content;state.entries[key].gratitude=document.getElementById('gratitude-input').value.trim();state.entries[key].wordCount=text?text.split(/\s+/).length:0;state.entries[key].updatedAt=Date.now();save();updateHomeBadge();cloudUploadEntry(key);toast('Entry saved!','success');const g=state.settings.dailyGoal;if(g>0&&state.entries[key].wordCount>=g)setTimeout(()=>toast('Daily goal reached!','success'),600);}
+   692→
+   693→  // Cloud sync for premium
+   694→  function cloudUploadEntry(key){if(!state.isPremium||!auth.currentUser)return;const e=state.entries[key];if(!e)return;db.collection('diaries').doc(auth.currentUser.uid).collection('entries').doc(key).set({content:e.content,mood:e.mood,gratitude:e.gratitude,wordCount:e.wordCount,isFavorite:e.isFavorite,updatedAt:e.updatedAt||Date.now()}).catch(err=>console.warn('Cloud upload failed:',err));}
+   695→  function cloudDownloadAll(){if(!auth.currentUser)return;state.isSyncing=true;updateSyncUI();db.collection('diaries').doc(auth.currentUser.uid).collection('entries').get().then(snap=>{let count=0;snap.forEach(doc=>{const d=doc.data();const key=doc.id;if(!state.entries[key]||(d.updatedAt&&state.entries[key].updatedAt&&d.updatedAt>state.entries[key].updatedAt)){state.entries[key]={content:d.content||'',mood:d.mood||null,gratitude:d.gratitude||'',wordCount:d.wordCount||0,isFavorite:d.isFavorite||false,createdAt:d.updatedAt||Date.now(),updatedAt:d.updatedAt||Date.now()};count++;}});save();state.isSyncing=false;updateSyncUI();if(count>0){toast(`Synced ${count} entries from cloud.`,'success');loadDateEntry();}else{toast('Already up to date.','info');}}).catch(err=>{state.isSyncing=false;updateSyncUI();toast('Sync failed. Check connection.','error');});}
+   696→  function updateSyncUI(){const ind=document.getElementById('sync-indicator'),txt=document.getElementById('sync-text'),btn=document.getElementById('sync-btn');if(state.isPremium){btn.style.display='block';if(state.isSyncing){ind.className='sync-ind syncing';txt.textContent='Syncing...';}else{ind.className='sync-ind';txt.textContent='Cloud sync available';}}else{btn.style.display='none';ind.className='sync-ind';txt.textContent='Local only — Premium required for cloud sync';}}
+   697→  function syncNow(){if(state.isPremium)cloudDownloadAll();else toast('Premium required for cloud sync.','error');}
+   698→
+   699→  // Check premium status
+   700→  function checkPremium(){if(!auth.currentUser)return;db.collection('premium').doc(auth.currentUser.uid).get().then(doc=>{if(doc.exists&&doc.data().active){state.isPremium=true;state.premiumSource=doc.data().source||'';applyPremiumTheme();}else{state.isPremium=false;state.premiumSource='';removePremiumTheme();}renderPremiumSection();updateSyncUI();updateAccountUI();}).catch(()=>{state.isPremium=false;removePremiumTheme();renderPremiumSection();updateSyncUI();});}
+   701→  function applyPremiumTheme(){document.documentElement.setAttribute('data-premium','true');document.getElementById('premium-banner').style.display='flex';}
+   702→  function removePremiumTheme(){document.documentElement.removeAttribute('data-premium');document.getElementById('premium-banner').style.display='none';}
+   703→
+   704→  // Render premium section in settings
+   705→  function renderPremiumSection(){const c=document.getElementById('premium-section');if(state.isPremium){c.innerHTML=`<div class="setting-group-title">Premium</div><div class="premium-active"><div class="pa-icon">&#128081;</div><div class="pa-title">Premium Active</div><div class="pa-sub">Source: ${state.premiumSource||'Unknown'}</div></div>`;}else{c.innerHTML=`<div class="setting-group-title">Premium</div><div class="premium-card"><div class="premium-card-icon">&#128081;</div><div class="premium-card-title">Go Premium</div><div class="premium-card-desc">Unlock cloud sync and exclusive features</div><div class="premium-card-price">19&#8377; <span>/ $0.30</span></div><div class="premium-feats"><div class="premium-feat"><i class="fas fa-check"></i> Cloud backup & sync</div><div class="premium-feat"><i class="fas fa-check"></i> Gold premium theme</div><div class="premium-feat"><i class="fas fa-check"></i> Priority support</div></div><div class="purchase-btns"><button class="btn btn-secondary btn-full btn-sm whatsapp-btn" onclick="App.buyWhatsApp()"><i class="fab fa-whatsapp"></i> Buy via WhatsApp</button><button class="btn btn-secondary btn-full btn-sm" onclick="App.buyEmail()"><i class="fas fa-envelope"></i> Buy via Email</button><button class="btn btn-full btn-sm promote-btn" onclick="App.promoteApp()"><i class="fas fa-share-nodes"></i> Promote App (Free Premium)</button></div></div>`;}}
+   706→
+   707→  function buyWhatsApp(){window.open('https://wa.me/919878733518?text='+encodeURIComponent('I would like to purchase premium of daily diary'),'_blank');}
+   708→  function buyEmail(){window.location.href='mailto:HeroAdeshjeet@gmail.com?subject='+encodeURIComponent('Premium Purchase — Daily Diary')+'&body='+encodeURIComponent('I would like to purchase premium of daily diary');}
+   709→  function promoteApp(){if(navigator.share){navigator.share({title:'Inkwell Diary',text:'Try Inkwell — a beautiful daily diary app!',url:window.location.href}).catch(()=>{});}else{navigator.clipboard.writeText(window.location.href).then(()=>toast('Link copied! Share it to get premium.','success')).catch(()=>toast('Could not copy link.','error'));}}
+   710→
+   711→  function updateHomeBadge(){const t=fmtD(new Date()),b=document.getElementById('badge-home');if(!state.entries[t])b.classList.add('show');else b.classList.remove('show');}
+   712→
+   713→  // Calendar
+   714→  function renderCalendar(){const y=state.calYear,m=state.calMonth,mn=['January','February','March','April','May','June','July','August','September','October','November','December'];document.getElementById('cal-title').textContent=mn[m]+' '+y;const fd=new Date(y,m,1).getDay(),dim=new Date(y,m+1,0).getDate(),dpm=new Date(y,m,0).getDate(),tk=fmtD(new Date()),g=document.getElementById('cal-grid');let h='';for(let i=fd-1;i>=0;i--){const day=dpm-i,d=new Date(y,m-1,day),k=fmtD(d),cls=isPast(d)&&!state.entries[k]?'other-month missed':'other-month';h+=`<button class="cal-day ${cls}" onclick="App.calDayClick('${k}')">${day}</button>`;}for(let day=1;day<=dim;day++){const d=new Date(y,m,day),k=fmtD(d);let cls='';if(k===tk)cls+=' today';if(state.entries[k])cls+=' has-entry mood-'+(state.entries[k].mood||'none');else if(isPast(d))cls+=' missed';if(k===fmtD(state.currentViewDate))cls+=' selected-day';h+=`<button class="cal-day ${cls}" onclick="App.calDayClick('${k}')">${day}</button>`;}const tc=fd+dim,rem=(7-tc%7)%7;for(let day=1;day<=rem;day++){const d=new Date(y,m+1,day),k=fmtD(d);h+=`<button class="cal-day other-month" onclick="App.calDayClick('${k}')">${day}</button>`;}g.innerHTML=h;}
+   715→  function calNav(dir){if(dir===0){state.calMonth=new Date().getMonth();state.calYear=new Date().getFullYear();}else{state.calMonth+=dir;if(state.calMonth>11){state.calMonth=0;state.calYear++;}if(state.calMonth<0){state.calMonth=11;state.calYear--;}}renderCalendar();}
+   716→  function calDayClick(key){state.currentViewDate=parseD(key);if(state.entries[key]){state.viewingEntryDate=key;renderEntryDetail(key);goTo('entry');}else{loadDateEntry();goTo('home');}}
+   717→
+   718→  // Entry detail
+   719→  function renderEntryDetail(key){const e=state.entries[key];if(!e)return;const d=parseD(key),mo=moods.find(m=>m.key===e.mood);let mh=`<span class="entry-meta-tag"><i class="fas fa-calendar"></i> ${friendlyD(d)}</span>`;if(mo)mh+=`<span class="entry-meta-tag">${mo.face} ${mo.label}</span>`;if(e.wordCount)mh+=`<span class="entry-meta-tag"><i class="fas fa-font"></i> ${e.wordCount} words</span>`;mh+=`<button class="entry-fav-btn ${e.isFavorite?'fav':''}" onclick="App.toggleFavorite('${key}')" aria-label="Toggle favorite">${e.isFavorite?'&#9733;':'&#9734;'}</button>`;document.getElementById('entry-meta').innerHTML=mh;document.getElementById('entry-detail-content').innerHTML=e.content||'<p style="color:var(--fg2);font-style:italic">No content written.</p>';const gd=document.getElementById('entry-gratitude-display');gd.innerHTML=e.gratitude?`<div class="gratitude-display"><div class="gl">Grateful for</div><div class="gt">${e.gratitude}</div></div>`:'';}
+   720→  function toggleFavorite(key){if(state.entries[key]){state.entries[key].isFavorite=!state.entries[key].isFavorite;save();cloudUploadEntry(key);renderEntryDetail(key);toast(state.entries[key].isFavorite?'Added to favorites!':'Removed from favorites.','info');}}
+   721→  function editEntry(){if(state.viewingEntryDate){state.currentViewDate=parseD(state.viewingEntryDate);loadDateEntry();goTo('home');}}
+   722→  function deleteEntry(){showConfirm('Delete Entry','Are you sure? This cannot be undone.',()=>{if(state.viewingEntryDate&&state.entries[state.viewingEntryDate]){delete state.entries[state.viewingEntryDate];save();if(state.isPremium&&auth.currentUser)db.collection('diaries').doc(auth.currentUser.uid).collection('entries').doc(state.viewingEntryDate).delete().catch(()=>{});toast('Entry deleted.','info');goTo('home');updateHomeBadge();}});}
+   723→  function goBack(){goTo(state.previousPage);}
+   724→
+   725→  // Stats
+   726→  function renderStats(){const sk=calcStreaks();document.getElementById('stat-streak').textContent=sk.current;document.getElementById('stat-longest').textContent=sk.longest;const entries=Object.values(state.entries),te=entries.length,tw=entries.reduce((s,e)=>s+(e.wordCount||0),0),aw=te>0?Math.round(tw/te):0,fc=entries.filter(e=>e.isFavorite).length;document.getElementById('stat-total-entries').textContent=te;document.getElementById('stat-total-words').textContent=tw>=1000?(tw/1000).toFixed(1)+'k':tw;document.getElementById('stats-grid').innerHTML=`<div class="card stat-card"><div class="stat-num">${aw}</div><div class="stat-lbl">Avg Words</div></div><div class="card stat-card"><div class="stat-num">${fc}</div><div class="stat-lbl">Favorites</div></div>`;const mc={};moods.forEach(m=>mc[m.key]=0);entries.forEach(e=>{if(e.mood&&mc[e.mood]!==undefined)mc[e.mood]++;});const mx=Math.max(1,...Object.values(mc));document.getElementById('mood-dist').innerHTML=moods.map(m=>{const c=mc[m.key],p=Math.round(c/mx*100);return`<div class="mood-bar-row"><div class="mood-bar-face">${m.face}</div><div class="mood-bar-track"><div class="mood-bar-fill" style="width:${p}%;background:var(--m${m.key.substring(0,1)})"></div></div><div class="mood-bar-count">${c}</div></div>`;}).join('');const wb=document.getElementById('weekly-bars');let wh='';for(let i=6;i>=0;i--){const d=addDays(new Date(),-i),k=fmtD(d),e=state.entries[k],w=e?(e.wordCount||0):0,g=state.settings.dailyGoal||100,h=g>0?Math.max(4,Math.min(100,w/g*100)):(w>0?30:4),dn=d.toLocaleDateString('en-US',{weekday:'short'}),it=isToday(d);wh+=`<div class="weekly-bar-col"><div class="weekly-bar" style="height:${h}%;${it?'box-shadow:0 0 8px var(--accent);':''}${w>=g&&g>0?'background:linear-gradient(to top,var(--success),var(--success-l));':''}"></div><div class="weekly-bar-label" style="${it?'color:var(--accent);font-weight:700;':''}">${dn}</div></div>`;}wb.innerHTML=wh;}
+   727→
+   728→  // Search
+   729→  function search(q){const c=document.getElementById('search-results');if(!q.trim()){c.innerHTML='<div class="search-empty"><i class="fas fa-magnifying-glass"></i>Search across all your diary entries</div>';return;}const ql=q.toLowerCase(),res=[];Object.keys(state.entries).sort().reverse().forEach(key=>{const e=state.entries[key],t=(e.content||'').replace(/<[^>]*>/g,'').toLowerCase(),g=(e.gratitude||'').toLowerCase(),idx=t.indexOf(ql);if(idx!==-1||g.includes(ql)){let pv='';if(idx!==-1){const s=Math.max(0,idx-40),en=Math.min(t.length,idx+ql.length+40);pv=(s>0?'...':'')+t.substring(s,en)+(en<t.length?'...':'');const rx=new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`,'gi');pv=pv.replace(rx,'<mark>$1</mark>');}else{pv='Gratitude: '+e.gratitude;}res.push({key,preview:pv,mood:e.mood,isFavorite:e.isFavorite});}});if(!res.length){c.innerHTML=`<div class="search-empty"><i class="fas fa-face-sad-tear"></i>No entries found for "${q}"</div>`;return;}c.innerHTML=res.map(r=>{const mo=moods.find(m=>m.key===r.mood);return`<div class="search-result" onclick="App.searchResultClick('${r.key}')"><div class="search-result-date">${r.isFavorite?'&#9733; ':''}${shortD(r.key)} ${mo?mo.face:''}</div><div class="search-result-text">${r.preview}</div></div>`;}).join('');}
+   730→  function searchResultClick(key){state.viewingEntryDate=key;renderEntryDetail(key);goTo('entry');}
+   731→
+   732→  // Navigation
+   733→  let currentPage='home';
+   734→  function goTo(page){if(page!=='entry')state.previousPage=currentPage;currentPage=page;document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+page).classList.add('active');document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.page===page));if(page==='calendar')renderCalendar();if(page==='stats')renderStats();if(page==='search')search(document.getElementById('search-input').value);if(page==='home'){loadDateEntry();updateHomeBadge();}if(page==='settings'){renderPremiumSection();updateSettingsUI();}if(page==='account')updateAccountUI();window.scrollTo(0,0);}
+   735→
+   736→  // Settings UI
+   737→  function updateSettingsUI(){document.getElementById('set-theme').checked=state.settings.theme==='dark';document.getElementById('set-fontsize').value=state.settings.fontSize;document.getElementById('fontsize-preview').textContent=state.settings.fontSize+'px';document.getElementById('set-notif').checked=state.settings.notifEnabled;document.getElementById('set-notif-time').value=state.settings.notifTime;document.getElementById('set-goal').value=state.settings.dailyGoal;document.getElementById('set-name').value=state.settings.userName;updateUserUI();}
+   738→  function updateUserUI(){const u=auth.currentUser;if(!u)return;const n=u.displayName||state.settings.userName||'User';const init=n.charAt(0).toUpperCase();document.getElementById('settings-avatar').textContent=init;document.getElementById('settings-user-name').textContent=n;document.getElementById('settings-user-email').textContent=u.email;}
+   739→  function updateAccountUI(){const u=auth.currentUser;if(!u)return;const n=u.displayName||state.settings.userName||'User';document.getElementById('account-avatar').textContent=n.charAt(0).toUpperCase();document.getElementById('account-name').textContent=n;document.getElementById('account-email').textContent=u.email;document.getElementById('account-provider').textContent=u.providerData[0]?.providerId==='google.com'?'Signed in with Google':'Signed in with Email';updateSyncUI();}
+   740→
+   741→  // Theme
+   742→  function setTheme(dark){state.settings.theme=dark?'dark':'light';document.documentElement.setAttribute('data-theme',state.settings.theme);document.getElementById('set-theme').checked=dark;save();}
+   743→  function setFontSize(s){state.settings.fontSize=parseInt(s);document.getElementById('editor').style.fontSize=s+'px';document.getElementById('fontsize-preview').textContent=s+'px';save();}
+   744→
+   745→  // Notifications
+   746→  function toggleNotifications(on){state.settings.notifEnabled=on;if(on){if(!('Notification' in window)){toast('Notifications not supported.','error');state.settings.notifEnabled=false;document.getElementById('set-notif').checked=false;save();return;}Notification.requestPermission().then(p=>{if(p==='granted'){toast('Reminders enabled!','success');scheduleNotif();}else{toast('Permission denied.','error');state.settings.notifEnabled=false;document.getElementById('set-notif').checked=false;}save();});}else{if(state.notifTimer)clearTimeout(state.notifTimer);toast('Reminders disabled.','info');save();}}
+   747→  function scheduleNotif(){if(state.notifTimer)clearTimeout(state.notifTimer);if(!state.settings.notifEnabled)return;const check=()=>{const now=new Date(),[h,m]=state.settings.notifTime.split(':').map(Number),tk=fmtD(now);if(now.getHours()===h&&Math.abs(now.getMinutes()-m)<=1&&!state.entries[tk]){new Notification('Inkwell Reminder',{body:"Time to write your diary! Don't break your streak.",tag:'inkwell-'+tk});}state.notifTimer=setTimeout(check,60000);};check();}
+   748→  function setNotifTime(v){state.settings.notifTime=v;save();if(state.settings.notifEnabled)scheduleNotif();}
+   749→  function setGoal(v){const n=parseInt(v);if(n>=10&&n<=5000){state.settings.dailyGoal=n;save();updateWordCount();toast('Goal set to '+n+' words.','info');}}
+   750→  function setName(v){state.settings.userName=v.trim();save();document.getElementById('greeting').textContent=getGreeting();updateUserUI();toast(v.trim()?'Hello, '+v.trim()+'!':'Name updated.','info');}
+   751→
+   752→  // Export/Clear
+   753→  function exportData(){const dates=Object.keys(state.entries).sort();if(!dates.length){toast('No entries to export.','error');return;}let t='=== Inkwell Diary Export ===\nExported: '+friendlyD(new Date())+'\nEntries: '+dates.length+'\n\n';dates.forEach(k=>{const e=state.entries[k],mo=moods.find(m=>m.key===e.mood);t+='--- '+friendlyD(parseD(k))+' ---\n';if(mo)t+='Mood: '+mo.label+'\n';if(e.wordCount)t+='Words: '+e.wordCount+'\n';t+='\n'+(e.content||'').replace(/<[^>]*>/g,'').trim()+'\n';if(e.gratitude)t+='\nGrateful for: '+e.gratitude+'\n';t+='\n\n';});const b=new Blob([t],{type:'text/plain'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='inkwell-'+fmtD(new Date())+'.txt';a.click();URL.revokeObjectURL(u);toast('Diary exported!','success');}
+   754→  function clearData(){showConfirm('Clear All Data','Permanently delete all entries and settings?',()=>{localStorage.removeItem('inkwell_entries');localStorage.removeItem('inkwell_settings');location.reload();});}
+   755→
+   756→  // Called after auth
+   757→  function onUserReady(){load();document.documentElement.setAttribute('data-theme',state.settings.theme);document.getElementById('editor').style.fontSize=state.settings.fontSize+'px';document.getElementById('greeting').textContent=getGreeting();document.getElementById('home-date').textContent=friendlyD(new Date());const sk=calcStreaks();if(sk.current>0)document.getElementById('streak-badge-home').innerHTML=`<div class="streak-badge"><span class="fire">&#128293;</span> ${sk.current} day streak</div>`;else document.getElementById('streak-badge-home').innerHTML='';renderToolbar();renderStickers();loadDateEntry();updateHomeBadge();if(state.settings.notifEnabled)scheduleNotif();updateUserUI();checkPremium();if(Object.keys(state.entries).length===0)setTimeout(()=>toast('Welcome to Inkwell! Start writing.','info'),800);}
+   758→
+   759→  function init(){load();document.documentElement.setAttribute('data-theme',state.settings.theme);document.getElementById('editor').style.fontSize=state.settings.fontSize+'px';document.getElementById('greeting').textContent=getGreeting();document.getElementById('home-date').textContent=friendlyD(new Date());renderToolbar();renderMoods();renderStickers();loadDateEntry();updateHomeBadge();const ed=document.getElementById('editor');ed.addEventListener('input',updateWordCount);Auth.init();}
+   760→
+   761→  return{init,onUserReady,goTo,navigateDate,loadDateEntry,selectMood,renderMoods,execCmd,openStickers,closeStickers,switchStickerCat,insertSticker,addImage,handleImage,showPrompt,closePrompt,usePrompt,saveEntry,updateWordCount,updateHomeBadge,calNav,calDayClick,renderCalendar,renderStats,search,searchResultClick,renderEntryDetail,toggleFavorite,editEntry,deleteEntry,goBack,setTheme,setFontSize,toggleNotifications,setNotifTime,setGoal,setName,exportData,clearData,showConfirm,closeConfirm,buyWhatsApp,buyEmail,promoteApp,syncNow,updateSettingsUI,get state(){return state;}};
+   762→})();
+   763→
+   764→document.addEventListener('DOMContentLoaded',App.init);
+   765→</script>
+   766→</body>
+   767→</html>

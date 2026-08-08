@@ -1,0 +1,232 @@
+Mewing Plan
+--- Day 1 ---
+Side-to-Side Turns - 01:00
+Hyoid Stretch - 01:00
+Tongue Turning - 01:00
+Eyes and Cheeks - 01:00
+Neck Lift - 01:00
+Full Face Massage - 01:00
+--- Day 2 ---
+Upward Chewing - 01:00
+Chin Tuck - 01:00
+Lion - 01:00
+Alternating Cheek Puffs - 01:00
+Hyoid Stretch - 01:00
+Full Face Massage - 01:00
+--- Day 3 ---
+Side-to-Side Turns - 01:00
+Lion - 01:00
+Alternating Cheek Puffs - 01:00
+Eyes and Cheeks - 01:00
+Neck Lift - 01:00
+Lymph Drainage Upward Slide - 00:30
+Lymph Drainage Downward Slide - 00:30
+--- Day 4 ---
+Upward Chewing - 01:00
+Chin Tuck - 01:00
+Lion - 01:00
+Tongue Turning - 01:00
+Sternocleidomastoid Stretch Left - 00:30
+Sternocleidomastoid Stretch Right - 00:30
+Cheek Upward Massage - 01:00
+--- Day 5 ---
+Side-to-Side Turns - 01:00
+Alternating Cheek Puffs - 01:00
+Tongue Turning - 01:00
+Sternocleidomastoid Stretch Left - 00:30
+Sternocleidomastoid Stretch Right - 00:30
+Eyes and Cheeks - 01:00
+Cheek Upward Massage - 01:00
+--- Day 6 ---
+Side-to-Side Turns - 01:00
+Upward Chewing - 01:00
+Chin Tuck - 01:00
+Eyes and Cheeks - 01:00
+Neck Lift - 01:00
+Full Face Massage - 01:00
+--- Day 7 ---
+Upward Chewing - 01:00
+Lion - 01:00
+Alternating Cheek Puffs - 01:00
+Hyoid Stretch - 01:00
+Tongue Turning - 01:00
+Lymph Drainage Upward Slide - 00:30
+Lymph Drainage Downward Slide - 00:30
+--- Day 8 ---
+Lion - 01:00
+Alternating Cheek Puffs - 01:00
+Tongue Turning - 01:00
+Sternocleidomastoid Stretch Left - 00:30
+Sternocleidomastoid Stretch Right - 00:30
+Neck Lift - 01:00
+Lymph Drainage Upward Slide - 00:30
+Lymph Drainage Downward Slide - 00:30
+--- Day 9 ---
+Chin Tuck - 01:00
+Hyoid Stretch - 01:00
+Tongue Turning - 01:00
+Eyes and Cheeks - 01:00
+Neck Lift - 01:00
+Cheek Upward Massage - 01:00
+--- Day 10 ---
+Side-to-Side Turns - 01:00
+Upward Chewing - 01:00
+Chin Tuck - 01:00
+Tongue Turning - 01:00
+Neck Lift - 01:00
+Full Face Massage - 01:00
+--- Day 11 ---
+Upward Chewing - 01:00
+Lion - 01:00
+Alternating Cheek Puffs - 01:00
+Hyoid Stretch - 01:00
+Eyes and Cheeks - 01:00
+Cheek Upward Massage - 01:00
+--- Day 12 ---
+Chin Tuck - 01:00
+Hyoid Stretch - 01:00
+Tongue Turning - 01:00
+Eyes and Cheeks - 01:00
+Neck Lift - 01:00
+Full Face Massage - 01:00
+--- Day 13 ---
+Upward Chewing - 01:00
+Chin Tuck - 01:00
+Lion - 01:00
+Tongue Turning - 01:00
+Sternocleidomastoid Stretch Left - 00:30
+Sternocleidomastoid Stretch Right - 00:30
+Lymph Drainage Upward Slide - 00:30
+Lymph Drainage Downward Slide - 00:30
+--- Day 14 ---
+Lion - 01:00
+Alternating Cheek Puffs - 01:00
+Hyoid Stretch - 01:00
+Eyes and Cheeks - 01:00
+Neck Lift - 01:00
+Cheek Upward Massage - 01:00
+--- Day 15 ---
+Side-to-Side Turns - 01:00
+Upward Chewing - 01:00
+Lion - 01:00
+Alternating Cheek Puffs - 01:00
+Sternocleidomastoid Stretch Left - 00:30
+Sternocleidomastoid Stretch Right - 00:30
+Full Face Massage - 01:00
+--- Day 16 ---
+Upward Chewing - 01:00
+Chin Tuck - 01:00
+Alternating Cheek Puffs - 01:00
+Tongue Turning - 01:00
+Neck Lift - 01:00
+Cheek Upward Massage - 01:00
+--- Day 17 ---
+Side-to-Side Turns - 01:00
+Lion - 01:00
+Alternating Cheek Puffs - 01:00
+Hyoid Stretch - 01:00
+Neck Lift - 01:00
+Cheek Upward Massage - 01:00
+--- Day 18 ---
+Upward Chewing - 01:00
+Chin Tuck - 01:00
+Tongue Turning - 01:00
+Sternocleidomastoid Stretch Left - 00:30
+Sternocleidomastoid Stretch Right - 00:30
+Eyes and Cheeks - 01:00
+Lymph Drainage Upward Slide - 00:30
+Lymph Drainage Downward Slide - 00:30
+--- Day 19 ---
+Upward Chewing - 01:00
+Chin Tuck - 01:00
+Lion - 01:00
+Alternating Cheek Puffs - 01:00
+Neck Lift - 01:00
+Full Face Massage - 01:00
+--- Day 20 ---
+Side-to-Side Turns - 01:00
+Alternating Cheek Puffs - 01:00
+Sternocleidomastoid Stretch Left - 00:30
+Sternocleidomastoid Stretch Right - 00:30
+Eyes and Cheeks - 01:00
+Neck Lift - 01:00
+Lymph Drainage Upward Slide - 00:30
+Lymph Drainage Downward Slide - 00:30
+--- Day 21 ---
+Upward Chewing - 01:00
+Chin Tuck - 01:00
+Hyoid Stretch - 01:00
+Tongue Turning - 01:00
+Eyes and Cheeks - 01:00
+Cheek Upward Massage - 01:00
+--- Day 22 ---
+Alternating Cheek Puffs - 01:00
+Tongue Turning - 01:00
+Sternocleidomastoid Stretch Left - 00:30
+Sternocleidomastoid Stretch Right - 00:30
+Eyes and Cheeks - 01:00
+Neck Lift - 01:00
+Full Face Massage - 01:00
+--- Day 23 ---
+Side-to-Side Turns - 01:00
+Lion - 01:00
+Alternating Cheek Puffs - 01:00
+Hyoid Stretch - 01:00
+Neck Lift - 01:00
+Lymph Drainage Upward Slide - 00:30
+Lymph Drainage Downward Slide - 00:30
+--- Day 24 ---
+Upward Chewing - 01:00
+Chin Tuck - 01:00
+Tongue Turning - 01:00
+Sternocleidomastoid Stretch Left - 00:30
+Sternocleidomastoid Stretch Right - 00:30
+Eyes and Cheeks - 01:00
+Cheek Upward Massage - 01:00
+--- Day 25 ---
+Alternating Cheek Puffs - 01:00
+Hyoid Stretch - 01:00
+Tongue Turning - 01:00
+Eyes and Cheeks - 01:00
+Neck Lift - 01:00
+Lymph Drainage Upward Slide - 00:30
+Lymph Drainage Downward Slide - 00:30
+--- Day 26 ---
+Upward Chewing - 01:00
+Chin Tuck - 01:00
+Lion - 01:00
+Alternating Cheek Puffs - 01:00
+Neck Lift - 01:00
+Full Face Massage - 01:00
+--- Day 27 ---
+Upward Chewing - 01:00
+Chin Tuck - 01:00
+Tongue Turning - 01:00
+Sternocleidomastoid Stretch Left - 00:30
+Sternocleidomastoid Stretch Right - 00:30
+Eyes and Cheeks - 01:00
+Lymph Drainage Upward Slide - 00:30
+Lymph Drainage Downward Slide - 00:30
+--- Day 28 ---
+Side-to-Side Turns - 01:00
+Upward Chewing - 01:00
+Alternating Cheek Puffs - 01:00
+Tongue Turning - 01:00
+Neck Lift - 01:00
+Full Face Massage - 01:00
+--- Day 29 ---
+Chin Tuck - 01:00
+Lion - 01:00
+Alternating Cheek Puffs - 01:00
+Hyoid Stretch - 01:00
+Neck Lift - 01:00
+Cheek Upward Massage - 01:00
+--- Day 30 ---
+Side-to-Side Turns - 01:00
+Upward Chewing - 01:00
+Lion - 01:00
+Sternocleidomastoid Stretch Left - 00:30
+Sternocleidomastoid Stretch Right - 00:30
+Eyes and Cheeks - 01:00
+Lymph Drainage Upward Slide - 00:30
+Lymph Drainage Downward Slide - 00:30

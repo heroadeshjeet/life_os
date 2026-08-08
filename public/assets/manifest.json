@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-08-07T13:22:18.622Z",
+  "exercises": {
+    "gifs": [],
+    "thumbnails": []
+  },
+  "audio": {
+    "coaches": [],
+    "music": {
+      "exercise": [],
+      "meditation": [],
+      "focus": []
+    },
+    "sfx": [],
+    "counselor": []
+  },
+  "totals": {
+    "gifs": 0,
+    "audio": 0
+  }
+}

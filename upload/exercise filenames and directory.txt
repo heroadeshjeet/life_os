@@ -1,0 +1,160 @@
+========================================
+ DIRECTORY STRUCTURE: /Exercise/
+ Total Files: 148
+ Exercise filename Gifs and location
+========================================
+
+📁 /Exercise/Gifs/
+   ├── Abdominal Crunches.gif
+   ├── Alt V Ups.gif
+   ├── Alternating Hooks.gif
+   ├── Arm Circles Clockwise.gif
+   ├── Arm Circles Counterclockwise.gif
+   ├── Arm Circles.gif
+   ├── Arm Raises.gif
+   ├── Arm Scissors.gif
+   ├── Bent Knee Side Hip Raises Left.gif
+   ├── Bent Knee Side Hip Raises Right.gif
+   ├── Bent Leg Raises.gif
+   ├── Bent Leg Twist.gif
+   ├── Bicycle Crunches.gif
+   ├── Brupees.gif
+   ├── Butt bridge.gif
+   ├── Cat Cow Pose.gif
+   ├── Chest Stretch.gif
+   ├── Child's Pose.gif
+   ├── Clapping Crunches.gif
+   ├── Cobra Stretch.gif
+   ├── Crab Walk.gif
+   ├── Cross Arm Crunches.gif
+   ├── Cross Knee Planks.gif
+   ├── Crossover Crunches.gif
+   ├── Crunch Kicks.gif
+   ├── Crunches With Legs Raised.gif
+   ├── Crutches With Legs Raised.gif
+   ├── Dead Bug.gif
+   ├── Decline Push-Ups.gif
+   ├── Diamond Pushups.gif
+   ├── Doorway Curls Left.gif
+   ├── Doorway Curls Right.gif
+   ├── Dynamic Chest.gif
+   ├── Elbows Back.gif
+   ├── Floor Tricep Dips.gif
+   ├── Flutter Kicks.gif
+   ├── Heel Touches.gif
+   ├── Heels To Heaven.gif
+   ├── High Steeping.gif
+   ├── Hindu Push-Ups.gif
+   ├── Hover Push-Ups.gif
+   ├── Hypertension.gif
+   ├── Inchworms.gif
+   ├── Incline Push-Ups.gif
+   ├── Jumping Jacks.gif
+   ├── Knee Push-Ups.gif
+   ├── Leg Barbell Curl Left.gif
+   ├── Leg Barbell Curl Right.gif
+   ├── Leg In & Outs.gif
+   ├── Leg Raises.gif
+   ├── Liying Twist Stretch Left.gif
+   ├── Liying Twist Stretch Rught.gif
+   ├── Long Arm Crunches.gif
+   ├── Military Push-Ups.gif
+   ├── Mountain Climbers.gif
+   ├── Oblique V Ups Left.gif
+   ├── Oblique V Ups Right.gif
+   ├── One down Two Ups.gif
+   ├── Pike Push-Ups.gif
+   ├── Plank and Reach.gif
+   ├── Plank.gif
+   ├── Prone Tricep Push-Ups.gif
+   ├── Push-Up and Rotation.gif
+   ├── Reclined Oblique Twist.gif
+   ├── Reclined Rhomboid Squeezes.gif
+   ├── Reverse Crunches.gif
+   ├── Reverse Push-Ups.gif
+   ├── Reverse Snow Angeles.gif
+   ├── Reversed Crunches with legs raised.gif
+   ├── Rhomboid Pulls.gif
+   ├── Russian Twist.gif
+   ├── Seated Abs Clockwise Circles.gif
+   ├── Seated Abs Counter Clockwise Circles.gif
+   ├── Shoulder Stretch.gif
+   ├── Side Arm Raise.gif
+   ├── Side Bridges Left.gif
+   ├── Side Bridges Right.gif
+   ├── Side Crunches Left.gif
+   ├── Side Crunches Right.gif
+   ├── Side Lying Floor Stretch Left.gif
+   ├── Side Lying Floor Stretch Right.gif
+   ├── Side Plank Left.gif
+   ├── Side Plank Right.gif
+   ├── Sit Up Twist.gif
+   ├── Sit ups.gif
+   ├── Skipping Without Rope.gif
+   ├── Slow mountain climbers.gif
+   ├── SmartSelect_20260801_122407_Six Pack in 30 Days.gif
+   ├── SmartSelect_20260808_200516_Arm Workout.gif
+   ├── Spiderman Push-Ups.gif
+   ├── Staggered Push-Ups.gif
+   ├── Standing Bicep Stretch Left.gif
+   ├── Standing Bicep Stretch Right.gif
+   ├── Standing Bicycle Crunches.gif
+   ├── Star Crawl.gif
+   ├── Straight Arm Plank.gif
+   ├── Supine Push-Ups.gif
+   ├── Swimmer and Superman.gif
+   ├── T Plank Left Pack in 30 Days.gif
+   ├── T Plank Left.gif
+   ├── T Plank Right.gif
+   ├── Tricep Stretch Left.gif
+   ├── Tricep Stretch Right.gif
+   ├── Triceps Dips.gif
+   ├── Triceps Kickbacks Workout.gif
+   ├── Up and Down Push-Ups.gif
+   ├── V Crunch.gif
+   ├── V Ups.gif
+   ├── Wide Arm Push-Ups.gif
+   ├── X Man Crunches.gif
+   ├── desktop.ini
+
+📁 /Exercise/Legs/
+   ├── CALF STRETCH LEFT.gif
+   ├── Donkey Kick Left.gif
+   ├── Donkey Kick Right.gif
+   ├── Froggy Glutes Lifts.gif
+   ├── GLUTE STRETCH LEFT.gif
+   ├── GLUTE STRETCH RIGHT.gif
+   ├── Glute Kick Back Left Workouts App.gif
+   ├── Glute Kick Back Right.gif
+   ├── KNEELING LUNGE STRETCH LEFT.gif
+   ├── KNEELING LUNGE STRETCH RIGHT.jpg
+   ├── Lunge Knee Hop Right.gif
+   ├── Lunge Knee Hops Left.gif
+   ├── Pile Squat.gif
+   ├── QUAD STRETCH LEFT.gif
+   ├── QUAD STRETCH RIGHT.gif
+   ├── SUPINE HAMSTRING STRETCH LEFT.gif
+   ├── SUPINE HAMSTRING STRETCH RIGHT.gif
+   ├── Side Lunge.gif
+   ├── Skater Jump.gif
+   ├── Squat.gif
+   ├── Sumo Squat and Leg Raise.gif
+   ├── Wall Sit.gif
+
+📁 /Exercise/Mewing/
+   ├── Alternating Cheek Puffs.gif
+   ├── CHEEKUPWARD MASSAGE.gif
+   ├── Chin Tuck.gif
+   ├── Eyes and Cheeks.gif
+   ├── Full Face Massage.gif
+   ├── Hyoid Stretch.gif
+   ├── LYMPH DRAINAGE DOWNWARD SLIDE.gif
+   ├── LYMPH DRAINAGE UPWARD SLIDE.gif
+   ├── Lion.gif
+   ├── Neck Lift.gif
+   ├── STERNOCLEIDOMASTOID STRETCHLEFT.gif
+   ├── STERNOCLEIDOMASTOID STRETCHRIGHT.gif
+   ├── Side-to-Side Turns.gif
+   ├── Tongue Turning.gif
+   ├── Upward Chewing.gif
+

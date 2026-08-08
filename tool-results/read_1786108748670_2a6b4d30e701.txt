@@ -1,0 +1,1419 @@
+     1→<!DOCTYPE html>
+     2→<html lang="en">
+     3→<head>
+     4→<meta charset="UTF-8">
+     5→<meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→<title>Life_OS — Your Personal Manual</title>
+     7→<script src="https://cdn.tailwindcss.com"></script>
+     8→<link rel="preconnect" href="https://fonts.googleapis.com">
+     9→<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    10→<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Outfit:wght@200..800&display=swap" rel="stylesheet">
+    11→<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    12→<style>
+    13→  /* 🟤 Change text selection color */
+    14→  ::selection {
+    15→    background: brown;
+    16→    color: white;
+    17→  }
+    18→
+    19→  /* 📱 Remove blue tap highlight on mobile */
+    20→  * {
+    21→    -webkit-tap-highlight-color: transparent;
+    22→  }
+    23→
+    24→  /* 🚫 Prevent dragging links */
+    25→  a {
+    26→    -webkit-user-drag: none;
+    27→    user-drag: none;
+    28→  }
+    29→</style>
+    30→
+    31→<script>
+    32→  // 🚫 Disable right-click
+    33→  document.addEventListener("contextmenu", e => e.preventDefault());
+    34→
+    35→  // 🚫 Block common DevTools shortcuts
+    36→  document.addEventListener("keydown", e => {
+    37→    if (
+    38→      (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key.toUpperCase())) || // Ctrl+Shift+I/J/C
+    39→      (e.ctrlKey && e.key.toUpperCase() === "U") || // Ctrl+U (view source)
+    40→      (e.key === "F12") // F12
+    41→    ) {
+    42→      e.preventDefault();
+    43→    }
+    44→  });
+    45→</script>
+    46→
+    47→<style>
+    48→  :root {
+    49→    --bg: #0e0b08;
+    50→    --bg-2: #15110b;
+    51→    --surface: #1c1610;
+    52→    --surface-2: #251e15;
+    53→    --border: #3a2e1f;
+    54→    --fg: #f4ead8;
+    55→    --fg-muted: #a89a82;
+    56→    --fg-dim: #6b614f;
+    57→    --accent: #e0a96d;
+    58→    --accent-2: #c97b4a;
+    59→    --growth: #8aa884;
+    60→    --trigger: #c97b5a;
+    61→    --serif: 'Fraunces', serif;
+    62→    --sans: 'Outfit', sans-serif;
+    63→  }
+    64→  * { box-sizing: border-box; }
+    65→  html { scroll-behavior: smooth; }
+    66→  body {
+    67→    background: var(--bg);
+    68→    color: var(--fg);
+    69→    font-family: var(--sans);
+    70→    margin: 0;
+    71→    min-height: 100vh;
+    72→    overflow-x: hidden;
+    73→    position: relative;
+    74→    font-weight: 300;
+    75→  }
+    76→  body::before {
+    77→    content: '';
+    78→    position: fixed; inset: 0;
+    79→    background:
+    80→      radial-gradient(circle at 15% 20%, rgba(224, 169, 109, 0.10), transparent 40%),
+    81→      radial-gradient(circle at 85% 80%, rgba(138, 168, 132, 0.07), transparent 50%),
+    82→      radial-gradient(circle at 50% 50%, rgba(201, 123, 74, 0.04), transparent 70%);
+    83→    pointer-events: none; z-index: 0;
+    84→  }
+    85→  body::after {
+    86→    content: '';
+    87→    position: fixed; inset: 0;
+    88→    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    89→    opacity: 0.035; pointer-events: none; z-index: 1;
+    90→  }
+    91→  .orb {
+    92→    position: fixed; border-radius: 50%;
+    93→    filter: blur(80px); pointer-events: none;
+    94→    z-index: 0; opacity: 0.5;
+    95→    animation: float 24s ease-in-out infinite;
+    96→  }
+    97→  @keyframes float {
+    98→    0%, 100% { transform: translate(0, 0) scale(1); }
+    99→    33% { transform: translate(40px, -30px) scale(1.05); }
+   100→    66% { transform: translate(-30px, 40px) scale(0.95); }
+   101→  }
+   102→  main, nav, footer { position: relative; z-index: 2; }
+   103→  .font-serif { font-family: var(--serif); }
+   104→  ::-webkit-scrollbar { width: 10px; }
+   105→  ::-webkit-scrollbar-track { background: var(--bg); }
+   106→  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
+   107→  ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+   108→
+   109→  .input, .textarea {
+   110→    background: rgba(255, 255, 255, 0.02);
+   111→    border: 1px solid var(--border);
+   112→    color: var(--fg);
+   113→    font-family: var(--sans);
+   114→    transition: all 0.3s;
+   115→    font-weight: 300;
+   116→  }
+   117→  .input:focus, .textarea:focus {
+   118→    outline: none;
+   119→    border-color: var(--accent);
+   120→    background: rgba(224, 169, 109, 0.04);
+   121→    box-shadow: 0 0 0 3px rgba(224, 169, 109, 0.08);
+   122→  }
+   123→  .textarea { resize: vertical; min-height: 90px; line-height: 1.7; }
+   124→  .input::placeholder, .textarea::placeholder { color: var(--fg-dim); font-style: italic; }
+   125→
+   126→  .card {
+   127→    background: linear-gradient(135deg, var(--surface) 0%, var(--bg-2) 100%);
+   128→    border: 1px solid var(--border);
+   129→    border-radius: 16px;
+   130→    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+   131→    position: relative;
+   132→    overflow: hidden;
+   133→  }
+   134→  .card:hover {
+   135→    border-color: rgba(224, 169, 109, 0.35);
+   136→    transform: translateY(-2px);
+   137→    box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(224, 169, 109, 0.08);
+   138→  }
+   139→  .card::before {
+   140→    content: '';
+   141→    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+   142→    background: linear-gradient(90deg, transparent, rgba(224, 169, 109, 0.4), transparent);
+   143→    opacity: 0; transition: opacity 0.4s;
+   144→  }
+   145→  .card:hover::before { opacity: 1; }
+   146→
+   147→  .reveal {
+   148→    opacity: 0; transform: translateY(30px);
+   149→    transition: opacity 1s ease, transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+   150→  }
+   151→  .reveal.visible { opacity: 1; transform: translateY(0); }
+   152→
+   153→  .btn-primary {
+   154→    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+   155→    color: #1a1208; font-weight: 600;
+   156→    padding: 12px 28px; border-radius: 8px;
+   157→    border: none; cursor: pointer;
+   158→    transition: all 0.3s; letter-spacing: 0.02em;
+   159→    display: inline-flex; align-items: center; gap: 8px;
+   160→  }
+   161→  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(224, 169, 109, 0.3); }
+   162→  .btn-ghost {
+   163→    background: transparent; color: var(--fg-muted);
+   164→    border: 1px solid var(--border);
+   165→    padding: 10px 20px; border-radius: 8px;
+   166→    cursor: pointer; transition: all 0.3s;
+   167→    display: inline-flex; align-items: center; gap: 8px;
+   168→  }
+   169→  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+   170→
+   171→  .section-eyebrow {
+   172→    font-size: 0.7rem; letter-spacing: 0.35em;
+   173→    text-transform: uppercase; color: var(--accent);
+   174→    font-weight: 500;
+   175→  }
+   176→  .section-title {
+   177→    font-family: var(--serif); font-weight: 300;
+   178→    font-style: italic; letter-spacing: -0.02em;
+   179→    line-height: 1;
+   180→  }
+   181→  .accent-line {
+   182→    width: 60px; height: 1px;
+   183→    background: linear-gradient(90deg, var(--accent), transparent);
+   184→    margin-top: 16px;
+   185→  }
+   186→
+   187→  .tag {
+   188→    display: inline-flex; align-items: center;
+   189→    padding: 4px 12px; border-radius: 20px;
+   190→    font-size: 0.65rem; letter-spacing: 0.1em;
+   191→    text-transform: uppercase; font-weight: 600;
+   192→    border: 1px solid; cursor: pointer;
+   193→    transition: all 0.3s;
+   194→  }
+   195→  .tag-health { color: #e0a96d; border-color: rgba(224, 169, 109, 0.35); background: rgba(224, 169, 109, 0.08); }
+   196→  .tag-relationships { color: #d97a8e; border-color: rgba(217, 122, 142, 0.35); background: rgba(217, 122, 142, 0.08); }
+   197→  .tag-productivity { color: #8aa884; border-color: rgba(138, 168, 132, 0.35); background: rgba(138, 168, 132, 0.08); }
+   198→  .tag-money { color: #c9a96e; border-color: rgba(201, 169, 110, 0.35); background: rgba(201, 169, 110, 0.08); }
+   199→  .tag-learning { color: #7a9ec9; border-color: rgba(122, 158, 201, 0.35); background: rgba(122, 158, 201, 0.08); }
+   200→  .tag-mind { color: #b08ac9; border-color: rgba(176, 138, 201, 0.35); background: rgba(176, 138, 201, 0.08); }
+   201→
+   202→  .nav-link {
+   203→    position: relative; color: var(--fg-muted);
+   204→    transition: color 0.3s; font-size: 0.82rem;
+   205→    letter-spacing: 0.08em;
+   206→  }
+   207→  .nav-link::after {
+   208→    content: ''; position: absolute; bottom: -6px; left: 0;
+   209→    width: 0; height: 1px; background: var(--accent);
+   210→    transition: width 0.3s;
+   211→  }
+   212→  .nav-link:hover, .nav-link.active { color: var(--accent); }
+   213→  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+   214→
+   215→  .hero-title {
+   216→    font-family: var(--serif); font-weight: 200;
+   217→    letter-spacing: -0.04em; line-height: 0.95;
+   218→  }
+   219→  .hero-title em {
+   220→    font-style: italic; font-weight: 400; color: var(--accent);
+   221→    background: linear-gradient(135deg, #e0a96d, #c97b4a);
+   222→    -webkit-background-clip: text;
+   223→    -webkit-text-fill-color: transparent;
+   224→    background-clip: text;
+   225→  }
+   226→
+   227→  .breath-circle {
+   228→    width: 220px; height: 220px; border-radius: 50%;
+   229→    background: radial-gradient(circle, rgba(224, 169, 109, 0.25), rgba(224, 169, 109, 0.02));
+   230→    border: 1px solid rgba(224, 169, 109, 0.3);
+   231→    animation: breathe 8s ease-in-out infinite;
+   232→    display: flex; align-items: center; justify-content: center;
+   233→  }
+   234→  @keyframes breathe {
+   235→    0%, 100% { transform: scale(0.85); box-shadow: 0 0 40px rgba(224, 169, 109, 0.2); }
+   236→    50% { transform: scale(1.1); box-shadow: 0 0 80px rgba(224, 169, 109, 0.4); }
+   237→  }
+   238→
+   239→  .tab {
+   240→    padding: 12px 18px; color: var(--fg-muted);
+   241→    cursor: pointer; border-bottom: 2px solid transparent;
+   242→    transition: all 0.3s; font-size: 0.82rem;
+   243→    letter-spacing: 0.06em; white-space: nowrap;
+   244→    font-weight: 400;
+   245→  }
+   246→  .tab:hover { color: var(--fg); }
+   247→  .tab.active { color: var(--accent); border-color: var(--accent); }
+   248→
+   249→  .identity-card {
+   250→    background: linear-gradient(135deg, rgba(224, 169, 109, 0.05), rgba(224, 169, 109, 0.01));
+   251→    border: 1px solid rgba(224, 169, 109, 0.18);
+   252→    border-radius: 12px; padding: 18px;
+   253→    transition: all 0.3s; position: relative;
+   254→  }
+   255→  .identity-card:hover {
+   256→    border-color: rgba(224, 169, 109, 0.45);
+   257→    background: linear-gradient(135deg, rgba(224, 169, 109, 0.08), rgba(224, 169, 109, 0.02));
+   258→  }
+   259→
+   260→  .check-btn {
+   261→    width: 24px; height: 24px; border-radius: 50%;
+   262→    border: 2px solid var(--border);
+   263→    cursor: pointer; transition: all 0.3s;
+   264→    display: flex; align-items: center; justify-content: center;
+   265→    flex-shrink: 0;
+   266→  }
+   267→  .check-btn:hover { border-color: var(--accent); }
+   268→  .check-btn.checked {
+   269→    border-color: var(--growth); background: var(--growth);
+   270→    box-shadow: 0 0 12px rgba(138, 168, 132, 0.4);
+   271→  }
+   272→  .check-btn.checked::after {
+   273→    content: '✓'; color: #0e0b08; font-size: 13px; font-weight: bold;
+   274→  }
+   275→
+   276→  .emergency-overlay {
+   277→    position: fixed; inset: 0;
+   278→    background: radial-gradient(circle at 50% 30%, #1a1208, #0a0805);
+   279→    z-index: 100; overflow-y: auto;
+   280→    opacity: 0; pointer-events: none;
+   281→    transition: opacity 0.5s;
+   282→  }
+   283→  .emergency-overlay.active { opacity: 1; pointer-events: auto; }
+   284→
+   285→  .toast {
+   286→    position: fixed; bottom: 30px; right: 30px;
+   287→    background: var(--surface); border: 1px solid var(--accent);
+   288→    color: var(--fg); padding: 14px 24px; border-radius: 10px;
+   289→    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+   290→    transform: translateY(100px); opacity: 0;
+   291→    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+   292→    z-index: 200; font-size: 0.88rem;
+   293→  }
+   294→  .toast.show { transform: translateY(0); opacity: 1; }
+   295→
+   296→  .question-card {
+   297→    background: rgba(255,255,255,0.015);
+   298→    border: 1px solid var(--border);
+   299→    border-radius: 12px; padding: 20px;
+   300→    transition: all 0.3s;
+   301→  }
+   302→  .question-card:hover { border-color: rgba(224, 169, 109, 0.3); }
+   303→
+   304→  .remove-btn {
+   305→    color: var(--fg-dim); cursor: pointer;
+   306→    transition: all 0.2s; font-size: 0.85rem;
+   307→    padding: 4px 8px; border-radius: 6px;
+   308→  }
+   309→  .remove-btn:hover { color: var(--trigger); background: rgba(201, 123, 90, 0.1); }
+   310→
+   311→  .stat-number {
+   312→    font-family: var(--serif); font-weight: 300;
+   313→    letter-spacing: -0.02em;
+   314→  }
+   315→
+   316→  .constellation { position: absolute; inset: 0; pointer-events: none; }
+   317→  .star {
+   318→    position: absolute; width: 2px; height: 2px;
+   319→    background: var(--accent); border-radius: 50%;
+   320→    box-shadow: 0 0 6px var(--accent);
+   321→    animation: twinkle 3s ease-in-out infinite;
+   322→  }
+   323→  @keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+   324→
+   325→  .tabs-strip::-webkit-scrollbar { display: none; }
+   326→  .tabs-strip { -ms-overflow-style: none; scrollbar-width: none; }
+   327→
+   328→  select.input {
+   329→    appearance: none;
+   330→    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23a89a82' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+   331→    background-repeat: no-repeat; background-position: right 12px center;
+   332→    padding-right: 36px;
+   333→  }
+   334→
+   335→  .saved-dot {
+   336→    width: 6px; height: 6px; border-radius: 50%;
+   337→    background: var(--growth);
+   338→    box-shadow: 0 0 8px var(--growth);
+   339→    animation: pulse 2.5s infinite;
+   340→  }
+   341→  @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+   342→
+   343→  .identity-orb {
+   344→    width: 100px; height: 100px; border-radius: 50%;
+   345→    background: conic-gradient(var(--growth) 0deg, var(--border) 0deg);
+   346→    display: flex; align-items: center; justify-content: center;
+   347→    position: relative; transition: all 0.8s;
+   348→    flex-shrink: 0;
+   349→  }
+   350→  .identity-orb::before {
+   351→    content: ''; position: absolute; inset: 8px;
+   352→    background: var(--surface); border-radius: 50%;
+   353→  }
+   354→  .identity-orb span {
+   355→    position: relative; z-index: 1;
+   356→    font-family: var(--serif); font-size: 1.5rem;
+   357→    color: var(--accent); font-weight: 400;
+   358→  }
+   359→
+   360→  .insight-card {
+   361→    background: linear-gradient(135deg, rgba(138, 168, 132, 0.08), rgba(138, 168, 132, 0.01));
+   362→    border: 1px solid rgba(138, 168, 132, 0.25);
+   363→    border-radius: 12px; padding: 16px 20px;
+   364→  }
+   365→
+   366→  @media (max-width: 768px) {
+   367→    .nav-links { display: none; }
+   368→    .hero-title { font-size: 3rem !important; }
+   369→  }
+   370→
+   371→  .quote-mark {
+   372→    font-family: var(--serif); font-size: 5rem;
+   373→    line-height: 0.5; color: var(--accent);
+   374→    opacity: 0.4; font-style: italic;
+   375→  }
+   376→
+   377→  /* Filter button active state */
+   378→  .filter-btn.active {
+   379→    background: rgba(224,169,109,0.15) !important;
+   380→    border-color: var(--accent) !important;
+   381→    color: var(--accent) !important;
+   382→  }
+   383→</style>
+   384→</head>
+   385→<body>
+   386→
+   387→<!-- Atmospheric orbs -->
+   388→<div class="orb" style="width: 400px; height: 400px; background: rgba(224, 169, 109, 0.18); top: 8%; left: -8%;"></div>
+   389→<div class="orb" style="width: 350px; height: 350px; background: rgba(138, 168, 132, 0.12); top: 55%; right: -5%; animation-delay: -8s;"></div>
+   390→<div class="orb" style="width: 280px; height: 280px; background: rgba(201, 123, 74, 0.12); top: 35%; left: 45%; animation-delay: -16s;"></div>
+   391→
+   392→<!-- Navigation -->
+   393→<nav class="sticky top-0 z-50 backdrop-blur-xl bg-[#0e0b08]/85 border-b border-[#3a2e1f]/50">
+   394→  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+   395→    <div class="flex items-center gap-3">
+   396→      <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#e0a96d] to-[#c97b4a] flex items-center justify-center shadow-lg shadow-[#e0a96d]/20">
+   397→        <span class="font-serif text-[#1a1208] font-bold text-xl italic">L</span>
+   398→      </div>
+   399→      <div>
+   400→        <div class="font-serif italic text-lg leading-none">Life_OS</div>
+   401→        <div class="text-[10px] tracking-[0.3em] uppercase text-[#a89a82] mt-1">Your Manual</div>
+   402→      </div>
+   403→    </div>
+   404→    <div class="nav-links hidden md:flex items-center gap-8">
+   405→      <a href="#hero" class="nav-link active">Home</a>
+   406→      <a href="#life-map" class="nav-link">Life Map</a>
+   407→      <a href="#identity" class="nav-link">Identity</a>
+   408→      <a href="#reflection" class="nav-link">Reflection</a>
+   409→      <a href="#rules" class="nav-link">Rules</a>
+   410→      <a href="#future-self" class="nav-link">Future Self</a>
+   411→    </div>
+   412→    <button onclick="openEmergency()" class="btn-ghost text-xs">
+   413→      <i class="fas fa-life-ring"></i>
+   414→      <span class="hidden sm:inline">Emergency</span>
+   415→    </button>
+   416→  </div>
+   417→</nav>
+   418→
+   419→<main class="max-w-7xl mx-auto px-6">
+   420→
+   421→  <!-- HERO -->
+   422→  <section id="hero" class="min-h-[88vh] flex flex-col justify-center py-20 relative">
+   423→    <div class="constellation" id="constellation"></div>
+   424→    <div class="max-w-4xl relative">
+   425→      <div class="section-eyebrow mb-6">A Manual For Living Intentionally</div>
+   426→      <h1 class="hero-title text-6xl md:text-8xl mb-8">
+   427→        Design your life,<br>
+   428→        <em>not someone else's.</em>
+   429→      </h1>
+   430→      <p class="text-xl text-[#a89a82] max-w-2xl leading-relaxed mb-10 font-light">
+   431→        Most people drift because they never wrote down who they want to become.
+   432→        This is your operating system — a place to define your direction,
+   433→        build your identity, and reflect with radical honesty.
+   434→      </p>
+   435→      <div class="flex flex-wrap gap-4 mb-16">
+   436→        <a href="#life-map" class="btn-primary">Begin Mapping <i class="fas fa-arrow-right text-xs"></i></a>
+   437→        <a href="#identity" class="btn-ghost">Build Identity</a>
+   438→      </div>
+   439→      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 border-t border-[#3a2e1f]/50">
+   440→        <div>
+   441→          <div class="stat-number text-5xl text-[#e0a96d]" id="stat-identity">0</div>
+   442→          <div class="text-xs uppercase tracking-wider text-[#a89a82] mt-2">Identity Statements</div>
+   443→        </div>
+   444→        <div>
+   445→          <div class="stat-number text-5xl text-[#e0a96d]" id="stat-rules">0</div>
+   446→          <div class="text-xs uppercase tracking-wider text-[#a89a82] mt-2">Personal Rules</div>
+   447→        </div>
+   448→        <div>
+   449→          <div class="stat-number text-5xl text-[#e0a96d]" id="stat-reflections">0</div>
+   450→          <div class="text-xs uppercase tracking-wider text-[#a89a82] mt-2">Reflections Written</div>
+   451→        </div>
+   452→        <div>
+   453→          <div class="stat-number text-5xl text-[#e0a96d]" id="stat-streak">1</div>
+   454→          <div class="text-xs uppercase tracking-wider text-[#a89a82] mt-2">Day Present</div>
+   455→        </div>
+   456→      </div>
+   457→    </div>
+   458→  </section>
+   459→
+   460→  <!-- LIFE MAP -->
+   461→  <section id="life-map" class="py-24 reveal">
+   462→    <div class="mb-16">
+   463→      <div class="section-eyebrow mb-4">Chapter I</div>
+   464→      <h2 class="section-title text-5xl md:text-6xl mb-4">The Life Map</h2>
+   465→      <div class="accent-line"></div>
+   466→      <p class="text-[#a89a82] max-w-2xl mt-6 text-lg leading-relaxed">
+   467→        A place where you design your future. Direction is the cure for distraction —
+   468→        answer these honestly, and revisit them often. Clarity here will pull you forward when motivation fails.
+   469→      </p>
+   470→    </div>
+   471→    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="life-map-grid"></div>
+   472→  </section>
+   473→
+   474→  <!-- IDENTITY BUILDER -->
+   475→  <section id="identity" class="py-24 reveal">
+   476→    <div class="mb-16">
+   477→      <div class="section-eyebrow mb-4">Chapter II</div>
+   478→      <h2 class="section-title text-5xl md:text-6xl mb-4">Identity Builder</h2>
+   479→      <div class="accent-line"></div>
+   480→      <p class="text-[#a89a82] max-w-2xl mt-6 text-lg leading-relaxed">
+   481→        Don't say "I want to wake up early." Say <em class="text-[#e0a96d]">"I am someone who respects my time."</em>
+   482→        Behavior follows identity. Define who you are — then ask each night if today's actions matched that person.
+   483→      </p>
+   484→    </div>
+   485→
+   486→    <!-- Daily check -->
+   487→    <div class="card p-8 mb-10">
+   488→      <div class="flex flex-col md:flex-row items-center gap-8">
+   489→        <div class="identity-orb" id="identity-orb">
+   490→          <span id="identity-percent">0%</span>
+   491→        </div>
+   492→        <div class="flex-1 text-center md:text-left">
+   493→          <div class="section-eyebrow mb-2">Tonight's Question</div>
+   494→          <h3 class="font-serif text-2xl md:text-3xl mb-2 italic">Did today's actions match your identity?</h3>
+   495→          <p class="text-[#a89a82] text-sm">Check each statement you lived up to today. Be honest — this is for you, not for show.</p>
+   496→        </div>
+   497→        <div class="text-center md:text-right">
+   498→          <div class="text-xs uppercase tracking-wider text-[#a89a82] mb-1">Last check</div>
+   499→          <div class="text-sm text-[#f4ead8]" id="last-check-date">Not yet today</div>
+   500→          <div class="flex items-center gap-2 justify-center md:justify-end mt-2">
+   501→            <div class="saved-dot"></div>
+   502→            <span class="text-xs text-[#8aa884]">Auto-saved</span>
+   503→          </div>
+   504→        </div>
+   505→      </div>
+   506→    </div>
+   507→
+   508→    <!-- Identity statements -->
+   509→    <div class="mb-6 flex items-center justify-between">
+   510→      <h3 class="font-serif text-2xl italic">Your Identity Statements</h3>
+   511→      <button onclick="addIdentity()" class="btn-ghost text-xs">
+   512→        <i class="fas fa-plus"></i> New Statement
+   513→      </button>
+   514→    </div>
+   515→    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12" id="identity-list"></div>
+   516→
+   517→    <!-- Screen time + Urge journal -->
+   518→    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+   519→      <div class="card p-6">
+   520→        <div class="flex items-center gap-3 mb-4">
+   521→          <div class="w-10 h-10 rounded-lg bg-[#c97b4a]/20 flex items-center justify-center">
+   522→            <i class="fas fa-mobile-screen text-[#c97b4a]"></i>
+   523→          </div>
+   524→          <h4 class="font-serif text-xl italic">Screen Time Today</h4>
+   525→        </div>
+   526→        <p class="text-xs text-[#a89a82] mb-4">Track honestly. Awareness is the first step toward change.</p>
+   527→        <div class="flex gap-2 items-center">
+   528→          <input type="number" min="0" max="24" id="screen-hours" class="input w-20 px-3 py-2 rounded-lg text-center" placeholder="0">
+   529→          <span class="text-[#a89a82] text-sm">hrs</span>
+   530→          <input type="number" min="0" max="59" id="screen-minutes" class="input w-20 px-3 py-2 rounded-lg text-center" placeholder="0">
+   531→          <span class="text-[#a89a82] text-sm">min</span>
+   532→        </div>
+   533→        <div class="mt-4 text-xs text-[#a89a82]" id="screen-streak">No entries yet</div>
+   534→      </div>
+   535→
+   536→      <div class="card p-6">
+   537→        <div class="flex items-center gap-3 mb-4">
+   538→          <div class="w-10 h-10 rounded-lg bg-[#c97b5a]/20 flex items-center justify-center">
+   539→            <i class="fas fa-wind text-[#c97b5a]"></i>
+   540→          </div>
+   541→          <h4 class="font-serif text-xl italic">Urge Journal</h4>
+   542→        </div>
+   543→        <p class="text-xs text-[#a89a82] mb-4">When the urge hit, what happened? Patterns will reveal themselves.</p>
+   544→        <div class="space-y-2">
+   545→          <input type="text" id="urge-trigger" class="input w-full px-3 py-2 rounded-lg text-sm" placeholder="What triggered me?">
+   546→          <input type="text" id="urge-emotion" class="input w-full px-3 py-2 rounded-lg text-sm" placeholder="What emotion was I feeling?">
+   547→          <input type="text" id="urge-choice" class="input w-full px-3 py-2 rounded-lg text-sm" placeholder="What did I choose instead?">
+   548→        </div>
+   549→        <button onclick="saveUrge()" class="btn-primary mt-4 text-xs py-2 px-4">Log Entry</button>
+   550→      </div>
+   551→    </div>
+   552→
+   553→    <!-- Pattern insight -->
+   554→    <div id="insight-container" class="mb-6"></div>
+   555→
+   556→    <!-- Digital detox -->
+   557→    <div class="card p-6">
+   558→      <div class="flex items-center justify-between mb-4 flex-wrap gap-3">
+   559→        <div class="flex items-center gap-3">
+   560→          <div class="w-10 h-10 rounded-lg bg-[#8aa884]/20 flex items-center justify-center">
+   561→            <i class="fas fa-leaf text-[#8aa884]"></i>
+   562→          </div>
+   563→          <h4 class="font-serif text-xl italic">Digital Detox Challenges</h4>
+   564→        </div>
+   565→        <button onclick="addDetox()" class="btn-ghost text-xs">
+   566→          <i class="fas fa-plus"></i> Add Challenge
+   567→        </button>
+   568→      </div>
+   569→      <div id="detox-list" class="space-y-2"></div>
+   570→    </div>
+   571→  </section>
+   572→
+   573→  <!-- REFLECTION -->
+   574→  <section id="reflection" class="py-24 reveal">
+   575→    <div class="mb-16">
+   576→      <div class="section-eyebrow mb-4">Chapter III</div>
+   577→      <h2 class="section-title text-5xl md:text-6xl mb-4">Reflection</h2>
+   578→      <div class="accent-line"></div>
+   579→      <p class="text-[#a89a82] max-w-2xl mt-6 text-lg leading-relaxed">
+   580→        Six collections of questions. Defaults are here to start — remove what
+   581→        doesn't serve you, add what does. Over time, patterns emerge. Insight beats information.
+   582→      </p>
+   583→    </div>
+   584→    <div class="tabs-strip flex gap-2 overflow-x-auto border-b border-[#3a2e1f]/50 mb-8 pb-px" id="reflection-tabs"></div>
+   585→    <div id="reflection-content"></div>
+   586→    <div class="mt-8 card p-6">
+   587→      <h4 class="font-serif text-lg italic mb-3">Add Your Own Question to This Category</h4>
+   588→      <div class="flex gap-3 flex-wrap">
+   589→        <input type="text" id="new-question-text" class="input flex-1 px-4 py-3 rounded-lg min-w-[200px]" placeholder="What do you need to ask yourself?">
+   590→        <button onclick="addCustomQuestion()" class="btn-primary">Add Question</button>
+   591→      </div>
+   592→    </div>
+   593→  </section>
+   594→
+   595→  <!-- PERSONAL RULES -->
+   596→  <section id="rules" class="py-24 reveal">
+   597→    <div class="mb-16">
+   598→      <div class="section-eyebrow mb-4">Chapter IV</div>
+   599→      <h2 class="section-title text-5xl md:text-6xl mb-4">Personal Rules</h2>
+   600→      <div class="accent-line"></div>
+   601→      <p class="text-[#a89a82] max-w-2xl mt-6 text-lg leading-relaxed">
+   602→        Rules are decisions made in advance. When emotion tries to override reason,
+   603→        these are what you return to. Tag them, refine them, live by them.
+   604→      </p>
+   605→    </div>
+   606→    <div class="card p-6 mb-8">
+   607→      <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+   608→        <input type="text" id="new-rule" class="input md:col-span-7 px-4 py-3 rounded-lg" placeholder="e.g., No phone during meals.">
+   609→        <select id="new-rule-tag" class="input md:col-span-3 px-4 py-3 rounded-lg">
+   610→          <option value="health">Health</option>
+   611→          <option value="relationships">Relationships</option>
+   612→          <option value="productivity">Productivity</option>
+   613→          <option value="money">Money</option>
+   614→          <option value="learning">Learning</option>
+   615→          <option value="mind">Mind</option>
+   616→        </select>
+   617→        <button onclick="addRule()" class="btn-primary md:col-span-2 justify-center">Add Rule</button>
+   618→      </div>
+   619→    </div>
+   620→    <div class="flex flex-wrap gap-2 mb-6" id="rule-filters">
+   621→      <button class="tag filter-btn active" data-filter="all">All</button>
+   622→      <button class="tag tag-health filter-btn" data-filter="health">Health</button>
+   623→      <button class="tag tag-relationships filter-btn" data-filter="relationships">Relationships</button>
+   624→      <button class="tag tag-productivity filter-btn" data-filter="productivity">Productivity</button>
+   625→      <button class="tag tag-money filter-btn" data-filter="money">Money</button>
+   626→      <button class="tag tag-learning filter-btn" data-filter="learning">Learning</button>
+   627→      <button class="tag tag-mind filter-btn" data-filter="mind">Mind</button>
+   628→    </div>
+   629→    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="rules-list"></div>
+   630→  </section>
+   631→
+   632→  <!-- FUTURE SELF -->
+   633→  <section id="future-self" class="py-24 reveal">
+   634→    <div class="mb-16">
+   635→      <div class="section-eyebrow mb-4">Chapter V</div>
+   636→      <h2 class="section-title text-5xl md:text-6xl mb-4">Future Self</h2>
+   637→      <div class="accent-line"></div>
+   638→      <p class="text-[#a89a82] max-w-2xl mt-6 text-lg leading-relaxed">
+   639→        A conversation across time. The person you become is being built right now,
+   640→        by every choice you make today.
+   641→      </p>
+   642→    </div>
+   643→    <div class="card p-8 md:p-12">
+   644→      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+   645→        <div>
+   646→          <div class="quote-mark mb-2">"</div>
+   647→          <h4 class="font-serif text-2xl italic mb-4 text-[#e0a96d]">From your future self</h4>
+   648→          <p class="text-[#a89a82] text-sm leading-relaxed mb-6">
+   649→            Imagine yourself ten years from today, looking back at this exact moment.
+   650→            What would they say? What would they thank you for? What would they beg you to start — or stop — right now?
+   651→          </p>
+   652→          <div class="space-y-5">
+   653→            <div>
+   654→              <label class="text-xs uppercase tracking-wider text-[#e0a96d] block mb-2">What would my future self tell me right now?</label>
+   655→              <textarea class="textarea input w-full p-3 rounded-lg" data-future="future-message" placeholder="Listen carefully..."></textarea>
+   656→            </div>
+   657→            <div>
+   658→              <label class="text-xs uppercase tracking-wider text-[#e0a96d] block mb-2">If I keep my current habits for 5 years, where will I end up?</label>
+   659→              <textarea class="textarea input w-full p-3 rounded-lg" data-future="five-year-habits" placeholder="Be brutally honest..."></textarea>
+   660→            </div>
+   661→          </div>
+   662→        </div>
+   663→        <div>
+   664→          <div class="quote-mark mb-2 text-[#8aa884]">"</div>
+   665→          <h4 class="font-serif text-2xl italic mb-4 text-[#8aa884]">From your younger self</h4>
+   666→          <p class="text-[#a89a82] text-sm leading-relaxed mb-6">
+   667→            The child you once were had dreams without limits. The version of you from
+   668→            five years ago had lessons to learn. Listen to them both.
+   669→          </p>
+   670→          <div class="space-y-5">
+   671→            <div>
+   672→              <label class="text-xs uppercase tracking-wider text-[#8aa884] block mb-2">What advice would my younger self need?</label>
+   673→              <textarea class="textarea input w-full p-3 rounded-lg" data-future="younger-advice" placeholder="Speak kindly..."></textarea>
+   674→            </div>
+   675→            <div>
+   676→              <label class="text-xs uppercase tracking-wider text-[#8aa884] block mb-2">What skill should I start learning today?</label>
+   677→              <textarea class="textarea input w-full p-3 rounded-lg" data-future="skill-today" placeholder="Begin before you're ready..."></textarea>
+   678→            </div>
+   679→          </div>
+   680→        </div>
+   681→      </div>
+   682→    </div>
+   683→  </section>
+   684→
+   685→  <!-- MOTTO -->
+   686→  <section class="py-24 reveal">
+   687→    <div class="card p-12 md:p-20 text-center relative overflow-hidden">
+   688→      <div class="absolute inset-0 bg-gradient-to-br from-[#e0a96d]/8 to-transparent"></div>
+   689→      <div class="relative">
+   690→        <div class="section-eyebrow mb-6">Your Personal Motto</div>
+   691→        <input type="text" id="motto" class="bg-transparent text-center font-serif italic text-3xl md:text-5xl text-[#f4ead8] border-none outline-none w-full placeholder-[#6b614f] placeholder:italic" placeholder="Write the words you live by...">
+   692→        <div class="accent-line mx-auto mt-8" style="margin-left:auto;margin-right:auto;"></div>
+   693→        <p class="text-[#a89a82] text-sm mt-6 max-w-lg mx-auto">A single sentence to return to when the world gets loud. Let it anchor you.</p>
+   694→      </div>
+   695→    </div>
+   696→  </section>
+   697→
+   698→</main>
+   699→
+   700→<!-- FOOTER -->
+   701→<footer class="border-t border-[#3a2e1f]/50 mt-12 py-12">
+   702→  <div class="max-w-7xl mx-auto px-6">
+   703→    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+   704→      <div>
+   705→        <div class="font-serif italic text-2xl mb-3">Life_OS</div>
+   706→        <p class="text-sm text-[#a89a82] leading-relaxed">
+   707→          A manual for intentional living. Built for those who refuse to drift through their one precious life.
+   708→        </p>
+   709→      </div>
+   710→      <div>
+   711→        <div class="text-xs uppercase tracking-wider text-[#e0a96d] mb-3">Reminder</div>
+   712→        <p class="text-sm text-[#a89a82] leading-relaxed italic">
+   713→          "You are the author of your life. Don't let someone else hold the pen."
+   714→        </p>
+   715→      </div>
+   716→      <div>
+   717→        <div class="text-xs uppercase tracking-wider text-[#e0a96d] mb-3">Your Data</div>
+   718→        <p class="text-sm text-[#a89a82] leading-relaxed mb-3">
+   719→          Everything stays in your browser. Nothing is sent anywhere. Only you can read this.
+   720→        </p>
+   721→        <button onclick="exportData()" class="btn-ghost text-xs">
+   722→          <i class="fas fa-download"></i> Export My Manual
+   723→        </button>
+   724→      </div>
+   725→    </div>
+   726→    <div class="pt-6 border-t border-[#3a2e1f]/50 flex flex-col md:flex-row justify-between items-center gap-3">
+   727→      <div class="text-xs text-[#6b614f]">
+   728→        © <span id="year"></span> Life_OS · Crafted with intention
+   729→      </div>
+   730→      <div class="text-xs text-[#6b614f]">© Adeshjeet_Official</div>
+   731→    </div>
+   732→  </div>
+   733→</footer>
+   734→
+   735→<!-- EMERGENCY OVERLAY -->
+   736→<div class="emergency-overlay" id="emergency-overlay">
+   737→  <div class="max-w-4xl mx-auto px-6 py-16">
+   738→    <div class="flex justify-between items-center mb-12">
+   739→      <div>
+   740→        <div class="section-eyebrow mb-2">Emergency Page</div>
+   741→        <h2 class="font-serif italic text-4xl text-[#f4ead8]">You are not lost.</h2>
+   742→      </div>
+   743→      <button onclick="closeEmergency()" class="btn-ghost">
+   744→        <i class="fas fa-times"></i> Close
+   745→      </button>
+   746→    </div>
+   747→
+   748→    <div class="flex flex-col items-center mb-16">
+   749→      <div class="breath-circle">
+   750→        <div class="text-center">
+   751→          <div class="font-serif italic text-xl text-[#e0a96d]" id="breath-text">Breathe in</div>
+   752→        </div>
+   753→      </div>
+   754→      <p class="text-[#a89a82] text-sm mt-6 max-w-md text-center leading-relaxed">
+   755→        Before you read on, breathe. Four seconds in. Four seconds out.
+   756→        You came here for a reason — and that reason is already passing.
+   757→      </p>
+   758→    </div>
+   759→
+   760→    <div class="space-y-5">
+   761→      <div class="card p-6">
+   762→        <div class="flex items-center gap-3 mb-3">
+   763→          <i class="fas fa-fire text-[#e0a96d]"></i>
+   764→          <h3 class="font-serif text-xl italic">Why am I fighting for my goals?</h3>
+   765→        </div>
+   766→        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="why-fighting" placeholder="The reason has to be bigger than the resistance..."></textarea>
+   767→      </div>
+   768→      <div class="card p-6">
+   769→        <div class="flex items-center gap-3 mb-3">
+   770→          <i class="fas fa-heart text-[#d97a8e]"></i>
+   771→          <h3 class="font-serif text-xl italic">Who loves and supports me?</h3>
+   772→        </div>
+   773→        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="who-loves" placeholder="Names, faces, the people who would show up..."></textarea>
+   774→      </div>
+   775→      <div class="card p-6">
+   776→        <div class="flex items-center gap-3 mb-3">
+   777→          <i class="fas fa-trophy text-[#c9a96e]"></i>
+   778→          <h3 class="font-serif text-xl italic">My proudest moments</h3>
+   779→        </div>
+   780→        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="proudest" placeholder="Times you surprised yourself. Times you didn't quit..."></textarea>
+   781→      </div>
+   782→      <div class="card p-6">
+   783→        <div class="flex items-center gap-3 mb-3">
+   784→          <i class="fas fa-mountain text-[#8aa884]"></i>
+   785→          <h3 class="font-serif text-xl italic">Problems I have already overcome</h3>
+   786→        </div>
+   787→        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="overcome" placeholder="Things that once felt impossible..."></textarea>
+   788→      </div>
+   789→      <div class="card p-6">
+   790→        <div class="flex items-center gap-3 mb-3">
+   791→          <i class="fas fa-seedling text-[#8aa884]"></i>
+   792→          <h3 class="font-serif text-xl italic">Things worth living for</h3>
+   793→        </div>
+   794→        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="worth-living" placeholder="Small things. Big things. The taste of morning coffee..."></textarea>
+   795→      </div>
+   796→      <div class="card p-6">
+   797→        <div class="flex items-center gap-3 mb-3">
+   798→          <i class="fas fa-quote-right text-[#e0a96d]"></i>
+   799→          <h3 class="font-serif text-xl italic">My personal motto</h3>
+   800→        </div>
+   801→        <textarea class="textarea input w-full p-3 rounded-lg" data-emergency="motto" placeholder="The words that bring you back..."></textarea>
+   802→      </div>
+   803→
+   804→      <div class="card p-6" style="background: linear-gradient(135deg, rgba(138, 168, 132, 0.08), rgba(138, 168, 132, 0.01)); border-color: rgba(138, 168, 132, 0.3);">
+   805→        <div class="flex items-center gap-3 mb-4">
+   806→          <i class="fas fa-hand-holding-heart text-[#8aa884]"></i>
+   807→          <h3 class="font-serif text-xl italic text-[#8aa884]">Grounding — 5-4-3-2-1</h3>
+   808→        </div>
+   809→        <p class="text-sm text-[#a89a82] mb-4">Name out loud, right now:</p>
+   810→        <ul class="space-y-2 text-sm text-[#f4ead8]">
+   811→          <li class="flex gap-3"><span class="text-[#8aa884] font-bold w-4">5</span> things you can see around you</li>
+   812→          <li class="flex gap-3"><span class="text-[#8aa884] font-bold w-4">4</span> things you can touch</li>
+   813→          <li class="flex gap-3"><span class="text-[#8aa884] font-bold w-4">3</span> things you can hear</li>
+   814→          <li class="flex gap-3"><span class="text-[#8aa884] font-bold w-4">2</span> things you can smell</li>
+   815→          <li class="flex gap-3"><span class="text-[#8aa884] font-bold w-4">1</span> thing you can taste</li>
+   816→        </ul>
+   817→      </div>
+   818→
+   819→      <div class="text-center pt-8 pb-4">
+   820→        <p class="font-serif italic text-2xl text-[#e0a96d] mb-3">
+   821→          "This feeling is weather. It will pass."
+   822→        </p>
+   823→        <p class="text-sm text-[#a89a82]">
+   824→          You have survived every hard day so far. That is a 100% record.
+   825→        </p>
+   826→      </div>
+   827→    </div>
+   828→  </div>
+   829→</div>
+   830→
+   831→<div class="toast" id="toast"></div>
+   832→
+   833→<script>
+   834→// ============ DATA LAYER ============
+   835→const STORE_KEY = 'life_os_v1';
+   836→let store = loadStore();
+   837→
+   838→function loadStore() {
+   839→  try {
+   840→    const raw = localStorage.getItem(STORE_KEY);
+   841→    if (raw) return { ...getDefaultStore(), ...JSON.parse(raw) };
+   842→  } catch(e) {}
+   843→  return getDefaultStore();
+   844→}
+   845→
+   846→function getDefaultStore() {
+   847→  return {
+   848→    lifeMap: {},
+   849→    identity: [
+   850→      { text: 'I am a disciplined person.', checked: false },
+   851→      { text: 'I finish what I start.', checked: false },
+   852→      { text: 'I protect my mind.', checked: false },
+   853→      { text: 'I learn every day.', checked: false }
+   854→    ],
+   855→    identityLastCheck: null,
+   856→    screenTime: [],
+   857→    urges: [],
+   858→    detox: [
+   859→      { text: 'No phone in the first hour after waking', active: true },
+   860→      { text: 'No phone in bed', active: true },
+   861→      { text: 'One screen-free meal per day', active: false }
+   862→    ],
+   863→    questions: getDefaultQuestions(),
+   864→    questionAnswers: {},
+   865→    rules: [
+   866→      { text: 'No phone during meals.', tag: 'mind' },
+   867→      { text: 'Sleep before 11 PM.', tag: 'health' },
+   868→      { text: 'Never make important decisions when angry.', tag: 'mind' },
+   869→      { text: 'Read before sleeping.', tag: 'learning' },
+   870→      { text: 'Exercise at least three times a week.', tag: 'health' }
+   871→    ],
+   872→    future: {},
+   873→    emergency: {},
+   874→    motto: '',
+   875→    activeTab: 'identity',
+   876→    ruleFilter: 'all'
+   877→  };
+   878→}
+   879→
+   880→function getDefaultQuestions() {
+   881→  return {
+   882→    identity: {
+   883→      title: 'Identity', icon: 'fa-user', color: '#e0a96d',
+   884→      items: [
+   885→        'Who am I becoming?',
+   886→        'What kind of person do I respect?',
+   887→        'What are my three strongest qualities?',
+   888→        'What are my biggest weaknesses?',
+   889→        'What values do I refuse to compromise on?',
+   890→        'What do I want people to remember about me?'
+   891→      ]
+   892→    },
+   893→    triggers: {
+   894→      title: 'Triggers & Emotions', icon: 'fa-bolt', color: '#c97b5a',
+   895→      items: [
+   896→        'What made me anxious today?',
+   897→        'What made me procrastinate?',
+   898→        'What emotion pushed me to open social media?',
+   899→        'Was I bored, lonely, stressed, or avoiding something?',
+   900→        'What activity improved my mood?'
+   901→      ]
+   902→    },
+   903→    decisions: {
+   904→      title: 'Decision Review', icon: 'fa-scale-balanced', color: '#c9a96e',
+   905→      items: [
+   906→        'What important decision did I make today?',
+   907→        'Why did I make it?',
+   908→        'Was it emotional or logical?',
+   909→        'Will my future self thank me for this decision?',
+   910→        'What would happen if I repeated this choice for a year?'
+   911→      ]
+   912→    },
+   913→    fomo: {
+   914→      title: 'Anti-FOMO', icon: 'fa-shield', color: '#8aa884',
+   915→      items: [
+   916→        'What exactly did I feel I was missing?',
+   917→        'Did seeing others online change my mood?',
+   918→        "Am I comparing someone's highlight reel to my real life?",
+   919→        'Did social media make me want something I didn\'t actually need?',
+   920→        'What meaningful thing did I do instead?'
+   921→      ]
+   922→    },
+   923→    future: {
+   924→      title: 'Future Self', icon: 'fa-hourglass', color: '#b08ac9',
+   925→      items: [
+   926→        'What would my 25-year-old self tell me right now?',
+   927→        'What advice would my younger self need?',
+   928→        'What skill should I start learning today?',
+   929→        'If I continue my current habits for five years, where will I end up?'
+   930→      ]
+   931→    },
+   932→    principles: {
+   933→      title: 'Life Principles', icon: 'fa-book', color: '#7a9ec9',
+   934→      items: [
+   935→        'What lesson did life teach me recently?',
+   936→        'What mistake do I never want to repeat?',
+   937→        'What belief changed this year?',
+   938→        'What truth do most people ignore?',
+   939→        'What quote or idea changed my thinking?'
+   940→      ]
+   941→    }
+   942→  };
+   943→}
+   944→
+   945→function save() { localStorage.setItem(STORE_KEY, JSON.stringify(store)); }
+   946→
+   947→function toast(msg) {
+   948→  const t = document.getElementById('toast');
+   949→  t.textContent = msg;
+   950→  t.classList.add('show');
+   951→  clearTimeout(t._tm);
+   952→  t._tm = setTimeout(() => t.classList.remove('show'), 2400);
+   953→}
+   954→
+   955→function escapeHtml(str) {
+   956→  const div = document.createElement('div');
+   957→  div.textContent = str || '';
+   958→  return div.innerHTML;
+   959→}
+   960→
+   961→// ============ LIFE MAP ============
+   962→const lifeMapSections = [
+   963→  { key: 'who-am-i', label: 'Who am I?', placeholder: 'Describe yourself honestly — your roles, your nature, your current state of being...' },
+   964→  { key: 'who-become', label: 'Who do I want to become?', placeholder: 'The person you are becoming. Be specific. Be bold.' },
+   965→  { key: 'vision-1yr', label: 'My 1-year vision', placeholder: 'Where do you want to be in one year? What does an ordinary Tuesday look like?' },
+   966→  { key: 'vision-5yr', label: 'My 5-year vision', placeholder: 'Paint the picture of five years from now. Who is around you? What are you doing?' },
+   967→  { key: 'skills', label: 'Skills I want to master', placeholder: 'List them. Be specific. Set priorities. Avoid vague words like "good at".' },
+   968→  { key: 'stop-doing', label: 'Things I want to stop doing', placeholder: 'What behaviors are no longer serving the person you are becoming?' },
+   969→  { key: 'become-like', label: 'People I want to become like', placeholder: 'Who do you admire? What specific qualities do they have that you want?' }
+   970→];
+   971→
+   972→function renderLifeMap() {
+   973→  const grid = document.getElementById('life-map-grid');
+   974→  grid.innerHTML = lifeMapSections.map((s, i) => `
+   975→    <div class="card p-6">
+   976→      <div class="flex items-start justify-between mb-3">
+   977→        <div>
+   978→          <div class="text-xs text-[#6b614f] mb-1 tracking-widest">0${i+1}</div>
+   979→          <h3 class="font-serif text-2xl italic">${s.label}</h3>
+   980→        </div>
+   981→        <i class="fas fa-feather text-[#e0a96d]/40"></i>
+   982→      </div>
+   983→      <textarea class="textarea input w-full p-3 rounded-lg" placeholder="${s.placeholder}" data-life-map="${s.key}">${escapeHtml(store.lifeMap[s.key])}</textarea>
+   984→    </div>
+   985→  `).join('');
+   986→  grid.querySelectorAll('[data-life-map]').forEach(el => {
+   987→    el.addEventListener('input', e => {
+   988→      store.lifeMap[e.target.dataset.lifeMap] = e.target.value;
+   989→      save();
+   990→    });
+   991→  });
+   992→}
+   993→
+   994→// ============ IDENTITY BUILDER ============
+   995→function renderIdentity() {
+   996→  const list = document.getElementById('identity-list');
+   997→  if (store.identity.length === 0) {
+   998→    list.innerHTML = `<div class="md:col-span-2 text-center py-12 text-[#6b614f] italic">No identity statements yet. Add one above to begin.</div>`;
+   999→  } else {
+  1000→    list.innerHTML = store.identity.map((id, i) => `
+  1001→      <div class="identity-card">
+  1002→        <div class="flex items-start gap-3">
+  1003→          <div class="check-btn ${id.checked ? 'checked' : ''}" onclick="toggleIdentity(${i})"></div>
+  1004→          <div class="flex-1">
+  1005→            <input type="text" class="bg-transparent border-none outline-none w-full font-serif italic text-lg text-[#f4ead8] placeholder-[#6b614f]" 
+  1006→                   value="${escapeHtml(id.text)}" 
+  1007→                   onchange="updateIdentityText(${i}, this.value)"
+  1008→                   placeholder="I am...">
+  1009→            <div class="text-xs mt-2 ${id.checked ? 'text-[#8aa884]' : 'text-[#a89a82]'}">
+  1010→              ${id.checked ? '✓ Lived up to today' : 'Not yet checked today'}
+  1011→            </div>
+  1012→          </div>
+  1013→          <button onclick="removeIdentity(${i})" class="remove-btn"><i class="fas fa-times"></i></button>
+  1014→        </div>
+  1015→      </div>
+  1016→    `).join('');
+  1017→  }
+  1018→  updateIdentityOrb();
+  1019→  document.getElementById('stat-identity').textContent = store.identity.length;
+  1020→}
+  1021→
+  1022→function toggleIdentity(i) {
+  1023→  store.identity[i].checked = !store.identity[i].checked;
+  1024→  store.identityLastCheck = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  1025→  save();
+  1026→  renderIdentity();
+  1027→}
+  1028→function updateIdentityText(i, text) { store.identity[i].text = text; save(); }
+  1029→function addIdentity() {
+  1030→  store.identity.push({ text: 'I am someone who...', checked: false });
+  1031→  save();
+  1032→  renderIdentity();
+  1033→  toast('New identity statement added.');
+  1034→}
+  1035→function removeIdentity(i) {
+  1036→  store.identity.splice(i, 1);
+  1037→  save();
+  1038→  renderIdentity();
+  1039→}
+  1040→function updateIdentityOrb() {
+  1041→  const checked = store.identity.filter(i => i.checked).length;
+  1042→  const total = store.identity.length;
+  1043→  const pct = total > 0 ? Math.round((checked / total) * 100) : 0;
+  1044→  const orb = document.getElementById('identity-orb');
+  1045→  orb.style.background = `conic-gradient(var(--growth) ${pct * 3.6}deg, var(--border) ${pct * 3.6}deg)`;
+  1046→  document.getElementById('identity-percent').textContent = pct + '%';
+  1047→  if (store.identityLastCheck) {
+  1048→    document.getElementById('last-check-date').textContent = store.identityLastCheck;
+  1049→  }
+  1050→}
+  1051→
+  1052→// ============ URGE JOURNAL ============
+  1053→function saveUrge() {
+  1054→  const trigger = document.getElementById('urge-trigger').value.trim();
+  1055→  const emotion = document.getElementById('urge-emotion').value.trim();
+  1056→  const choice = document.getElementById('urge-choice').value.trim();
+  1057→  if (!trigger && !emotion && !choice) { toast('Write something first.'); return; }
+  1058→  store.urges.push({ date: new Date().toISOString(), trigger, emotion, choice });
+  1059→  save();
+  1060→  document.getElementById('urge-trigger').value = '';
+  1061→  document.getElementById('urge-emotion').value = '';
+  1062→  document.getElementById('urge-choice').value = '';
+  1063→  renderInsight();
+  1064→  toast('Urge logged. Awareness is power.');
+  1065→}
+  1066→
+  1067→// ============ PATTERN INSIGHT ============
+  1068→function renderInsight() {
+  1069→  const container = document.getElementById('insight-container');
+  1070→  if (store.urges.length < 2) {
+  1071→    container.innerHTML = '';
+  1072→    return;
+  1073→  }
+  1074→  // Find most common words in triggers and emotions
+  1075→  const wordCount = {};
+  1076→  store.urges.forEach(u => {
+  1077→    [u.trigger, u.emotion].forEach(field => {
+  1078→      if (!field) return;
+  1079→      field.toLowerCase().split(/\s+/).forEach(w => {
+  1080→        w = w.replace(/[^a-z]/g, '');
+  1081→        if (w.length > 3 && !['that','this','with','have','were','they','them','what','when','from'].includes(w)) {
+  1082→          wordCount[w] = (wordCount[w] || 0) + 1;
+  1083→        }
+  1084→      });
+  1085→    });
+  1086→  });
+  1087→  const sorted = Object.entries(wordCount).sort((a,b) => b[1] - a[1]).slice(0, 3);
+  1088→  if (sorted.length === 0 || sorted[0][1] < 2) {
+  1089→    container.innerHTML = `
+  1090→      <div class="insight-card">
+  1091→        <div class="flex items-start gap-3">
+  1092→          <i class="fas fa-lightbulb text-[#8aa884] mt-1"></i>
+  1093→          <div>
+  1094→            <div class="text-xs uppercase tracking-wider text-[#8aa884] mb-1">Pattern Emerging</div>
+  1095→            <p class="text-sm text-[#f4ead8]">You've logged ${store.urges.length} urge${store.urges.length>1?'s':''}. Keep journaling — patterns will reveal themselves as you add more entries.</p>
+  1096→          </div>
+  1097→        </div>
+  1098→      </div>`;
+  1099→    return;
+  1100→  }
+  1101→  const top = sorted.map(s => s[0]).join(', ');
+  1102→  container.innerHTML = `
+  1103→    <div class="insight-card">
+  1104→      <div class="flex items-start gap-3">
+  1105→        <i class="fas fa-lightbulb text-[#8aa884] mt-1"></i>
+  1106→        <div>
+  1107→          <div class="text-xs uppercase tracking-wider text-[#8aa884] mb-1">Pattern Detected</div>
+  1108→          <p class="text-sm text-[#f4ead8]">Across ${store.urges.length} entries, your most common triggers and emotions involve: <span class="text-[#8aa884] font-semibold">${top}</span>. Awareness is the first step. What will you change?</p>
+  1109→        </div>
+  1110→      </div>
+  1111→    </div>`;
+  1112→}
+  1113→
+  1114→// ============ DETOX ============
+  1115→function renderDetox() {
+  1116→  const list = document.getElementById('detox-list');
+  1117→  if (store.detox.length === 0) {
+  1118→    list.innerHTML = `<div class="text-center py-6 text-[#6b614f] italic text-sm">No active challenges. Add one above.</div>`;
+  1119→    return;
+  1120→  }
+  1121→  list.innerHTML = store.detox.map((d, i) => `
+  1122→    <div class="flex items-center gap-3 p-3 rounded-lg bg-white/[0.02] border border-[#3a2e1f]/50">
+  1123→      <div class="check-btn ${d.active ? 'checked' : ''}" onclick="toggleDetox(${i})"></div>
+  1124→      <input type="text" class="flex-1 bg-transparent border-none outline-none text-sm text-[#f4ead8]" value="${escapeHtml(d.text)}" onchange="updateDetox(${i}, this.value)">
+  1125→      <button onclick="removeDetox(${i})" class="remove-btn"><i class="fas fa-times"></i></button>
+  1126→    </div>
+  1127→  `).join('');
+  1128→}
+  1129→function toggleDetox(i) { store.detox[i].active = !store.detox[i].active; save(); renderDetox(); }
+  1130→function updateDetox(i, text) { store.detox[i].text = text; save(); }
+  1131→function addDetox() { store.detox.push({ text: 'New challenge — click to edit', active: true }); save(); renderDetox(); }
+  1132→function removeDetox(i) { store.detox.splice(i, 1); save(); renderDetox(); }
+  1133→
+  1134→// ============ SCREEN TIME ============
+  1135→function setupScreenTime() {
+  1136→  const today = new Date().toDateString();
+  1137→  const todayEntry = store.screenTime.find(s => s.date === today);
+  1138→  if (todayEntry) {
+  1139→    document.getElementById('screen-hours').value = todayEntry.hours;
+  1140→    document.getElementById('screen-minutes').value = todayEntry.minutes;
+  1141→  }
+  1142→  ['screen-hours', 'screen-minutes'].forEach(id => {
+  1143→    document.getElementById(id).addEventListener('input', () => {
+  1144→      const h = parseInt(document.getElementById('screen-hours').value) || 0;
+  1145→      const m = parseInt(document.getElementById('screen-minutes').value) || 0;
+  1146→      const today = new Date().toDateString();
+  1147→      store.screenTime = store.screenTime.filter(s => s.date !== today);
+  1148→      store.screenTime.push({ date: today, hours: h, minutes: m });
+  1149→      save();
+  1150→      updateScreenStreak();
+  1151→    });
+  1152→  });
+  1153→  updateScreenStreak();
+  1154→}
+  1155→function updateScreenStreak() {
+  1156→  const el = document.getElementById('screen-streak');
+  1157→  if (store.screenTime.length === 0) { el.textContent = 'No entries yet'; return; }
+  1158→  const last = store.screenTime[store.screenTime.length - 1];
+  1159→  el.textContent = `Today: ${last.hours}h ${last.minutes}m logged`;
+  1160→}
+  1161→
+  1162→// ============ REFLECTION ============
+  1163→function renderReflectionTabs() {
+  1164→  const tabs = document.getElementById('reflection-tabs');
+  1165→  tabs.innerHTML = Object.entries(store.questions).map(([key, q]) => `
+  1166→    <div class="tab ${key === store.activeTab ? 'active' : ''}" onclick="setTab('${key}')">
+  1167→      <i class="fas ${q.icon} mr-2" style="color: ${q.color}"></i>${q.title}
+  1168→    </div>
+  1169→  `).join('');
+  1170→  renderReflectionContent();
+  1171→}
+  1172→function setTab(key) { store.activeTab = key; save(); renderReflectionTabs(); }
+  1173→function renderReflectionContent() {
+  1174→  const content = document.getElementById('reflection-content');
+  1175→  const q = store.questions[store.activeTab];
+  1176→  if (!store.questionAnswers[store.activeTab]) store.questionAnswers[store.activeTab] = {};
+  1177→  const answers = store.questionAnswers[store.activeTab];
+  1178→  if (q.items.length === 0) {
+  1179→    content.innerHTML = `<div class="card p-12 text-center"><p class="text-[#6b614f] italic">No questions in this category yet. Add your own below.</p></div>`;
+  1180→    return;
+  1181→  }
+  1182→  content.innerHTML = q.items.map((item, i) => `
+  1183→    <div class="question-card mb-4">
+  1184→      <div class="flex items-start justify-between mb-3 gap-3">
+  1185→        <h4 class="font-serif text-lg italic text-[#f4ead8] flex-1">${escapeHtml(item)}</h4>
+  1186→        <button onclick="removeQuestion(${i})" class="remove-btn" title="Remove this question">
+  1187→          <i class="fas fa-times"></i>
+  1188→        </button>
+  1189→      </div>
+  1190→      <textarea class="textarea input w-full p-3 rounded-lg" 
+  1191→                placeholder="Write your honest answer..."
+  1192→                data-question-index="${i}">${escapeHtml(answers[i])}</textarea>
+  1193→    </div>
+  1194→  `).join('');
+  1195→  content.querySelectorAll('[data-question-index]').forEach(el => {
+  1196→    el.addEventListener('input', e => {
+  1197→      if (!store.questionAnswers[store.activeTab]) store.questionAnswers[store.activeTab] = {};
+  1198→      store.questionAnswers[store.activeTab][e.target.dataset.questionIndex] = e.target.value;
+  1199→      save();
+  1200→      updateStats();
+  1201→    });
+  1202→  });
+  1203→}
+  1204→function removeQuestion(i) {
+  1205→  store.questions[store.activeTab].items.splice(i, 1);
+  1206→  // Reindex answers
+  1207→  if (store.questionAnswers[store.activeTab]) {
+  1208→    const old = store.questionAnswers[store.activeTab];
+  1209→    const newAns = {};
+  1210→    Object.keys(old).forEach(k => {
+  1211→      const ki = parseInt(k);
+  1212→      if (ki < i) newAns[ki] = old[k];
+  1213→      else if (ki > i) newAns[ki - 1] = old[k];
+  1214→    });
+  1215→    store.questionAnswers[store.activeTab] = newAns;
+  1216→  }
+  1217→  save();
+  1218→  renderReflectionContent();
+  1219→  toast('Question removed.');
+  1220→}
+  1221→function addCustomQuestion() {
+  1222→  const input = document.getElementById('new-question-text');
+  1223→  const text = input.value.trim();
+  1224→  if (!text) { toast('Write a question first.'); return; }
+  1225→  store.questions[store.activeTab].items.push(text);
+  1226→  save();
+  1227→  input.value = '';
+  1228→  renderReflectionContent();
+  1229→  toast('Question added to ' + store.questions[store.activeTab].title);
+  1230→}
+  1231→
+  1232→// ============ RULES ============
+  1233→function renderRules() {
+  1234→  const list = document.getElementById('rules-list');
+  1235→  const filtered = store.ruleFilter === 'all' ? store.rules : store.rules.filter(r => r.tag === store.ruleFilter);
+  1236→  if (filtered.length === 0) {
+  1237→    list.innerHTML = `<div class="md:col-span-2 text-center py-12 text-[#6b614f] italic">No rules in this category yet. Add one above.</div>`;
+  1238→  } else {
+  1239→    list.innerHTML = filtered.map(r => {
+  1240→      const idx = store.rules.indexOf(r);
+  1241→      return `
+  1242→      <div class="card p-5 flex items-start gap-3">
+  1243→        <div class="text-2xl text-[#e0a96d] font-serif italic mt-1">§</div>
+  1244→        <div class="flex-1">
+  1245→          <input type="text" class="bg-transparent border-none outline-none w-full text-[#f4ead8] font-serif italic text-lg" 
+  1246→                 value="${escapeHtml(r.text)}" 
+  1247→                 onchange="updateRule(${idx}, this.value)">
+  1248→          <div class="mt-3">
+  1249→            <span class="tag tag-${r.tag}">${r.tag}</span>
+  1250→          </div>
+  1251→        </div>
+  1252→        <button onclick="removeRule(${idx})" class="remove-btn"><i class="fas fa-times"></i></button>
+  1253→      </div>`;
+  1254→    }).join('');
+  1255→  }
+  1256→  document.getElementById('stat-rules').textContent = store.rules.length;
+  1257→}
+  1258→function addRule() {
+  1259→  const text = document.getElementById('new-rule').value.trim();
+  1260→  if (!text) { toast('Write a rule first.'); return; }
+  1261→  const tag = document.getElementById('new-rule-tag').value;
+  1262→  store.rules.push({ text, tag });
+  1263→  save();
+  1264→  document.getElementById('new-rule').value = '';
+  1265→  renderRules();
+  1266→  toast('Rule added.');
+  1267→}
+  1268→function updateRule(i, text) { store.rules[i].text = text; save(); }
+  1269→function removeRule(i) { store.rules.splice(i, 1); save(); renderRules(); }
+  1270→
+  1271→function setupRuleFilters() {
+  1272→  document.querySelectorAll('#rule-filters .filter-btn').forEach(btn => {
+  1273→    btn.addEventListener('click', () => {
+  1274→      document.querySelectorAll('#rule-filters .filter-btn').forEach(b => b.classList.remove('active'));
+  1275→      btn.classList.add('active');
+  1276→      store.ruleFilter = btn.dataset.filter;
+  1277→      save();
+  1278→      renderRules();
+  1279→    });
+  1280→  });
+  1281→}
+  1282→
+  1283→// ============ FUTURE SELF ============
+  1284→function setupFuture() {
+  1285→  document.querySelectorAll('[data-future]').forEach(el => {
+  1286→    el.value = store.future[el.dataset.future] || '';
+  1287→    el.addEventListener('input', e => {
+  1288→      store.future[e.target.dataset.future] = e.target.value;
+  1289→      save();
+  1290→    });
+  1291→  });
+  1292→}
+  1293→
+  1294→// ============ EMERGENCY ============
+  1295→function setupEmergency() {
+  1296→  document.querySelectorAll('[data-emergency]').forEach(el => {
+  1297→    el.value = store.emergency[el.dataset.emergency] || '';
+  1298→    el.addEventListener('input', e => {
+  1299→      store.emergency[e.target.dataset.emergency] = e.target.value;
+  1300→      save();
+  1301→    });
+  1302→  });
+  1303→}
+  1304→function openEmergency() {
+  1305→  document.getElementById('emergency-overlay').classList.add('active');
+  1306→  document.body.style.overflow = 'hidden';
+  1307→}
+  1308→function closeEmergency() {
+  1309→  document.getElementById('emergency-overlay').classList.remove('active');
+  1310→  document.body.style.overflow = '';
+  1311→}
+  1312→
+  1313→// ============ MOTTO ============
+  1314→function setupMotto() {
+  1315→  const m = document.getElementById('motto');
+  1316→  m.value = store.motto || '';
+  1317→  m.addEventListener('input', e => { store.motto = e.target.value; save(); });
+  1318→}
+  1319→
+  1320→// ============ BREATHING ============
+  1321→function setupBreathing() {
+  1322→  const text = document.getElementById('breath-text');
+  1323→  const phases = ['Breathe in...', 'Hold...', 'Breathe out...', 'Hold...'];
+  1324→  let i = 0;
+  1325→  setInterval(() => { i = (i + 1) % phases.length; text.textContent = phases[i]; }, 4000);
+  1326→}
+  1327→
+  1328→// ============ STATS ============
+  1329→function updateStats() {
+  1330→  let count = 0;
+  1331→  Object.values(store.questionAnswers).forEach(cat => {
+  1332→    Object.values(cat).forEach(v => { if (v && v.trim()) count++; });
+  1333→  });
+  1334→  document.getElementById('stat-reflections').textContent = count;
+  1335→  // Day streak - days since first visit
+  1336→  const firstVisit = localStorage.getItem('life_os_first_visit');
+  1337→  if (!firstVisit) {
+  1338→    localStorage.setItem('life_os_first_visit', new Date().toDateString());
+  1339→    document.getElementById('stat-streak').textContent = '1';
+  1340→  } else {
+  1341→    const days = Math.floor((new Date() - new Date(firstVisit)) / (1000*60*60*24)) + 1;
+  1342→    document.getElementById('stat-streak').textContent = days;
+  1343→  }
+  1344→}
+  1345→
+  1346→// ============ CONSTELLATION ============
+  1347→function makeConstellation() {
+  1348→  const c = document.getElementById('constellation');
+  1349→  for (let i = 0; i < 35; i++) {
+  1350→    const star = document.createElement('div');
+  1351→    star.className = 'star';
+  1352→    star.style.left = Math.random() * 100 + '%';
+  1353→    star.style.top = Math.random() * 100 + '%';
+  1354→    star.style.animationDelay = Math.random() * 3 + 's';
+  1355→    star.style.opacity = 0.3 + Math.random() * 0.7;
+  1356→    c.appendChild(star);
+  1357→  }
+  1358→}
+  1359→
+  1360→// ============ REVEAL ============
+  1361→function setupReveal() {
+  1362→  const observer = new IntersectionObserver(entries => {
+  1363→    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  1364→  }, { threshold: 0.08 });
+  1365→  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  1366→}
+  1367→
+  1368→// ============ NAV SCROLL ============
+  1369→function setupNavScroll() {
+  1370→  const sections = ['hero', 'life-map', 'identity', 'reflection', 'rules', 'future-self'];
+  1371→  const links = document.querySelectorAll('.nav-link');
+  1372→  window.addEventListener('scroll', () => {
+  1373→    let current = 'hero';
+  1374→    sections.forEach(id => {
+  1375→      const el = document.getElementById(id);
+  1376→      if (el && window.scrollY >= el.offsetTop - 200) current = id;
+  1377→    });
+  1378→    links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+  1379→  });
+  1380→}
+  1381→
+  1382→// ============ EXPORT ============
+  1383→function exportData() {
+  1384→  const blob = new Blob([JSON.stringify(store, null, 2)], { type: 'application/json' });
+  1385→  const url = URL.createObjectURL(blob);
+  1386→  const a = document.createElement('a');
+  1387→  a.href = url;
+  1388→  a.download = `life_os_manual_${new Date().toISOString().split('T')[0]}.json`;
+  1389→  a.click();
+  1390→  URL.revokeObjectURL(url);
+  1391→  toast('Your manual has been exported.');
+  1392→}
+  1393→
+  1394→// ============ KEYBOARD ============
+  1395→document.addEventListener('keydown', e => {
+  1396→  if (e.key === 'Escape') closeEmergency();
+  1397→});
+  1398→
+  1399→// ============ INIT ============
+  1400→document.getElementById('year').textContent = new Date().getFullYear();
+  1401→renderLifeMap();
+  1402→renderIdentity();
+  1403→renderDetox();
+  1404→setupScreenTime();
+  1405→renderInsight();
+  1406→renderReflectionTabs();
+  1407→renderRules();
+  1408→setupRuleFilters();
+  1409→setupFuture();
+  1410→setupEmergency();
+  1411→setupMotto();
+  1412→setupBreathing();
+  1413→makeConstellation();
+  1414→setupReveal();
+  1415→setupNavScroll();
+  1416→updateStats();
+  1417→</script>
+  1418→</body>
+  1419→</html>
